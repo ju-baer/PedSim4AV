@@ -104,18 +104,33 @@ Watch pedestrians navigate an evacuation scenario with physics-based flair!
 
 ## 🧠 Models at a Glance
 
-| **Model**           | **Type**       | **Key Feature**                                 | **Use Case**                          |
-|---------------------|----------------|--------------------------------------------------|----------------------------------------|
-| **Social Force**        | Microscopic    | Physics-based attractive/repulsive forces        | Evacuation, crowd flow                 |
-| **Cellular Automata**   | Microscopic    | Grid-based discrete movement                     | Large-scale crowds                     |
-| **Vision-Based**        | AI-Driven      | CNN for visual navigation                        | AV pedestrian detection                |
-| **RL-Based**            | AI-Driven      | Learned policies via reinforcement learning      | Adaptive behaviors                     |
-| **Hybrid Models**       | AI-Driven      | Learned policies via reinforcement learning      | Adaptive behaviors                     |
-| **RL-Based**            | AI-Driven      | Learned policies via reinforcement learning      | Adaptive behaviors                     |
-| **RL-Based**            | AI-Driven      | Learned policies via reinforcement learning      | Adaptive behaviors                     |
-| **RL-Based**            | AI-Driven      | Learned policies via reinforcement learning      | Adaptive behaviors                     |
-| **RL-Based**            | AI-Driven      | Learned policies via reinforcement learning      | Adaptive behaviors                     |
-| **RL-Based**            | AI-Driven      | Learned policies via reinforcement learning      | Adaptive behaviors                     |
-| **RL-Based**            | AI-Driven      | Learned policies via reinforcement learning      | Adaptive behaviors                     |
-| **RL-Based**            | AI-Driven      | Learned policies via reinforcement learning      | Adaptive behaviors                     |
-| **RL-Based**            | AI-Driven      | Learned policies via reinforcement learning      | Adaptive behaviors                     |
+Dive into the heart of pedestrian simulation with our 24 cutting-edge models! From physics-inspired classics to AI-driven innovations, this table highlights each model’s type, key feature, and primary use case. Explore the diversity of approaches and find the perfect tool for your research or application. Check `docs/paper_summaries.md` for the research behind each model!
+
+| Model | Type | Key Feature | Use Case |
+|-------|------|-------------|----------|
+| **Social Force** | Microscopic | Physics-based attractive/repulsive forces | Evacuation, crowd flow |
+| **Cellular Automata** | Microscopic | Grid-based discrete movement | Large-scale crowds |
+| **Vision-Based** | AI-Driven | CNN for visual navigation | AV pedestrian detection |
+| **RL-Based** | AI-Driven | Learned policies via reinforcement learning | Adaptive behaviors |
+| **Hybrid Models** | Hybrid | Combines physics and AI (e.g., Social Force + RL) | Complex scenarios |
+| **Granular** | Microscopic | Particle-based contact forces | Dense crowds |
+| **Macroscopic** | Flow-Based | Crowd treated as continuous flow | Urban planning |
+| **Microscopic** | Microscopic | Individual-level detailed dynamics | High-precision simulations |
+| **Mesoscopic** | Group-Based | Group dynamics balancing micro/macro | Social group behavior |
+| **Agent-Based** | Microscopic | Mesa-driven individual agents | Flexible simulations |
+| **Rule-Based** | Microscopic | Predefined movement rules | Simple crowd modeling |
+| **Prediction Models** | AI-Driven | Data-driven trajectory forecasting | AV safety, planning |
+| **Social LSTM/GANs** | AI-Driven | Socially-aware trajectory prediction | Dense crowd forecasting |
+| **Generative Models** | AI-Driven | VAEs and diffusion for synthetic trajectories | Data augmentation |
+| **Continuum** | Flow-Based | Continuous crowd flow dynamics | Large-scale urban planning |
+| **Fluid Dynamics** | Flow-Based | Navier-Stokes-based crowd movement | High-density crowds |
+| **Graph-Based** | Microscopic | Graph-based navigation (e.g., shortest paths) | Structured environments |
+| **Path-Based** | Microscopic | A* pathfinding for movement | Optimal routing |
+| **SUMO Models** | Hybrid | Pedestrian simulation in SUMO | Traffic-pedestrian interactions |
+| **Optimal Steps** | Microscopic | Efficient A* with risk-based weights | Fast navigation |
+| **Gradient Navigation** | Microscopic | Gradient field-guided movement | Structured navigation |
+| **Behavioral Heuristics** | Microscopic | Heuristic rules for behavior | Simple realistic modeling |
+| **Steering Behaviors** | Microscopic | Game-inspired steering (e.g., Reynolds) | Game-like simulations |
+| **Collision-Free Speed** | Microscopic | Velocity-based collision avoidance | Safe navigation |
+| **Anticipation Velocity** | Microscopic | Predictive collision avoidance | Dense environments |
+| **Centrifugal Force** | Microscopic | Generalized force for crowd avoidance | High-density crowds |
