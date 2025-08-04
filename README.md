@@ -1,12 +1,15 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-1.0-blue.svg" alt="Version">
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
-  <img src="https://img.shields.io/badge/Contributions-Welcome-orange.svg" alt="Contributions">
+  <img src="logo.png" alt="PedSim4AV Logo" width="300"/>
 </p>
 
 <h1 align="center"> PedSim4AV: Pedestrian Simulation Models for Autonomous Vehicles </h1>
 <p align="center">
   <strong>A vibrant hub of pedestrian simulation models for researchers, urban planners, and tech enthusiasts .</strong>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Version-1.0-blue.svg" alt="Version">
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+  <img src="https://img.shields.io/badge/Contributions-Welcome-orange.svg" alt="Contributions">
 </p>
 
 ---
