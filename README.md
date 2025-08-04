@@ -14,7 +14,7 @@
 
 ---
 
-## 🌟 Why This Repository?
+## Why This Repository?
 
 Crowd dynamics shape our cities, safety systems, and autonomous tech. **Pedestrian Simulation Models** is your one-stop shop for exploring *24 cutting-edge models*—from classic physics-based approaches to modern AI-driven predictions. Whether you're studying evacuation scenarios, designing smarter cities, or building AVs that navigate human crowds, this repository empowers you with:
 
@@ -25,37 +25,19 @@ Crowd dynamics shape our cities, safety systems, and autonomous tech. **Pedestri
 
 This isn’t just a collection—it’s a *playground for innovation* in crowd simulation.
 
-## 🎨 Features That Shine
+## Features That Shine
 
-- **24 Models**: From granular physics to generative AI, covering macroscopic, microscopic, mesoscopic, and hybrid approaches.
+- **34 Models**: From granular physics to generative AI, covering macroscopic, microscopic, mesoscopic, and hybrid approaches.
 - **Interactive Demos**: Jupyter Notebooks for every model, showcasing scenarios like evacuations and street crossings.
 - **Performance Insights**: Compare models with `metrics_eval.ipynb` for runtime, accuracy, and scalability.
 - **Real-World Integrations**: Plug into CARLA for AV testing, SUMO for traffic sims, or Unity for 3D visualizations.
 - **Data & Scenarios**: Synthetic datasets and example scenarios to jumpstart your experiments.
 - **Research Context**: Curated paper summaries in `docs/paper_summaries.md` to ground your work.
 
-## 🚀 Quickstart
-
-Get moving in minutes!
-
-1. **Clone the repo**:
-   ```bash
-   git clone https://github.com/<your-username>/pedestrian-sim-models.git
-   cd pedestrian-sim-models
-   ```
-2. **Install dependencies (example for Social Force model)**:
-   ```bash
-   pip install -r models/social_force/requirements.txt
-   ```
-3. **Run a demo**:
-    ```bash
-   jupyter notebook models/social_force/demo.ipynb
-   ```
-Watch pedestrians navigate an evacuation scenario with physics-based flair!
 
 ---
 
-## 📦 What's Inside?
+## What's Inside?
  ```bash
    pedestrian-sim-models/
 ├── README.md                   # You're here!
@@ -102,9 +84,10 @@ Watch pedestrians navigate an evacuation scenario with physics-based flair!
    ```
 ---
 
-## 🧠 Models at a Glance
 
-Dive into the heart of pedestrian simulation with our 24 cutting-edge models! From physics-inspired classics to AI-driven innovations, this table highlights each model’s type, key feature, and primary use case. Explore the diversity of approaches and find the perfect tool for your research or application. Check `docs/paper_summaries.md` for the research behind each model!
+## Models at a Glance
+
+Dive into the heart of pedestrian simulation with our **34 cutting-edge models**! From physics-inspired classics to AI-driven innovations, this table highlights each model’s type, key feature, and primary use case. Explore the diversity of approaches and find the perfect tool for your research or application. Check `docs/paper_summaries.md` for the research behind each model!
 
 | Model | Type | Key Feature | Use Case |
 |-------|------|-------------|----------|
@@ -134,3 +117,13 @@ Dive into the heart of pedestrian simulation with our 24 cutting-edge models! Fr
 | **Collision-Free Speed** | Microscopic | Velocity-based collision avoidance | Safe navigation |
 | **Anticipation Velocity** | Microscopic | Predictive collision avoidance | Dense environments |
 | **Centrifugal Force** | Microscopic | Generalized force for crowd avoidance | High-density crowds |
+| **Vision Transformer (ViT) Models** | AI-Driven | Transformer-based visual trajectory prediction | AV perception, crowd forecasting |
+| **Multi-Agent Reinforcement Learning Models** | AI-Driven | Multi-agent RL for interactive behaviors | Dynamic crowd interactions |
+| **Physics-Informed Neural Networks (PINNs)** | Hybrid | Neural networks with physics constraints | Physics-aware trajectory prediction |
+| **Bayesian Models** | AI-Driven | Uncertainty quantification in behavior | Probabilistic crowd modeling |
+| **Attention-based Models** | AI-Driven | Attention mechanisms for pedestrian focus | Socially-aware navigation |
+| **Imitation Learning Models** | AI-Driven | Learning from human demonstrations | Realistic pedestrian behavior |
+| **Federated Learning Models** | AI-Driven | Privacy-preserving behavior learning | Decentralized crowd modeling |
+| **Temporal Convolutional Networks (TCNs)** | AI-Driven | Sequence modeling for trajectories | Long-term trajectory forecasting |
+| **Normalizing Flow Models** | AI-Driven | Generating realistic trajectory distributions | Synthetic crowd data generation |
+| **Neuro-Symbolic Models** | Hybrid | Combines neural networks with symbolic reasoning | Interpretable crowd dynamics |
