@@ -15,23 +15,23 @@ High-quality datasets are the foundation of robust autonomous vehicle (AV) syste
 
 ---
 
-## Quick Reference Table
 
-| Dataset | Year | Source | Modalities | Key Scenarios | AV Testing Focus | License |
-|---------|------|--------|------------|---------------|------------------|---------|
-| **[Waymo Open](#waymo-open-dataset)** | 2024 | [waymo.com/open](https://waymo.com/open/) | LiDAR, RGB | Urban, Suburban | Multi-sensor fusion | Custom |
-| **[NuScenes](#nuscenes)** | 2025 | [nuscenes.org](https://www.nuscenes.org/) | LiDAR, RGB, Radar | Night, Rain, Urban | Low-visibility conditions | CC BY-NC-SA 4.0 |
-| **[TrajImpute](#trajimpute)** | 2024 | [arXiv:2411.00174](https://arxiv.org/abs/2411.00174) | RGB, Trajectories | Occlusion scenarios | Missing data handling | Open-source |
-| **[PSI 2.0](#psi-20)** | 2024 | [situated-intent.net](https://pedestriandataset.situated-intent.net/) | RGB, Intent labels | Social interactions | Intent prediction | Custom |
-| **[JAAD 2.0](#jaad-20)** | 2024 | [GitHub](https://github.com/ykotseruba/JAAD) | RGB, Behavior tags | Pedestrian crossings | Action prediction | CC BY-NC-SA 4.0 |
-| **[MMPD](#mmpd)** | 2024 | [GitHub](https://github.com/MMPedestron/MMPD) | RGB, IR, Depth, LiDAR | Multi-modal fusion | Sensor redundancy | MIT |
-| **[MSP60K](#msp60k)** | 2024 | [GitHub](https://github.com/Event-AHU/OpenPAR) | RGB, Event | Urban, Large-Scale | Attribute recognition | MIT |
-| **[Cchead](#cchead)** | 2024 | [arXiv:2408.05877](https://arxiv.org/abs/2408.05877) | RGB, Optical Flow | Crowded scenes | Occlusion handling | Open-source |
-| **[NU-AIR](#nu-air)** | 2025 | [bit.ly/nuair-data](https://bit.ly/nuair-data) | Event-based | Aerial urban views | Neuromorphic vision | Open-source |
-| **[Cognata](#cognata-synthetic)** | 2024 | [cognata.com](https://www.cognata.com/) | Synthetic data | Work zones | Safety-critical testing | Proprietary |
-| **[KITTI](#kitti)** | 2024 | [cvlibs.net/datasets/kitti](http://www.cvlibs.net/datasets/kitti/) | Stereo RGB, LiDAR, GPS/IMU | Urban, Rural, Highway | Detection, tracking | Free (Non-commercial) |
-| **[BDD100K](#bdd100k)** | 2024 | [bdd100k.com](https://www.bdd100k.com/) | RGB, Annotations | Urban, Diverse | Multi-object detection | Custom (Non-commercial) |
-| **[Caltech Pedestrian](#caltech-pedestrian)** | Classic | [Caltech Vision](http://www.vision.caltech.edu/Image_Datasets/CaltechPedestrians/) | RGB Video | Urban, Rural | Baseline detection | Free (Non-commercial) |
+## Datasets
+
+| Dataset | Source | Modalities | Key Scenarios | AV Testing Focus | License |
+|---------|--------|------------|---------------|------------------|---------|
+| **Waymo Open** | [Waymo Open](https://waymo.com/open/) | LiDAR, RGB | Urban, Suburban | Multi-sensor fusion | Custom |
+| **NuScenes**| [Nuscenes](https://www.nuscenes.org/) | LiDAR, RGB, Radar | Night, Rain, Urban | Low-visibility conditions | CC BY-NC-SA 4.0 |
+| **TrajImpute**  | [TrajImpute](https://arxiv.org/abs/2411.00174) | RGB, Trajectories | Occlusion scenarios | Missing data handling | Open-source |
+| **PSI 2.0** | [PSI 2.0](https://pedestriandataset.situated-intent.net/) | RGB, Intent labels | Social interactions | Intent prediction | Custom |
+| **JAAD 2.0** | [JAAD 2.0](https://github.com/ykotseruba/JAAD) | RGB, Behavior tags | Pedestrian crossings | Action prediction | CC BY-NC-SA 4.0 |
+| **MSP60K**  | [MSP60K](https://github.com/Event-AHU/OpenPAR) | RGB, Event | Urban, Large-Scale | Attribute recognition | MIT |
+| **Cchead**  | [Cchead](https://arxiv.org/abs/2408.05877) | RGB, Optical Flow | Crowded scenes | Occlusion handling | Open-source |
+| **NU-AIR** | [NU-Air](https://drive.google.com/drive/folders/1N_k4zf5eCa3qAXfrSYPDJhiLfiL5betf) | Event-based | Aerial urban views | Neuromorphic vision | Open-source |
+| **Cognata**  | [Cognata](https://www.cognata.com/) | Synthetic data | Work zones | Safety-critical testing | Proprietary |
+| **KITTI**  | [KITTI](http://www.cvlibs.net/datasets/kitti/) | Stereo RGB, LiDAR, GPS/IMU | Urban, Rural, Highway | Detection, tracking | Free (Non-commercial) |
+| **BDD100K**  | [BDD100K-Berkeley DeepDrive](https://bair.berkeley.edu/blog/2018/05/30/bdd/) | RGB, Annotations | Urban, Diverse | Multi-object detection | Custom (Non-commercial) |
+| **Caltech Pedestrian** | [Caltech Vision](https://data.caltech.edu/records/f6rph-90m20) | RGB Video | Urban, Rural | Baseline detection | Free (Non-commercial) |
 
 ---
 
@@ -127,24 +127,6 @@ python run_simulation.py --input ped_trajectories.csv --scenario occluded
 ---
 
 ## Cutting-Edge 2024-2025 Releases
-
-### MMPD - Multi-Modal Pedestrian Detection
-**The First Comprehensive Multi-Modal Benchmark**
-
-**Revolutionary Features**:
-- **5 Modalities**: RGB, Infrared, Depth, LiDAR, Event streams
-- **100,000+ Samples**: Largest multi-modal pedestrian dataset
-- **EventPed Subset**: Specialized for event-based vision
-- **Day/Night Coverage**: Complete lighting condition spectrum
-
-**Technical Specifications**:
-- RGB: 1920×1080, 30fps
-- IR: 640×512, thermal imaging
-- Depth: 640×480, stereo-computed
-- LiDAR: 64-beam rotating scanner
-- Event: 346×240, microsecond precision
-
----
 
 ### NU-AIR - Neuromorphic Urban Aerial
 **Next-Generation Event-Based Vision**
