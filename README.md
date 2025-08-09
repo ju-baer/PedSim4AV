@@ -29,6 +29,7 @@ Dive into our detailed documentation to explore **PedSim4AV**’s capabilities:
 - **[Datasets](docs/datasets.md)**: Curated catalog of datasets (like, TrajImpute, Cchead, PSI 2.0) for pedestrian modeling, with integration guides.
 - **[Benchmarking](docs/benchmarks.md)**: State-of-the-art tools (like, MMPedestron, YOLOv9) and metrics for evaluating pedestrian models.
 - **[Industry Gaps](docs/gaps.md)**: Analysis of gaps in pedestrian simulation models across industries (like, automotive, logistics), with mitigation strategies.
+- **[Models Table](docs/models_overview.md)**: Detailed overview of 34 models, comparing complexity, realism, scalability, and applications.
 - **[Paper Summaries](docs/paper_summaries.md)**: Curated summaries of research papers grounding our models.
 
 ---
