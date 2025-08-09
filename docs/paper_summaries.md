@@ -317,18 +317,73 @@
 ---
 
 ### Agent-Based
-**Title**: A Simple and Realistic Pedestrian Model for Crowd Simulation  
-**Authors**: Peter M. Kielar, André Borrmann  
-**Publication Year**: 2017  
-**Summary**: Proposes an agent-based model with discrete-time updates, capturing realistic behaviors like bidirectional flows and bottleneck navigation. Uses Mesa framework for agent interactions, validated with corridor and bottleneck experiments.  
-**Link**: [ResearchGate](https://www.researchgate.net/publication/123456791)  
-**Datasets**: Corridor and bottleneck experiments, synthetic scenarios.  
-**Metrics**: Flow rates, evacuation time, agent collision rates.  
-**Applications**: Hajj crowd management, event planning, urban simulation.  
-**Limitations**: Simplified social interactions; computational cost increases with agent count.  
-**Future Directions**: Incorporating social group dynamics; scaling for massive crowds.
+
+**Title**: A Hybrid Workflow Connecting a Network and an Agent-based model to Simulate Micro-scale Pedestrian Movement
+
+**Authors**: Berghauser Pont, Henrik, et al.
+
+**Publication Year**: 2024 
+
+**Summary**:This study presents an Agent-Based Model integrated with the Social Force Model to simulate micro-scale pedestrian movement in outdoor environments. Pedestrians are modeled as agents represented by three spheres indicating body parts and orientation. The model incorporates path planning, obstacle avoidance, and speed adaptation, calibrated and validated for urban open spaces. It efficiently handles large-scale pedestrian interactions and allows extensions for complex behavioral rules.
+
+**Link**: [https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2024.1447377/full](https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2024.1447377/full)  
+
+**Datasets**: Origin-Destination matrices for pedestrian flows; simulations in realistic urban geometries.
+
+**Metrics**: Pedestrian velocity, collision avoidance performance, flow distributions.
+
+**Applications**: Urban planning, crowd management in public spaces, micro-scale pedestrian movement analysis.
+
+**Limitations**: Requires extensive calibration for different contexts; complexity increases with behavioral rule extensions.
+
+**Future Directions**: Incorporation of more complex pedestrian behaviors and tactical planning; coupling with network models for comprehensive city-scale simulations.
 
 ---
+
+**Title**: Large-Scale Agent-Based Pedestrian Simulation
+
+**Authors**: Franz Klügl, Gabriele Rindsfüser
+
+**Publication Year**: 2007
+
+**Summary**:This paper reports an agent-based simulation of pedestrian traffic at a large scale: the full railway station in Bern during busy morning hours, simulating over 40,000 pedestrians. The model enables flexible path planning and re-planning for individual agents to navigate dynamically without collisions. It demonstrates the capabilities and challenges of large-scale pedestrian simulations at microscopic levels within complex infrastructures like train stations.
+
+**Link**: [https://link.springer.com/chapter/10.1007/978-3-540-74949-3_13](https://link.springer.com/chapter/10.1007/978-3-540-74949-3_13)  
+
+**Datasets**: Scenario data based on train station layouts and schedules with pedestrian arrival rates.
+
+**Metrics**: Collision avoidance, path efficiency, pedestrian density and flow rates.
+
+**Applications**: Station design and management, crowd flow optimization in transit hubs.
+
+**Limitations**: High computational cost and data requirements for large scale; limited real-world validation reported.
+
+**Future Directions**: Improving computational efficiency and validation techniques; integrating real-time data feeds.
+
+---
+
+**Title**: An Agent-Based Simulation Model of Pedestrian Evacuation Based on Bayesian Game Theory
+
+**Authors**: Weiwei Mau, Mohamed A. Mostafa, Chao Zhang
+
+**Publication Year**: 2017
+
+**Summary**:This research develops an agent-based model for pedestrian evacuation integrating Bayesian Nash Equilibrium game theory to simulate individual decision-making during emergencies. The approach realistically models behavioral heterogeneity and dynamic route choices influenced by predicted congestion. Simulation experiments show improved evacuation efficiency with the Bayesian approach, giving insights into crowd management and evacuation planning.
+
+**Link**: [https://www.jasss.org/26/3/6.html](https://www.jasss.org/26/3/6.html)  
+
+**Datasets**: Simulation-generated data of emergency evacuation scenarios with varying pedestrian behaviors.
+
+**Metrics**: Evacuation time, congestion levels, route choice variability.
+
+**Applications**: Emergency evacuation planning, crowd management, safety policy evaluation.
+
+**Limitations**: Model complexity and assumptions on rationality; needs empirical validation in real emergency scenarios.
+
+**Future Directions**: Incorporation of panic behaviors, diverse pedestrian characteristics, and real-time decision support.
+
+---
+
 
 ### Rule-Based
 **Title**: Pedestrian Traffic: Simulation and Experiments  
