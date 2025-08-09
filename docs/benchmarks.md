@@ -1,26 +1,14 @@
 # Benchmarking Tools and Methods for Pedestrian Models in AV Testing
 
-> **Comprehensive evaluation framework for pedestrian models in autonomous vehicle systems**
-
-## Table of Contents
-
-1. [Overview](#-overview)
-2. [Benchmarking Tools](#️-benchmarking-tools)
-3. [Tool Detailed Descriptions](#-tool-detailed-descriptions)
-4. [Evaluation Metrics](#-evaluation-metrics)
-5. [Benchmarking Methodologies](#-benchmarking-methodologies)
-6. [Standardized Workflows](#-standardized-workflows)
-7. [Performance Standards](#-performance-standards)
-8. [Recent Advances (2024-2025)](#-recent-advances-2024-2025)
-9. [Implementation Guide](#️-implementation-guide)
-10. [Community & Contribution](#-community--contribution)
-11. [Additional Resources](#-additional-resources)
-
----
+> **A comprehensive survey of existing benchmarking approaches for pedestrian behavior modeling in autonomous vehicle systems**
 
 ## Overview
 
-Benchmarking is critical for validating pedestrian models in autonomous vehicle (AV) testing environments. This guide provides comprehensive tools, metrics, and methodologies optimized for **PedSim4AV**, ensuring that pedestrian simulations accurately reflect real-world behaviors and enable safe AV navigation.
+This document surveys existing benchmarking tools, methods, and frameworks used by researchers and industry for evaluating pedestrian behavior models in autonomous vehicle testing. It provides a comprehensive overview of established approaches, standard metrics, and comparative analysis of different methodologies.
+
+---
+
+### Scope of Benchmarking
 
 ### Why Benchmarking Matters
 
@@ -28,6 +16,14 @@ Benchmarking is critical for validating pedestrian models in autonomous vehicle 
 - **Safety Assurance**: Validate AV safety in pedestrian interaction scenarios
 - **Performance Comparison**: Standardized metrics for model evaluation
 - **Continuous Improvement**: Drive innovation through measurable benchmarks
+
+### What This Document Covers
+- Existing benchmarking frameworks and tools
+- Standard evaluation metrics and protocols
+- Comparative analysis of different approaches
+- Published performance results from research literature
+- Industry-standard evaluation methodologies
+
 
 ---
 
@@ -57,7 +53,7 @@ Benchmarking is critical for validating pedestrian models in autonomous vehicle 
 
 ---
 
-## Tool Detailed Descriptions
+##  Detailed Descriptions
 
 ### OpenPCDet - 3D Object Detection Framework
 **State-of-the-art LiDAR-based pedestrian detection**
@@ -81,7 +77,7 @@ python tools/openpcdet_processor.py \
 python run_simulation.py --input ped_detections.json --scenario urban_lidar
 ```
 
-**Performance Notes**: Results vary by model and dataset - check original papers for specific metrics.
+**Performance Notes**: Results vary by model and dataset - consult original papers for specific metrics.
 
 ---
 
@@ -131,21 +127,106 @@ python tools/behavior_analyzer.py --input pose_keypoints.json --output behaviors
 
 ---
 
-## Evaluation Metrics
+
+## Established Benchmarking Frameworks
+
+### KITTI Vision Benchmark Suite
+**The Foundation of AV Perception Benchmarking**
+
+- **Established**: 2012, continuously updated
+- **Scope**: Object detection, tracking, odometry, optical flow
+- **Pedestrian Focus**: 3D detection and tracking benchmarks
+- **Evaluation Protocol**: Standardized train/test splits, multiple difficulty levels
+- **Public Leaderboard**: [KITTI Benchmarks](http://www.cvlibs.net/datasets/kitti/)
+
+**Key Metrics**:
+- Average Precision (AP) for detection
+- Multiple Object Tracking Accuracy (MOTA) for tracking
+- Difficulty levels: Easy, Moderate, Hard based on occlusion and truncation
+
+
+### COCO Detection Challenge
+**Large-Scale Object Detection Benchmark**
+
+- **Established**: 2014, annual challenges
+- **Scope**: Object detection, segmentation, keypoint detection
+- **Pedestrian Relevance**: Person class detection and keypoint estimation
+- **Evaluation Protocol**: mAP across IoU thresholds 0.5-0.95
+- **Leaderboard**: [COCO Detection](https://cocodataset.org/#detection-leaderboard)
+
+### MOT Challenge (Multiple Object Tracking)
+**Standardized Multi-Object Tracking Evaluation**
+
+- **Established**: 2014, biennial challenges
+- **Focus**: Multi-object tracking in video sequences
+- **Datasets**: MOT15, MOT16, MOT17, MOT20
+- **Metrics**: MOTA, MOTP, ID switches, fragmentations
+- **Website**: [MOT Challenge](https://motchallenge.net/)
+
+### NuScenes Detection Challenge
+**3D Multi-Modal Object Detection**
+
+- **Established**: 2019
+- **Scope**: 3D object detection using camera, LiDAR, radar
+- **Evaluation**: Average Precision across multiple IoU thresholds
+- **Unique Features**: 360° perception, multi-modal sensor fusion
+- **Results**: [NuScenes Leaderboard](https://www.nuscenes.org/object-detection)
+
+### Cityscapes Benchmark
+**Urban Scene Understanding**
+
+- **Established**: 2016
+- **Focus**: Semantic segmentation, instance segmentation, panoptic segmentation
+- **Relevance**: Urban pedestrian detection and segmentation
+- **Evaluation**: IoU-based metrics, instance-level accuracy
+- **Website**: [Cityscapes](https://www.cityscapes-dataset.com/benchmarks/)
+
+---
+
+## Detection & Tracking Tools
+
+### Academic Research Tools
+
+**OpenPCDet**
+- **Source**: OpenMMLab
+- **Purpose**: 3D object detection from point clouds
+- **Supported Models**: PointPillars, SECOND, PV-RCNN, CenterPoint
+- **Datasets**: KITTI, Waymo, NuScenes, ONCE
+- **License**: Apache 2.0
+
+**FairMOT**
+- **Purpose**: Joint detection and tracking
+- **Innovation**: Single-network approach for tracking-by-detection
+- **Performance**: State-of-the-art on MOT benchmarks
+- **Source**: Research implementation
+
+---
+
+### Industrial Tools
+
+**YOLO Family (v1-v9)**
+- **Evolution**: Continuous development since 2016
+- **Strengths**: Real-time inference, good accuracy-speed trade-off
+- **Usage**: Widely adopted in industry applications
+- **Variants**: YOLOv5, YOLOv8, YOLOv9 with different optimizations
+
+---
+
+## Standard Evaluation Metrics
 
 ### Detection Metrics
 
-**Mean Average Precision (mAP)**
-- **Definition**: Primary metric for object detection evaluation
-- **Formula**: Average precision across IoU thresholds (typically 0.5-0.95)
-- **Use Case**: Compare detection algorithms across datasets
-- **Interpretation**: Higher values indicate better detection performance
+**Average Precision (AP)**
+- **Definition**: Area under precision-recall curve
+- **Variations**: AP@0.5, AP@0.75, AP@0.5:0.95
+- **Usage**: Primary metric in COCO, KITTI, NuScenes
 
-**Precision and Recall**
-```
-Precision = True Positives / (True Positives + False Positives)
-Recall = True Positives / (True Positives + False Negatives)
-```
+**Mean Average Precision (mAP)**
+- **Definition**: Average AP across all classes
+- **Standard**: mAP@0.5:0.95 for comprehensive evaluation
+- **Industry Standard**: Widely adopted across benchmarks
+
+---
 
 ### Tracking Metrics
 
@@ -153,348 +234,292 @@ Recall = True Positives / (True Positives + False Negatives)
 ```
 MOTA = 1 - (FN + FP + IDSW) / GT
 ```
-Where: FN = False Negatives, FP = False Positives, IDSW = ID Switches, GT = Ground Truth
+- **Components**: False negatives, false positives, ID switches
+- **Range**: -∞ to 1 (higher is better)
+- **Usage**: Primary tracking metric in MOT Challenge
 
 **Multiple Object Tracking Precision (MOTP)**
-- Measures localization precision of correctly matched detections
-- Average IoU between matched ground truth and predicted bounding boxes
+- **Definition**: Average IoU of correctly matched detections
+- **Focus**: Localization accuracy
+- **Complement**: Used alongside MOTA
 
-### Trajectory Metrics
+**Identity F1 Score (IDF1)**
+- **Purpose**: Identity-aware evaluation
+- **Calculation**: F1 score of identity assignments
+- **Advantage**: Better reflects tracking quality
+
+---
+
+### Trajectory Prediction Metrics
 
 **Average Displacement Error (ADE)**
-```
-ADE = (1/N) * Σ ||predicted_position - ground_truth_position||
-```
+- **Definition**: Average L2 distance between predicted and ground truth trajectories
+- **Usage**: Standard in trajectory prediction literature
+- **Units**: Typically meters or pixels
 
 **Final Displacement Error (FDE)**
-- Euclidean distance between predicted and actual final positions
-- Critical for long-term trajectory prediction evaluation
-
-### Behavioral Metrics
-
-**Intent Prediction Accuracy**
-- F1 Score for binary classification (crossing/not crossing)
-- Multi-class accuracy for complex behavioral states
-
-**Behavioral Realism Score**
-- Qualitative assessment of natural movement patterns
-- Distribution matching with real-world data
+- **Definition**: L2 distance at final time step
+- **Purpose**: Long-term prediction accuracy
+- **Critical**: Important for safety applications
 
 ---
 
-## Benchmarking Methodologies
+## Benchmark Datasets
 
-### 1. Cross-Dataset Validation
-**Evaluate model generalization across different datasets**
+### Established Datasets with Benchmarks
 
-**Methodology**:
-1. Train model on Dataset A (e.g., KITTI)
-2. Evaluate on Dataset B (e.g., NuScenes)
-3. Measure performance degradation
-4. Analyze domain gap effects
+**KITTI Dataset**
+- **Pedestrian Annotations**: 7,481 training, 7,518 test images
+- **Benchmark Results**: Available on public leaderboard
+- **Evaluation**: 3-level difficulty assessment
+- **Historical Importance**: Foundation for autonomous driving research
 
-**Implementation**:
-```bash
-# Train on KITTI
-python train_model.py --dataset kitti --model yolov9 --epochs 100
+**Caltech Pedestrian Dataset**
+- **Scale**: 350,000 bounding boxes, 2,300 unique pedestrians
+- **Evaluation Protocol**: Log-average miss rate vs. FPPI
+- **Historical Results**: Comprehensive comparison of detection methods
+- **Status**: Classic benchmark, still referenced
 
-# Test on NuScenes
-python evaluate_model.py --dataset nuscenes --weights kitti_trained.pt --metrics map
-```
+**CityPersons**
+- **Built On**: Cityscapes dataset
+- **Focus**: Pedestrian detection in urban scenes
+- **Annotations**: Dense pedestrian annotations
+- **Evaluation**: Standard detection metrics
 
-### 2. Temporal Consistency Testing
-**Evaluate tracking stability over time**
-
-**Key Aspects**:
-- ID switching frequency
-- Trajectory smoothness
-- Long-term tracking accuracy
-
-**Implementation**:
-```bash
-# Long sequence evaluation
-python temporal_benchmark.py \
-    --input long_sequence_data/ \
-    --tracker deepsort \
-    --metrics mota motp id_switches
-```
-
-### 3. Adverse Conditions Testing
-**Evaluate robustness in challenging scenarios**
-
-**Test Conditions**:
-- Night-time scenarios
-- Weather conditions (rain, fog)
-- Crowded environments
-- Occlusion scenarios
-
-### 4. Multi-Modal Sensor Fusion
-**Assess improvement from sensor combination**
-
-**Evaluation Framework**:
-1. Single modality baselines
-2. Pairwise fusion results
-3. Full multi-modal performance
-4. Ablation studies
+**MOT Datasets (MOT15-MOT20)**
+- **Purpose**: Multi-object tracking evaluation
+- **Annotations**: Frame-by-frame bounding boxes with IDs
+- **Metrics**: Standardized tracking evaluation
+- **Results**: Public leaderboards with extensive baselines
 
 ---
 
-## Standardized Workflows
+### Recent Datasets (2020-2025)
 
-### Basic Detection Workflow
-```bash
-# 1. Data Preparation
-python tools/data_converter.py --dataset waymo --output standard_format/
+**Waymo Open Dataset**
+- **Scale**: 200,000+ annotated frames
+- **Evaluation**: 3D detection challenge
+- **Modalities**: LiDAR, camera data
+- **Benchmark**: Active leaderboard
 
-# 2. Model Training/Loading
-python load_model.py --model yolov9 --weights pretrained.pt
+**NuScenes**
+- **Innovation**: 360° multi-modal perception
+- **Evaluation**: 3D detection and tracking challenges
+- **Metrics**: nuScenes Detection Score (NDS)
+- **Industry Adoption**: Widely used benchmark
 
-# 3. Detection
-python detect.py --input test_data/ --output detections.json
-
-# 4. Evaluation
-python evaluate.py --predictions detections.json --ground_truth gt.json --metrics map
-```
-
-### Complete Tracking Pipeline
-```bash
-# 1. Detection
-python yolo_detect.py --input video.mp4 --output detections/
-
-# 2. Tracking
-python deep_sort_track.py --detections detections/ --output tracks.txt
-
-# 3. Trajectory Analysis
-python analyze_trajectories.py --input tracks.txt --output analysis.json
-
-# 4. Behavioral Assessment
-python behavior_analysis.py --trajectories tracks.txt --output behaviors.csv
-```
+**MMPD (Multi-Modal Pedestrian Detection)**
+- **Innovation**: First comprehensive multi-modal benchmark
+- **Modalities**: RGB, IR, Depth, LiDAR, Event
+- **Baselines**: Provided evaluation framework
+- **Published**: 2024 research
 
 ---
 
-## Performance Benchmarking Context
+## Evaluation Methodologies
 
-### Understanding Performance Metrics
+### Cross-Dataset Evaluation
+**Methodology**: Train on one dataset, test on another
+- **Purpose**: Assess generalization capability
+- **Common Pairs**: KITTI → Cityscapes, COCO → KITTI
+- **Findings**: Significant performance drops common
+- **Research Focus**: Domain adaptation techniques
 
-**Important**: Performance in pedestrian detection and tracking varies significantly based on:
-- Dataset characteristics and quality
-- Model architecture and training methodology  
-- Hardware specifications and optimization
-- Evaluation protocols and threshold settings
-- Environmental conditions and scenario complexity
+### Temporal Evaluation
+**Methodology**: Evaluate tracking over extended sequences
+- **Metrics**: Long-term tracking accuracy, ID consistency
+- **Challenges**: Appearance changes, occlusions
+- **Benchmarks**: MOT Challenge protocols
 
-### Reference Performance Sources
+### Multi-Modal Evaluation
+**Methodology**: Compare single vs. multi-sensor performance
+- **Datasets**: NuScenes, MMPD
+- **Analysis**: Sensor fusion benefits quantification
+- **Results**: Multi-modal typically outperforms single-sensor
 
-For authoritative performance benchmarks, consult these primary sources:
+### Adversarial Evaluation
+**Methodology**: Test robustness under challenging conditions
+- **Conditions**: Weather, lighting, occlusion
+- **Tools**: Robustness benchmarks, synthetic data
+- **Importance**: Safety-critical applications
 
-**Detection Benchmarks**:
-- [KITTI Object Detection Leaderboard](http://www.cvlibs.net/datasets/kitti/eval_object.php)
-- [COCO Detection Challenge Results](https://cocodataset.org/#detection-leaderboard)
-- [NuScenes Detection Challenge](https://www.nuscenes.org/object-detection)
+---
+
+## Published Performance Results
+
+### KITTI Detection Benchmark (Selected Results)
+*Based on historical leaderboard data*
+
+**Top Performing Methods**:
+- **PointPillars**: Efficient 3D detection from point clouds
+- **SECOND**: Sparsely embedded convolutional detection
+- **PV-RCNN**: Point-voxel feature set abstraction
+
+**Performance Range**: 70-85% AP on moderate difficulty pedestrians
+
+---
+
+### MOT Challenge Results
+*Historical tracking benchmark results*
+
+**Leading Methods**:
+- **FairMOT**: Joint detection and tracking approach
+- **ByteTrack**: Simple online tracking method
+- **TransTrack**: Transformer-based tracking
+
+**Performance Range**: 65-80% MOTA on challenging sequences
+
+---
+
+### COCO Person Detection
+*Annual challenge results*
+
+**State-of-the-Art**: 55-65% AP for person class
+**Real-Time Methods**: 45-55% AP at >30 FPS
+**Trend**: Consistent improvement over time
+
+---
+
+## Comparative Analysis
+
+### Detection Framework Comparison
+
+**Academic vs. Industrial Tools**:
+- **Academic**: Higher accuracy, research-focused, extensive evaluation
+- **Industrial**: Optimized for speed, production-ready, practical constraints
+
+**2D vs. 3D Detection**:
+- **2D**: Established benchmarks, extensive baselines, easier deployment
+- **3D**: More informative for AV applications, complex evaluation, sensor requirements
+
+**Single vs. Multi-Modal**:
+- **Single**: Simpler evaluation, established metrics, cost-effective
+- **Multi-Modal**: Better performance, complex integration, higher costs
+
+---
+
+### Tracking Method Comparison
+
+**Detection-Based vs. Joint Approaches**:
+- **Detection-Based**: Modular, easier to optimize separately
+- **Joint**: End-to-end optimization, better overall performance
+
+**Online vs. Offline Methods**:
+- **Online**: Real-time capability, practical for deployment
+- **Offline**: Better accuracy, not suitable for real-time applications
+
+---
+
+### Benchmark Dataset Characteristics
+
+| Dataset | Year | Focus | Strength | Limitation |
+|---------|------|-------|----------|------------|
+| **KITTI** | 2012 | AV Perception | Established, comprehensive | Limited diversity |
+| **COCO** | 2014 | General Detection | Large scale, diverse | Not AV-specific |
+| **MOT** | 2015+ | Tracking | Standardized tracking eval | Limited scenarios |
+| **Cityscapes** | 2016 | Urban Scenes | Dense annotations | European cities only |
+| **NuScenes** | 2019 | 3D Multi-Modal | 360° perception | Complex evaluation |
+| **Waymo** | 2019 | Large-Scale AV | Massive scale | Access restrictions |
+
+---
+
+## Others
+
+### New Benchmarking Initiatives
+
+**MMPD Multi-Modal Benchmark**
+- **Innovation**: First comprehensive multi-modal pedestrian benchmark
+- **Coverage**: RGB, IR, Depth, LiDAR, Event cameras
+- **Contribution**: Standardized multi-modal evaluation protocols
+
+**TrajImpute Dataset**
+- **Focus**: Trajectory completion under missing data
+- **Methodology**: Synthetic occlusion scenarios
+- **Applications**: Robust tracking evaluation
+
+**Event-Based Vision Benchmarks**
+- **Datasets**: N-Caltech101, DVS128 Gesture
+- **Growth**: Increasing focus on neuromorphic sensors
+- **Applications**: High-speed, low-power detection
+
+---
+
+### Methodological Advances
+
+**Transformer-Based Methods**
+- **Detection**: DETR, Deformable DETR
+- **Tracking**: TransTrack, TransMOT
+- **Evaluation**: New attention-based metrics
+
+**Self-Supervised Learning**
+- **Trend**: Reduced dependence on annotations
+- **Evaluation**: New protocols for unsupervised methods
+- **Benchmarks**: Emerging self-supervised challenges
+
+**Domain Adaptation**
+- **Focus**: Cross-dataset generalization
+- **Evaluation**: Standardized domain gap assessment
+- **Tools**: Domain adaptation benchmarks
+
+---
+
+## Research Resources
+
+### Official Benchmark Websites
+- [KITTI Vision Benchmark](http://www.cvlibs.net/datasets/kitti/)
+- [COCO Detection Challenge](https://cocodataset.org/#detection-leaderboard)
+- [MOT Challenge](https://motchallenge.net/)
+- [NuScenes](https://www.nuscenes.org/)
 - [Cityscapes Benchmark](https://www.cityscapes-dataset.com/benchmarks/)
 
-**Tracking Benchmarks**:
-- [MOT Challenge](https://motchallenge.net/)
-- [KITTI Tracking Benchmark](http://www.cvlibs.net/datasets/kitti/eval_tracking.php)
-- [TAO Dataset](https://taodataset.org/)
+---
 
-**Multi-Modal Detection**:
-- MMPD Paper: [arXiv:2407.10125](https://arxiv.org/abs/2407.10125) - Provides baseline results across RGB, IR, Depth, LiDAR, and Event modalities
-
-### Performance Considerations
-
-**Realistic Expectations**:
-- Detection performance varies widely (50-95% mAP) depending on dataset and conditions
-- Tracking accuracy typically ranges from 60-90% MOTA in challenging scenarios
-- Real-time inference requirements depend on application (10-30+ FPS)
-- Multi-modal approaches generally outperform single-sensor methods
-
-**Evaluation Best Practices**:
-1. **Use Standard Datasets**: Compare against established benchmarks
-2. **Report Complete Metrics**: Include precision, recall, F1, and inference time
-3. **Document Conditions**: Specify hardware, software versions, and evaluation settings
-4. **Cross-Validate**: Test across multiple datasets and scenarios
-5. **Statistical Significance**: Report confidence intervals and multiple runs
-
-> ⚠️ **Always verify performance claims against original research papers and official benchmark results. Be skeptical of performance numbers without proper citations and reproducible evaluation protocols.**
+### Survey Papers
+- "Object Detection Networks on Convolutional Feature Maps" (TPAMI 2017)
+- "Multiple Object Tracking: A Literature Review" (Artificial Intelligence 2017)
+- "Deep Learning for 3D Point Clouds: A Survey" (TPAMI 2021)
+- "Multi-Modal Deep Learning for Autonomous Driving" (IEEE Access 2021)
 
 ---
 
-## 🚀 Recent Advances (2024-2025)
-
-### New Architectures & Models
-- **MMPedestron**: First comprehensive multi-modal pedestrian detection framework
-- **YOLOv9**: Programmable Gradient Information for improved detection
-- **Advanced Event-based Models**: Leveraging neuromorphic vision sensors
-
-### Enhanced Datasets
-- **MMPD**: Multi-modal pedestrian detection dataset with 5 sensor types
-- **TrajImpute**: Specialized for handling missing trajectory data
-- **Cchead**: Large-scale head tracking in crowded environments
-
-### Methodological Improvements
-- **Cross-modal Learning**: Improved sensor fusion techniques
-- **Temporal Modeling**: Better long-term trajectory prediction
-- **Adversarial Testing**: Enhanced robustness evaluation
+### Tool Documentation
+- [OpenPCDet Documentation](https://github.com/open-mmlab/OpenPCDet)
+- [MMDetection Documentation](https://mmdetection.readthedocs.io/)
+- [Detectron2 Documentation](https://detectron2.readthedocs.io/)
+- [YOLOv9 Repository](https://github.com/WongKinYiu/yolov9)
 
 ---
 
-## 🛠️ Implementation Guide
-
-### Environment Setup
-```bash
-# Create virtual environment
-python -m venv pedsim_benchmark
-source pedsim_benchmark/bin/activate  # Linux/Mac
-# pedsim_benchmark\Scripts\activate  # Windows
-
-# Install core dependencies
-pip install torch torchvision opencv-python numpy pandas matplotlib
-pip install mediapipe plotly scipy scikit-learn
-
-# Install specific tools
-pip install openpcdet  # For LiDAR processing
-git clone https://github.com/WongKinYiu/yolov9.git  # For YOLO detection
-```
-
-### Basic Benchmark Script
-```python
-import json
-import numpy as np
-from typing import Dict, List
-import logging
-
-class PedestrianBenchmark:
-    def __init__(self, config_path: str):
-        """Initialize benchmark with configuration."""
-        with open(config_path, 'r') as f:
-            self.config = json.load(f)
-        self.logger = self._setup_logging()
-    
-    def run_detection_benchmark(self, 
-                              model_name: str, 
-                              dataset_path: str) -> Dict:
-        """Run detection benchmark on specified dataset."""
-        results = {
-            'model': model_name,
-            'dataset': dataset_path,
-            'metrics': {}
-        }
-        
-        # Load ground truth
-        gt_data = self._load_ground_truth(dataset_path)
-        
-        # Run detection
-        predictions = self._run_detection(model_name, dataset_path)
-        
-        # Calculate metrics
-        results['metrics']['map'] = self._calculate_map(predictions, gt_data)
-        results['metrics']['precision'] = self._calculate_precision(predictions, gt_data)
-        results['metrics']['recall'] = self._calculate_recall(predictions, gt_data)
-        
-        return results
-    
-    def _calculate_map(self, predictions: List, ground_truth: List) -> float:
-        """Calculate mean Average Precision."""
-        # Implementation details would go here
-        # This is a placeholder for the actual mAP calculation
-        pass
-    
-    def _setup_logging(self) -> logging.Logger:
-        """Setup logging configuration."""
-        logging.basicConfig(
-            level=logging.INFO,
-            format='%(asctime)s - %(levelname)s - %(message)s'
-        )
-        return logging.getLogger(__name__)
-
-# Usage example
-if __name__ == "__main__":
-    benchmark = PedestrianBenchmark('config/benchmark_config.json')
-    results = benchmark.run_detection_benchmark('yolov9', 'data/test_set/')
-    print(json.dumps(results, indent=2))
-```
+### Performance Tracking
+- [Papers With Code - Object Detection](https://paperswithcode.com/task/object-detection)
+- [Papers With Code - Multi-Object Tracking](https://paperswithcode.com/task/multi-object-tracking)
+- [Papers With Code - 3D Object Detection](https://paperswithcode.com/task/3d-object-detection)
 
 ---
 
-## 🤝 Community & Contribution
+## Summary
 
-### Contributing Guidelines
-
-**Adding New Tools**:
-1. Fork the repository
-2. Add tool integration in `tools/` directory
-3. Include documentation and examples
-4. Submit pull request with benchmarking results
-
-**Reporting Issues**:
-- Use GitHub Issues for bug reports
-- Provide reproducible examples
-- Include system specifications and error logs
-
-**Community Resources**:
-- [GitHub Discussions](https://github.com/ju-baer/PedSim4AV/discussions) for questions
-- [Contributing Guide](../CONTRIBUTING.md) for detailed guidelines
-- Regular community calls for major updates
-
-### Best Practices
-
-**Code Quality**:
-- Follow PEP 8 style guidelines
-- Include comprehensive docstrings
-- Add unit tests for new functionality
-- Use type hints for better code clarity
-
-**Documentation**:
-- Provide clear usage examples
-- Include performance benchmarks
-- Document parameter choices and limitations
+### Established Practices
+1. **Standard Metrics**: mAP for detection, MOTA for tracking are universally accepted
+2. **Benchmark Datasets**: KITTI, COCO, MOT provide standardized evaluation
+3. **Evaluation Protocols**: Well-defined train/test splits and evaluation procedures
+4. **Public Leaderboards**: Enable objective comparison of methods
 
 ---
 
-## 📚 Additional Resources
-
-### Official Documentation
-- [OpenPCDet Documentation](https://github.com/open-mmlab/OpenPCDet/blob/master/README.md)
-- [YOLOv9 Paper](https://arxiv.org/abs/2402.13616)
-- [DeepSORT Paper](https://arxiv.org/abs/1703.07402)
-- [Mediapipe Documentation](https://developers.google.com/mediapipe)
-
-### Research Papers & References
-- [Multi-Modal Pedestrian Detection Survey](https://arxiv.org/abs/2407.10125)
-- [Trajectory Prediction Benchmarks](https://arxiv.org/abs/2411.00174)
-- [AV Safety Evaluation Methods](https://papers.nips.cc/paper_files/paper/2022/hash/4c5f3b2e649d496e7b26ddfa842e2c47-Abstract-Datasets_and_Benchmarks.html)
-
-### Community Benchmarks
-- [Papers With Code - Pedestrian Detection](https://paperswithcode.com/task/pedestrian-detection)
-- [KITTI Benchmark Results](http://www.cvlibs.net/datasets/kitti/eval_object.php)
-- [NuScenes Detection Challenge](https://www.nuscenes.org/object-detection)
+### Current Trends
+1. **Multi-Modal Fusion**: Growing emphasis on sensor combination
+2. **3D Perception**: Shift from 2D to 3D evaluation for AV applications
+3. **Real-Time Performance**: Balance between accuracy and computational efficiency
+4. **Robustness Testing**: Evaluation under challenging conditions
 
 ---
 
-## ⚠️ Important Notes
-
-### Performance Validation
-- Always verify benchmark results against original research papers
-- Performance metrics can vary significantly based on:
-  - Hardware specifications
-  - Software versions
-  - Dataset preprocessing methods
-  - Evaluation protocols
-
-### Tool Compatibility
-- Ensure tool versions match your Python environment
-- Some tools may require specific CUDA versions for GPU acceleration
-- Docker containers can help maintain consistent environments
-
-### Ethical Considerations
-- Respect dataset licenses and usage terms
-- Consider privacy implications when working with pedestrian data
-- Follow institutional review board (IRB) guidelines for human subject research
+### Research Gaps
+1. **Long-Term Tracking**: Limited evaluation of extended temporal sequences
+2. **Behavioral Modeling**: Few benchmarks for pedestrian behavior prediction
+3. **Safety Metrics**: Limited standardization of safety-critical evaluation
+4. **Cross-Domain Generalization**: Need for better domain adaptation benchmarks
 
 ---
 
-*Last Updated: August 2025 | Maintained by the PedSim4AV Community*
-
-*For questions or contributions, please visit our [GitHub repository](https://github.com/ju-baer/PedSim4AV) or join our community discussions.*
