@@ -21,6 +21,17 @@ PedSim4AV is a comprehensive hub for pedestrian simulation models specifically d
 - **Research-Ready Tools**: Benchmarks, comparisons, and integrations with existing simulators. 
 - **Open & Modular**: MIT-licensed, designed for easy extensions and community contributions.
 
+---
+
+## Documentation
+
+Dive into our detailed documentation to explore **PedSim4AV**’s capabilities:
+- **[Datasets](docs/datasets.md)**: Curated catalog of datasets (like, TrajImpute, Cchead, PSI 2.0) for pedestrian modeling, with integration guides.
+- **[Benchmarking](docs/benchmarks.md)**: State-of-the-art tools (like, MMPedestron, YOLOv9) and metrics for evaluating pedestrian models.
+- **[Industry Gaps](docs/gaps.md)**: Analysis of gaps in pedestrian simulation models across industries (like, automotive, logistics), with mitigation strategies.
+- **[Paper Summaries](docs/paper_summaries.md)**: Curated summaries of research papers grounding our models.
+
+---
 
 ## Features That this repository will have after completing everything
 
@@ -30,9 +41,7 @@ PedSim4AV is a comprehensive hub for pedestrian simulation models specifically d
 - **Data & Scenarios**: Synthetic datasets and example scenarios to jumpstart experiments.
 - **Research Context**: Curated paper summaries in `docs/paper_summaries.md` to ground your work.
 
-
 ---
-
 
 ## Models at a Glance
 
