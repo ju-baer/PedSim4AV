@@ -258,8 +258,6 @@ python run_simulation.py --input ped_trajectories.csv
 - **MSP60K**: 80% mAP for attribute recognition (from arXiv paper)
 - **Cchead**: 85% tracking accuracy with MIFN (from arXiv paper)
 
-> **Verification Required**: Always consult the original research papers and dataset documentation for the most current and accurate performance benchmarks. Results may vary based on evaluation protocols, model architectures, and dataset versions.
-
 ---
 
 ## Future Directions
