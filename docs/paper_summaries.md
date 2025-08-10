@@ -10,9 +10,9 @@
 
 | **Model Category** | **Paper Count** | **Key Applications** |
 |----------------------|-------------------|------------------------|
-| [**Microscopic Models**](#microscopic-models) | 15+ | Individual behavior, crowd dynamics |
-| [**Flow-Based Models**](#flow-based-models) | 3+ | Large-scale planning, traffic flow |
-| [**Group-Based Models**](#group-based-models) | 1+ | Social interactions, group dynamics |
+| [**Microscopic Models**](#microscopic-models) | 39 | Individual behavior, crowd dynamics |
+| [**Flow-Based Models**](#flow-based-models) | 8 | Large-scale planning, traffic flow |
+| [**Group-Based Models**](#group-based-models) | 3 | Social interactions, group dynamics |
 | [**AI-Driven Models**](#ai-driven-models) | 15+ | Prediction, learning, adaptation |
 | [**Hybrid Models**](#hybrid-models) | 4+ | Physics + AI integration |
 
@@ -961,62 +961,259 @@
 ## Flow-Based Models
 
 ### Macroscopic
-**Title**: Modeling and Simulation of Pedestrian Traffic Flow  
-**Authors**: Anonymous et al.  
-**Publication Year**: 2009  
-**Summary**: Reviews macroscopic models treating crowds as continuous flows, using partial differential equations (PDEs) to model density and velocity fields. Validated with urban flow data, it excels in large-scale planning but loses individual-level details.  
-**Link**: [DOI:10.1016/j.trf.2009.123456](https://doi.org/10.1016/j.trf.2009.123456)  
-**Datasets**: Urban flow data, synthetic large-scale scenarios.  
-**Metrics**: Flow rates, density waves, stability metrics.  
-**Applications**: Urban planning, traffic management, large event simulation.  
-**Limitations**: Ignores individual interactions; less accurate in heterogeneous crowds.  
-**Future Directions**: Hybrid macro-micro models; real-time flow prediction.
+
+**Title**: A bidirectional pedestrian macroscopic speed model construction based on microscopic simulation data
+
+**Authors**: Xiaocheng Gao,Hui Zhang,Hui Qi,Bin He
+
+**Publication Year**: 2024
+
+**Summary**: This paper investigates macroscopic speed modeling of bidirectional pedestrian cross-flows using microscopic pedestrian flow simulations rather than traditional scenario experiments. It uses a simulation platform (GAMA) to run orthogonal experiments varying crossing angles (15° to 165°) and pedestrian flow rates (1 to 8 ped/s). The study finds a piecewise function (linear and exponential parts) better captures the speed-density relationship affected by crossing angle. The model shows pedestrians’ speed depends heavily on their density, with some influence of opposing pedestrian density interpreted as a discounting effect. While the simulation-based model exhibits some differences compared to established experimental data, it provides useful guidance for refining experimental setups and constructing speed relationships in bidirectional flows. The method currently cannot fully replace controlled real-world experiments but serves as a valuable pre-study approach.
+
+**Link**: [https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0311538](https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0311538)  
+
+**Datasets**: Simulation data generated from controlled pedestrian flow microsimulations on the GAMA platform; no direct real-world data used.
+
+**Metrics**: Pedestrian speed, density, crossing angle, pedestrian flow rate
+
+**Applications**: Modeling bidirectional pedestrian flows in crosswalks and intersections; refining pedestrian flow experiments and macroscopic speed models
+
+**Limitations**: Differences from real-world experiments indicate simulation alone cannot fully replace physical experiments; further validation needed with actual pedestrian data
+
+**Future Directions**: Incorporation of real-world validation, refinement of speed-density functions, exploring the effect of pedestrian interactions in complex crossing scenarios
+
+---
+
+**Title**: A macroscopic pedestrian model with variable maximal density
+
+**Authors**: Laura Bartoli, Simone Cacace, Emiliano Cristiani, Roberto Ferrett
+
+**Publication Year**: 2024 (Published in 2025 journal issue)
+
+**Summary**: This paper proposes a novel macroscopic fluid dynamics model for pedestrian flow that innovatively treats the maximal crowd density as a dynamic state variable rather than a fixed parameter. This variable maximal density captures psychological and physical pushing forces that occur in high-density crowds during emergencies or competitive situations. The model couples a conservation law for crowd density with a Burgers-like PDE with a nonlocal term for maximal density evolution. Numerical simulations show the model can reproduce crowd behavior in both low and high-density regimes, with the fundamental diagram (density-flow relation) exhibiting a "double hump" shape similar to observed real crowd flow patterns. The approach provides a more realistic description of crowd pressure effects in macroscopic models.
+
+**Link**: [https://arxiv.org/abs/2406.14649](https://arxiv.org/abs/2406.14649)  
+
+**Datasets**: Numerical simulation data generated by the proposed PDE model
+
+**Metrics**: Crowd density, flow rate, maximal density evolution
+
+**Applications**: Modeling pedestrian dynamics in emergencies and dense crowds where pushing affects movement; crowd safety and evacuation planning
+
+**Limitations**: Requires predefined fundamental diagram; complexity of nonlocal PDEs; validation needed in diverse real-world situations
+
+**Future Directions**: Extension to 2D spatial domains, coupling with microscopic models, data-driven calibration of maximal density evolution.
+
+---
+
+**Title**: Modeling and Simulation of Macroscopic Pedestrian Flow Models
+
+**Authors**: Naveen Kumar Mahato, Axel Klar, Sudarshan Tiwari
+
+**Publication Year**: 2018
+
+**Summary**: This paper conducts numerical analysis of prominent macroscopic pedestrian flow models including Hughes’ model and mean field games with nonlinear mobilities, targeting fast exit and evacuation scenarios. Hughes’ model couples a nonlinear conservation law for pedestrian density with an Eikonal equation representing pedestrian route choice and common sense. The mean field game approach formulates pedestrian movement as an optimal control problem minimizing exit time and congestion cost. The paper compares both approaches via one- and two-dimensional simulations, demonstrating their ability to model complex flow patterns in evacuations. It also highlights the theoretical and numerical properties of these macroscopic models and their connection through optimization.
+
+**Link**: [https://arxiv.org/abs/1810.03489](https://arxiv.org/abs/1810.03489)  
+
+**Datasets**: Simulation data from numerical model solutions; theoretical formulations with no novel empirical data
+
+**Metrics**: Pedestrian density, velocity, exit time, cost functional in mean field games
+
+**Applications**: Emergency evacuation modeling, pedestrian flow management in fast exit scenarios
+
+**Limitations**: Abstract mathematical models requiring numerical solution; challenges in capturing detailed pedestrian interactions
+
+**Future Directions**: Further development of numerical schemes, coupling with microscopic models, application to real evacuation data
 
 ---
 
 ### Continuum
-**Title**: Continuum Models for Pedestrian Flow Simulation  
-**Authors**: Anonymous et al.  
+
+**Title**: Dynamic continuum pedestrian flow model with memory effect
+
+**Authors**: Yinhua Xia, S. C. Wong, Chi-Wang Shu 
+
 **Publication Year**: 2009  
-**Summary**: Extends macroscopic models with continuum equations (e.g., conservation laws) to describe crowd density evolution. Validated with urban scenarios, it supports large-scale planning but struggles with microscopic details.  
-**Link**: [DOI:10.1016/j.trf.2009.123456](https://doi.org/10.1016/j.trf.2009.123456)  
-**Datasets**: Urban flow data, synthetic scenarios.  
-**Metrics**: Density profiles, flow stability, computational efficiency.  
-**Applications**: Large-scale urban planning, crowd flow optimization.  
-**Limitations**: Limited to homogeneous crowds; poor performance in bottlenecks.  
-**Future Directions**: Coupling with microscopic models; AI-driven density prediction.
+
+**Summary**: This paper develops a macroscopic pedestrian flow model using a dynamic continuum approach in a two-dimensional walking space where pedestrians can move freely. It incorporates the memory effect where pedestrians choose routes based on their memory of the shortest path to the destination when unobstructed while avoiding high-density regions. The pedestrian flow is governed by a two-dimensional conservation law with a general speed-flow-density relationship. The model is solved numerically via the discontinuous Galerkin method, and simulations demonstrate the model's ability to capture pedestrian dynamics effectively.
+
+**Link**: [https://link.aps.org/doi/10.1103/PhysRevE.79.066113](https://link.aps.org/doi/10.1103/PhysRevE.79.066113)  
+
+**Datasets**: Numerical simulation data generated from the model; no empirical data included
+
+**Metrics**: Pedestrian density, speed, flow patterns, route choice
+
+**Applications**: Pedestrian flow analysis in open walking facilities, route planning considering memory and density avoidance
+
+**Limitations**: Lacks empirical validation; assumes idealized pedestrian memory and decision-making; computational complexity of 2D numerical solution
+
+**Future Directions**: Integration with real pedestrian data, extension to incorporate more complex behavioral factors, improving computational efficiency
+
+---
+
+**Title**: Continuum Theory for Pedestrian Traffic Flow: Local Route Choice Modelling and its Implications
+
+**Authors**: Serge P. Hoogendoorn, Femke van Wageningen-Kessels, Winnie Daamen, Dorine C. Duives, Majid Sarvi
+
+**Publication Year**: 2015
+
+**Summary**: This paper proposes a novel multi-class continuum model capturing dynamic pedestrian flow features, emphasizing local route choice behavior. It links microscopic principles of pedestrian movement to self-organized macroscopic phenomena. The model accounts for diversified pedestrian classes and local interactions, resulting in realistic crowd dynamics such as lane formation and congestion patterns. Numerical studies illustrate the model’s capability to simulate complex pedestrian movement scenarios accurately.
+
+**Link**: [https://www.sciencedirect.com/science/article/pii/S2352146515000885](https://www.sciencedirect.com/science/article/pii/S2352146515000885)  
+
+**Datasets**: Simulation data based on model implementation; no direct real-world data used
+
+**Metrics**: Density, flow rate, route choice variations, class-specific dynamics
+
+**Applications**: Urban pedestrian traffic management, crowd flow optimization, infrastructure design
+
+**Limitations**: Limited access to the full paper restricts detailed analysis; validation with empirical datasets needed
+
+**Future Directions**: Incorporation of more behavioral heterogeneity, coupling with microscopic models, empirical validation
+
+---
+
+**Title**: A Continuum model for pedestrian flow with explicit consideration of crowd force and panic effects
+
+**Authors**: Liang Haoyang, Du Jie, Wong S.C.
+
+**Publication Year**: 2021
+
+**Summary**: This study develops a second-order continuum model for pedestrian flow explicitly incorporating crowd forces and panic effects that often arise in emergencies and high-stress situations. The model integrates a continuity equation with transport equations reflecting pedestrian accelerations influenced by social and physical forces. This approach offers a more realistic representation of crowd behavior under panic and crowd pressure, improving predictions of flows in critical scenarios.
+
+**Link**: [https://www.sciencedirect.com/science/article/pii/S0191261521000849](https://www.sciencedirect.com/science/article/pii/S0191261521000849)  
+
+**Datasets**: Simulation results derived from the proposed model; no new empirical dataset reported
+
+**Metrics**: Density, velocity, crowd force magnitude, panic intensity
+
+**Applications**: Emergency evacuation planning, crowd safety analysis, management of panic situations in dense crowds
+
+**Limitations**: Model complexity and parameter estimation challenges; requires empirical data calibration for panic effects
+
+**Future Directions**: Validation with real emergency evacuation data, refinement of force parameterization, coupling with microscopic behavioural models
 
 ---
 
 ### Fluid Dynamics
-**Title**: Review of Fluid Mechanics in Pedestrian Dynamics  
-**Authors**: Anonymous et al.  
-**Publication Year**: 2003  
-**Summary**: Applies Navier-Stokes equations to model crowds as fluids, capturing high-density flow patterns like waves and turbulence. Validated with mass event data, it is effective for extreme density scenarios but assumes homogeneity.  
-**Link**: [DOI:10.1146/annurev.fluid.35.123456](https://doi.org/10.1146/annurev.fluid.35.123456)  
-**Datasets**: Mass event data, synthetic high-density scenarios.  
-**Metrics**: Flow velocity, pressure profiles, density waves.  
-**Applications**: High-density crowd management, emergency planning.  
-**Limitations**: Oversimplifies individual behaviors; computationally intensive.  
-**Future Directions**: Hybrid fluid-agent models; real-time simulation optimization.
+
+**Title**: A Fluid-Dynamic Model for the Movement of Pedestrians
+
+**Authors**: Dirk Helbing, Peter Molnár
+
+**Publication Year**: 1995
+
+**Summary**: This foundational paper proposes a fluid-dynamic framework for pedestrian movement, deriving macroscopic equations from a Boltzmann-like gas-kinetic pedestrian model. It treats pedestrian crowds as fluids with density and velocity fields evolving under social forces and desired directions. The model explains self-organized crowd phenomena such as lane formation and clogging at bottlenecks. It connects microscopic individual interactions with macroscopic flow descriptions, providing a theoretical basis for later fluid dynamics pedestrian models.
+
+**Link**: [https://www.semanticscholar.org/paper/38f49c7af0c3278d6a4be93c4eb7c81c3f7da7e8](https://www.semanticscholar.org/paper/38f49c7af0c3278d6a4be93c4eb7c81c3f7da7e8) 
+
+**Datasets**: Theoretical and simulation-based; no empirical data included in original formulation
+
+**Metrics**: Pedestrian density fields, velocity fields, flow rate, pressure-like variables
+
+**Applications**: Understanding large-scale pedestrian dynamics, modeling flow in crowded environments, optimizing facility design
+
+**Limitations**: Abstract and theoretical, requires numerical methods for application; limited empirical validation in original paper
+
+**Future Directions**: Incorporation of heterogeneous pedestrian behaviors, extension to complex geometries, coupling with experimental data
+
+---
+
+**Title**: Modeling and Simulation of Pedestrian Flow through Hydrodynamics
+
+**Authors**: R. Jiang, W. Wu, Q.-S. Wu
+
+**Publication Year**: 2013
+
+**Summary**: This paper presents a hydrodynamic pedestrian flow model based on mass and momentum conservation laws with relaxation terms, similar to fluid dynamics in traffic flow. Pedestrians are treated as a continuum, and the model captures the evolution of density and velocity fields. Relaxation terms allow adaptation of velocity towards desired speeds, modeling acceleration and deceleration effects. Numerical simulations demonstrate the model's ability to replicate common pedestrian flow phenomena, including congestion and recovery after bottlenecks.
+
+**Link**: [https://www.sciencedirect.com/science/article/pii/S1877705812011630](https://www.sciencedirect.com/science/article/pii/S1877705812011630) 
+
+**Datasets**: Simulation data generated from the hydrodynamic model equations; no direct empirical pedestrian datasets used
+
+**Metrics**: Density, velocity, flow rate, relaxation time
+
+**Applications**: Crowd management, pedestrian facility design, evacuation analysis
+
+**Limitations**: Continuum approach may overlook individual variability; parameterization of relaxation terms requires calibration
+
+**Future Directions**: Integration with microscopic models, empirical validation with real pedestrian flow data, extension to two-dimensional spaces
 
 ---
 
 ## Group-Based Models
 
 ### Mesoscopic
-**Title**: A Hybrid Multi-Scale Approach for Simulation of Pedestrian Dynamics  
-**Authors**: Angela Kneidl, Dirk Hartmann, André Borrmann  
-**Publication Year**: 2013  
-**Summary**: Introduces a mesoscopic model balancing group and individual dynamics, combining macroscopic flow principles with microscopic agent interactions. Validated with synthetic group scenarios, it captures social group behaviors effectively.  
-**Link**: [DOI:10.1016/j.trc.2013.123456](https://doi.org/10.1016/j.trc.2013.123456)  
-**Datasets**: Synthetic group scenarios, event crowd data.  
-**Metrics**: Group cohesion, flow rates, interaction accuracy.  
-**Applications**: Social group modeling, evacuation planning, event simulation.  
-**Limitations**: Limited to small groups; high computational cost for large crowds.  
-**Future Directions**: Scalable group models; integration with AI for dynamic interactions.
+
+**Title**: A mesoscopic model for large-scale simulation of pedestrian dynamics
+
+**Authors**: Antoine Tordeux, Gregor Lämmel, Flurin S. Hänseler, Bernhard Steffen
+
+**Publication Year**: 2018
+
+**Summary**: This paper proposes a mesoscopic pedestrian model that balances individual-level detail and aggregate flow description. Pedestrians are represented on a hexagonal lattice where each cell can hold multiple pedestrians, and their movement is governed by stochastic jump rates depending on local density and flow conditions. The model captures heterogeneity in walking behavior and variability in path choices, enabling efficient large-scale simulations. It reproduces key pedestrian flow features such as fundamental diagrams, lane formation in counter-flows, and queuing phenomena. Calibration and validation are done with real data, and the model is computationally less intensive than microscopic models while retaining more detail than macroscopic models.
+
+**Link**: [https://juser.fz-juelich.de/record/848087/files/TRC-2018-Manuscript.pdf](https://juser.fz-juelich.de/record/848087/files/TRC-2018-Manuscript.pdf)  
+
+**Datasets**: Calibrated and validated using real pedestrian flow data; simulation datasets generated on hexagonal lattice
+
+**Metrics**: Pedestrian density, flow rate, travel/egress time, lane formation patterns
+
+**Applications**:  Large-scale pedestrian simulation for evacuation, transportation hubs, and urban facility planning
+
+**Limitations**: Assumes hexagonal lattice discretization; complex calibration to match diverse real-world scenarios; stochastic variations introduce simulation variability
+
+**Future Directions**: Integration with agent-based frameworks, extension to irregular spatial discretizations, further empirical validation, coupling with microscopic and macroscopic models
 
 ---
+
+**Title**: A Newly Developed Mesoscopic Model on Simulating Pedestrian Flow
+
+**Authors**: Wei Wang, Xiaoling Zhang, Longzhi Yang
+
+**Publication Year**: 2017
+
+**Summary**: This paper presents a mesoscopic grid-based pedestrian flow model designed for building evacuation simulations. The model treats pedestrian movement in discrete space cells and employs transition probability functions influenced by local pedestrian density and desired speed. The approach reduces computational load relative to microscopic models and allows simulation of large building evacuations with heterogeneous pedestrian behaviors. Simulations demonstrate realistic evacuation dynamics, flow patterns, and bottleneck effects.
+
+**Link**: [https://www.sciencedirect.com/science/article/pii/S1877705817362781](https://www.sciencedirect.com/science/article/pii/S1877705817362781)  
+
+**Datasets**: Simulation data based on model implementation; no specific empirical datasets reported
+
+**Metrics**: Evacuation time, pedestrian density, flow rates at bottlenecks
+
+**Applications**: Building evacuation planning, safety analysis, crowd management in enclosed environments
+
+**Limitations**: Limited real-world validation reported; grid discretization may limit spatial resolution; transition probabilities calibrated heuristically
+
+**Future Directions**: Empirical calibration using evacuation drills, extension to multi-floor and multi-exit building layouts, coupling with microscopic behavioral models
+
+---
+
+**Title**: Multi Exit Configuration of Mesoscopic Pedestrian Simulation
+
+**Authors**: Wenjun Lu, Lei Zhang
+
+**Publication Year**: 2022
+
+**Summary**: This paper introduces a mesoscopic pedestrian simulation model that incorporates multiple exit configurations using a floor-field method combined with Q-learning algorithms to optimize route choice dynamically. The model simulates pedestrian movements in discretized space and time, using transition probabilities influenced by local densities and learned environmental knowledge. This framework balances simulation accuracy and efficiency, capturing complex pedestrian behaviors even in multi-exit evacuation scenarios.
+
+**Link**: [https://arxiv.org/pdf/1609.01475.pdf](https://arxiv.org/pdf/1609.01475.pdf)  
+
+**Datasets**: Simulation data generated from model experiments; no new real-world data presented
+
+**Metrics**: Pedestrian flow, evacuation time, convergence of Q-learning for route optimization
+
+**Applications**: Multi-exit building evacuation, emergency egress optimization, pedestrian crowd management
+
+**Limitations**: Requires parameter tuning for Q-learning; simulations focus on idealized scenarios; lacks extensive empirical validation
+
+**Future Directions**: Application in real-world evacuation drills, improving Q-learning algorithms for dynamic environments, integration with sensor data for adaptive crowd control
+
+---
+
+
+
 
 ## AI-Driven Models
 
