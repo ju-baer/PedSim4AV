@@ -891,16 +891,70 @@
 ---
 
 ### Centrifugal Force
-**Title**: Generalized Centrifugal Force Model for Pedestrian Dynamics  
-**Authors**: Anonymous et al.  
+
+**Title**: Generalized centrifugal-force model for pedestrian dynamics
+
+**Authors**: Mohcine Chraibi, Armin Seyfried
+
 **Publication Year**: 2010  
-**Summary**: Extends the Social Force Model with centrifugal forces to model avoidance behaviors in high-density crowds, capturing swirling patterns in panic scenarios. Validated with mass event data, it improves realism in extreme conditions.  
-**Link**: [ResearchGate](https://www.researchgate.net/publication/123456799)  
-**Datasets**: Mass event data, synthetic panic scenarios.  
-**Metrics**: Flow patterns, density profiles, avoidance success.  
-**Applications**: Emergency planning, high-density crowd management.  
-**Limitations**: Limited to specific scenarios; complex parameter tuning.  
-**Future Directions**: Automated parameter optimization; integration with AI models.
+
+**Summary**: This paper introduces a spatially continuous force-based pedestrian dynamics model incorporating an elliptical volume exclusion to better represent pedestrian body shapes. The model tackles common issues such as oscillations and overlapping pedestrians encountered in force-based approaches. It quantitatively describes pedestrian movement in various geometries, including corridors, and matches empirical fundamental diagrams from controlled experiments. Distinctive features include anisotropic interaction forces derived from elliptical shapes and velocity-dependent pedestrian interactions.
+
+**Link**: [https://link.aps.org/doi/10.1103/PhysRevE.82.046111](https://link.aps.org/doi/10.1103/PhysRevE.82.046111)  
+
+**Datasets**: Empirical pedestrian flow data from controlled corridor experiments for fundamental diagram validation.
+
+**Metrics**: Flow rates, density-velocity relations, collision occurrences, oscillation frequency, lane formation efficiency.
+
+**Applications**: Crowd flow simulation in corridors and bottlenecks, evacuation planning, pedestrian facility design.
+
+**Limitations**: Requires accurate parameter tuning; complexity increases with elliptical interactions; may not fully capture social or psychological pedestrian behaviors.
+
+**Future Directions**: Extension to heterogeneous pedestrian populations, integration with behavioral models, simulation of complex multi-directional flows.
+
+---
+
+**Title**: Centrifugal force model for pedestrian dynamics
+
+**Authors**: Yu, Chen, Dong
+
+**Publication Year**: 2005  
+
+**Summary**: This early foundational paper proposes the Centrifugal Force Model (CFM), describing pedestrian repulsive interactions as a function of relative velocity and distance, resembling a "centrifugal" type repulsion. Unlike classical social force models, CFM reduces unrealistic oscillations and collisions by incorporating velocity-dependent repulsive forces. The model enables reproduction of key pedestrian dynamics phenomena such as lane formation and congestion. It highlights the impact of direction choice strategies in bottleneck scenarios on flow efficiency.
+
+**Link**: [https://link.aps.org/doi/10.1103/PhysRevE.72.026112](https://link.aps.org/doi/10.1103/PhysRevE.72.026112)  
+
+**Datasets**: Simulation data validated with bottleneck flow experiments and pedestrian tracking data.
+
+**Metrics**: Flow rate through bottlenecks, collision frequency, trajectory smoothness, exit time distributions.
+
+**Applications**: Evacuation modeling, pedestrian flow through narrow passages, crowd safety analysis.
+
+**Limitations**: Initial form is circular interaction-based; less precise in complex geometries; behavioral realism limited to physical interactions
+
+**Future Directions**: Incorporation of elliptical pedestrian representations, coupling with cognitive decision processes, enhanced parameter calibration.
+
+---
+
+**Title**: Force-based models of pedestrian dynamics (including discussion of Centrifugal Force Model)
+
+**Authors**: Mohcine Chraibi, Ulrich Kemloh, Andreas Schadschneider, Armin Seyfried
+
+**Publication Year**: 2011  
+
+**Summary**: This overview article reviews force-based pedestrian dynamics models, highlighting strengths and limitations of different approaches including the Centrifugal Force Model (CFM). It explains how CFM differs from social force models by relying on velocity-dependent repulsive forces to reduce pedestrian overlapping and unrealistic movements. The paper includes detailed analysis of repulsive force formulations, calibration challenges, and simulation results for crowd movement in bottlenecks and corridors. It provides insights into the choice of direction strategies and their effect on bottleneck flow.
+
+**Link**: [https://www.aimspress.com/aimspress-data/nhm/2011/3/PDF/1556-1801_2011_3_425.pdf](https://www.aimspress.com/aimspress-data/nhm/2011/3/PDF/1556-1801_2011_3_425.pdf)  
+
+**Datasets**: Simulated pedestrian flows in corridors and bottlenecks, benchmarked against experimental fundamental diagrams and flow measurements.
+
+**Metrics**: Overlapping incidents, flow rates, pedestrian velocity, direction choice effects.
+
+**Applications**: Pedestrian crowd simulation, public space design, emergency evacuation models.
+
+**Limitations**: Parameter sensitivity and calibration complexity; does not incorporate detailed psychological or social behavior.
+
+**Future Directions**: Hybrid modeling approaches combining force-based and behavioral models, extension to multi-level environments, real-world empirical testing.
 
 ---
 
