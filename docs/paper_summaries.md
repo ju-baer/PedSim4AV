@@ -1218,72 +1218,276 @@
 ## AI-Driven Models
 
 ### Vision-Based
-**Title**: A Review of Deep Learning-Based Methods for Pedestrian Trajectory Prediction  
-**Authors**: Anonymous et al.  
-**Publication Year**: 2021  
-**Summary**: Surveys vision-based models using CNNs and sensor fusion (e.g., LiDAR, cameras) for pedestrian trajectory prediction. CNNs excel in detecting pedestrians in urban settings, validated with PIE and Caltech datasets, but require high-quality visual data.  
-**Link**: [PMC](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1234567)  
-**Datasets**: PIE, Caltech, InD.  
-**Metrics**: ADE, FDE, Modified Hausdorff Distance (MHD).  
-**Applications**: ADAS, autonomous vehicle navigation, surveillance.  
-**Limitations**: Struggles in low-visibility conditions; high computational requirements.  
-**Future Directions**: Multi-modal sensor integration; lightweight CNN architectures.
+
+**Title**: Vision-based crowd dynamic model for multi-directional pedestrian flow
+
+**Authors**: Zixuan ZHOU, Wataru NAKANISHI, Yasuo ASAKURA
+
+**Publication Year**: 2022
+
+**Summary**: This paper proposes a microscopic pedestrian simulation model using continuous space representation for multi-directional pedestrian flows. It focuses on the role of visual information in pedestrian route choice around obstacles and dynamic congestion within a pedestrian's visual field. Pedestrians make routing decisions based only on congestion and other pedestrian choices in their line of sight, integrated with optimal reciprocal collision avoidance (ORCA) techniques. The model effectively reproduces crowd behaviors such as movement in intersection zones, benefiting pedestrian flow management and space design in large public areas.
+
+**Link**: [https://www.jstage.jst.go.jp/article/easts/14/0/14_2524/_article/-char/ja/](https://www.jstage.jst.go.jp/article/easts/14/0/14_2524/_article/-char/ja/)  
+
+**Datasets**: Simulation data generated through microscopic pedestrian models with visual perception assumptions; no empirical datasets reported
+
+**Metrics**: Pedestrian route choice, congestion levels perceived, collision avoidance efficiency, flow patterns
+
+**Applications**: Design and management of pedestrian flow in large public spaces, crowd safety, architectural planning
+
+**Limitations**: The model assumes limited visual perception range and simplified pedestrian decision processes; no direct empirical validation included
+
+**Future Directions**: Empirical validation with real-world pedestrian data, extension to heterogeneous pedestrian behavior, incorporating environmental complexity
+
+---
+
+**Title**: Simulation of bi-directional pedestrian flow in corridor based on direction fuzzy visual field (DFVF)
+
+**Authors**: Shiwei Li, Qianqian Li, Ganglong Zhong & Yuzhao Zhang 
+
+**Publication Year**: 2023
+
+**Summary**: This study introduces an improved model for simulating bi-directional pedestrian movements in corridors by incorporating individual differences in visual perception through a direction fuzzy visual field (DFVF) concept. The DFVF divides pedestrian interaction force fields into directional areas affected by psychological factors and personal space, allowing pedestrians' decisions to be influenced by static and dynamic information within their visual field. The model simulates density-speed relationships, lane formations, and self-organization phenomena, capturing more realistic heterogeneity in pedestrian behaviors. Controlled experiments support the parameterization of the DFVF for varied pedestrian traits.
+
+**Link**: [https://www.nature.com/articles/s41598-023-46530-0](https://www.nature.com/articles/s41598-023-46530-0)  
+
+**Datasets**: Controlled experimental data on pedestrian visual field perception; simulation data on bi-directional flows
+
+**Metrics**: Density, speed, flow rates, lane formation, evacuation time
+
+**Applications**: Pedestrian flow simulation in corridors, evacuation planning, understanding heterogeneous pedestrian interactions
+
+**Limitations**: Focuses on corridor environments; requires extensive parameter calibration; limited real-world validation beyond controlled experiments
+
+**Future Directions**: Extending to more complex environments, coupling with real-time data for adaptive simulations, exploring multi-modal pedestrian interaction
+
+---
+
+**Title**: A machine vision-based method for crowd density estimation and evacuation simulation
+
+**Authors**: Shijie Huang, Jingwei Ji, Yu Wang, Wenju Li, Yuechuan Zheng 
+
+**Publication Year**: 2023
+
+**Summary**: This paper presents a machine vision-based methodology for estimating crowd density from video data and simulating evacuation scenarios. By leveraging computer vision techniques, the approach detects and quantifies pedestrian density and behavior from real-world footage, then integrates the data into simulation models to improve evacuation safety. This approach enhances the accuracy of crowd simulations by grounding them in observed visual data, potentially reducing risks like stampedes through better evacuation route planning.
+
+**Link**: [https://www.sciencedirect.com/science/article/abs/pii/S0925753523002278](https://www.sciencedirect.com/science/article/abs/pii/S0925753523002278)  
+
+**Datasets**: Video footage of crowds used for density estimation; simulation datasets derived from vision data
+
+**Metrics**: Crowd density estimates, evacuation time, pedestrian movement trajectories
+
+**Applications**: Real-time crowd monitoring, evacuation strategy optimization, public safety in mass gatherings
+
+**Limitations**: Dependent on video quality and environmental conditions; computational complexity of processing large-scale video data
+
+**Future Directions**: Integration with real-time surveillance systems, combining vision data with behavioral models, extending to diverse crowd scenarios
 
 ---
 
 ### RL-Based
-**Title**: Pedestrian Simulation with Reinforcement Learning: A Curriculum-Based Approach  
-**Authors**: Anonymous et al.  
-**Publication Year**: 2023  
-**Summary**: Applies reinforcement learning (RL) with curriculum-based training to learn goal-oriented pedestrian movement and collision avoidance. Outperforms basic Unity agents in synthetic scenarios, showing adaptive behaviors in dynamic crowds.  
-**Link**: [MDPI](https://www.mdpi.com/1234-5678)  
-**Datasets**: Synthetic Unity scenarios, crowd flow data.  
-**Metrics**: Success rate, collision frequency, reward convergence.  
-**Applications**: Urban planning, AV testing, adaptive crowd simulation.  
-**Limitations**: Limited generalization to unseen environments; high training time.  
-**Future Directions**: Transfer learning for robustness; real-world data integration.
+
+**Title**: Pedestrian simulation as multi-objective reinforcement learning
+
+**Authors**: Naresh Balaji Ravichandran, Fangkai Yang, Christopher Peters, Anders Lansner, Pawel Herman
+
+**Publication Year**: 2018
+
+**Summary**: This paper models pedestrians as autonomous agents using a modular multi-objective reinforcement learning (RL) framework. The approach divides pedestrian behavior into navigation and collision avoidance tasks, each with independent state spaces and rewards, combined for action selection. The RL-based model learns natural, goal-directed pedestrian movement while minimizing collisions in dynamic environments. Experiments in scenarios like circle walking, intersections, and hallways show this method competes well with classic models like Social Force and ORCA, with strengths in complex, bottleneck scenarios.
+
+**Link**: [https://www.diva-portal.org/smash/get/diva2:1281770/FULLTEXT01.pdf](https://www.diva-portal.org/smash/get/diva2:1281770/FULLTEXT01.pdf)  
+
+**Datasets**: Simulated data generated within Unity3D pedestrian scenarios across various layouts and densities
+
+**Metrics**: Time to reach goal, collision counts, pedestrian trajectories
+
+**Applications**: Autonomous pedestrian simulation for games, robotics, crowded environment analysis, and urban planning
+
+**Limitations**: RL model training can be computationally intensive; performance depends on reward design; in some scenarios, collision avoidance is less effective than specialized models
+
+**Future Directions**: Enhancing generalization, refining reward structures, integrating with real pedestrian data, combining with other simulation paradigms
+
+---
+
+**Title**: Curriculum-Based Reinforcement Learning for Pedestrian Simulation
+
+**Authors**: Giuseppe Vizzari, Daniela Briola, Thomas Cecconello
+
+**Publication Year**: 2023
+
+**Summary**: This work applies deep reinforcement learning (DRL) with a curriculum learning approach to pedestrian simulation. Agents learn wayfinding decisions to navigate planar environments with intermediate targets, progressively mastering complex navigation tasks via increasingly difficult training scenarios. The curriculum design aims to improve learning explainability and generalization beyond specific maps. The results demonstrate agents' learned policies effectively guide pedestrians through environments requiring multi-step route planning.
+
+**Link**: [https://ceur-ws.org/Vol-3579/paper3.pdf](https://ceur-ws.org/Vol-3579/paper3.pdf)  
+
+**Datasets**: Simulation data from virtual environments with annotated waypoints; no empirical pedestrian data
+
+**Metrics**: Navigation success rate, learning convergence, policy generalization across maps
+
+**Applications**: Modeling pedestrian route choice and wayfinding in buildings, evacuation planning, autonomous robot navigation in human environments
+
+**Limitations**: No direct empirical validation; scalability to complex real-world environments needs further study
+
+**Future Directions**: Enhancing explainability of learned policies, incorporating heterogeneous pedestrian behaviors, applying in real architectural layouts
+
+---
+
+**Title**: Using Collision Momentum in Deep Reinforcement Learning Based Adversarial Pedestrian Modeling
+
+**Authors**: Dianwei Chen, Ekim Yurtsever, Keith Redmill, Umit Ozguner
+
+**Publication Year**: 2023
+
+**Summary**: This research introduces a deep reinforcement learning (DRL) framework for pedestrian behavior modeling tailored to adversarial scenarios that generate collisions, aiming to uncover weaknesses in autonomous vehicle safety systems. Unlike conventional RL models focusing on realistic safe behaviors, this approach emphasizes collision momentum to generate severe collision cases. The method improves testing and validation of autonomous vehicle controllers by simulating challenging pedestrian behavior in edge cases.
+
+**Link**: [https://arxiv.org/abs/2306.07525](https://arxiv.org/abs/2306.07525)  
+
+**Datasets**: Simulated pedestrian-vehicle interaction scenarios generated for training/testing the DRL model
+
+**Metrics**: Collision frequency and severity, pedestrian trajectories, vehicle controller failure modes
+
+**Applications**: Autonomous vehicle safety testing, pedestrian behavior simulation in extreme traffic scenarios, robustness evaluation of driver assistance systems
+
+**Limitations**: Focus on adversarial scenarios may limit general pedestrian behavior realism; complex training process requiring specialized expertise
+
+**Future Directions**: Extending to multi-agent and multi-modal traffic scenarios, integrating with real-world vehicle and pedestrian datasets, refining transferability to physical trials
 
 ---
 
 ### Prediction Models
-**Title**: Review of Neural Network Approaches in Pedestrian Dynamics Studies  
-**Authors**: Anonymous et al.  
-**Publication Year**: 2022  
-**Summary**: Surveys MLP and LSTM-based models for pedestrian trajectory prediction. LSTMs excel in short-term predictions but struggle with long-term accuracy due to error accumulation. Validated with UCY and ETH datasets, it supports AV safety applications.  
-**Link**: [PMC](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1234568)  
-**Datasets**: UCY, ETH, TJU-DHD-Pedestrian.  
-**Metrics**: ADE, FDE, Negative Log-Likelihood (NLL).  
-**Applications**: AV safety, crowd management, urban planning.  
-**Limitations**: Long-term prediction errors; data dependency.  
-**Future Directions**: Attention mechanisms; multi-modal data integration.
+
+**Title**: Pedestrian Behavior Prediction Using Machine Learning Methods  
+
+**Authors**: Chi Zhang, Christian Berger, Marco Dozza
+
+**Publication Year**: 2024 
+
+**Summary**: This thesis explores pedestrian behavior prediction leveraging deep learning, covering trajectory prediction, crossing intention, and the transferability of models across different countries. It enhances trajectory prediction accuracy by integrating social and pedestrian-vehicle interactions and spectral features through discrete Fourier transform. The study also evaluates crossing intention prediction using neural networks based on simulator data and performs cross-country comparative analysis between Japan and Germany. The approach advances automated systems' understanding of pedestrian dynamics to improve safety and autonomous vehicle navigation.
+
+**Link**: [https://research.chalmers.se/publication/544319/file/544319_Fulltext.pdf](https://research.chalmers.se/publication/544319/file/544319_Fulltext.pdf)  
+
+**Datasets**: Real-world pedestrian trajectory and behavior data; simulator-generated crossing intention data
+
+**Metrics**: Trajectory prediction accuracy, crossing intention classification accuracy, model transferability
+
+**Applications**: Autonomous driving safety systems, urban pedestrian behavior modeling, intelligent transportation systems
+
+**Limitations**: Focused on urban scenarios; model transferability beyond studied regions needs further exploration
+
+**Future Directions**: Incorporation of more diverse environments, real-time prediction enhancement, integration with multi-agent simulations
+
+---
+
+**Title**: A Predictive Collision Avoidance Model for Pedestrian Simulation  
+
+**Authors**: Ioannis Karamouzas, Peter Heil, Pascal van Beek, Marc Overmars
+
+**Publication Year**: 2009
+
+**Summary**: This paper introduces a novel local pedestrian collision avoidance technique based on prediction of future collisions. Each pedestrian forecasts potential collisions and adjusts their trajectory efficiently to avoid conflicts, resulting in smooth and realistic movement paths. The model reproduces natural crowd dynamics, including lane formation, and supports real-time simulation of large crowds. It is computationally efficient and visually compelling for use in pedestrian flow simulation.
+
+**Link**: [https://doi.org/10.1007/978-3-642-10347-6_4](https://doi.org/10.1007/978-3-642-10347-6_4)  
+
+**Datasets**: Simulation data generated within the model; validation against observed crowd behaviors
+
+**Metrics**: Path length, curvature, collision frequency, smoothness of avoidance maneuvers
+
+**Applications**: Real-time pedestrian simulation in gaming, architectural design, crowd safety management
+
+**Limitations**: Primarily focused on local interactions; less emphasis on long-term trajectory prediction
+
+**Future Directions**: Integration with global route planning, extension to heterogeneous pedestrian populations, hybrid approaches combining prediction and optimization
+
+---
+
+**Title**: Review of Pedestrian Trajectory Prediction Methods - Comparing Deep Learning and Knowledge-based Approaches  
+
+**Authors**: Raphael Korbmacher, Antoine Tordeux
+
+**Publication Year**: 2021
+
+**Summary**: This comprehensive review contrasts knowledge-based microscopic models (e.g., social force, ORCA) with deep learning methods for pedestrian trajectory prediction. It highlights that deep learning models provide significantly better accuracy in predicting individual trajectories, especially in sparse scenes, while knowledge-based models are better suited for capturing large-scale crowd dynamics. The paper discusses challenges such as model explainability, dataset requirements, and the potential of hybrid models combining strengths from both approaches. It sets a roadmap for future research emphasizing improving generalization, interpretability, and large-scale applications.
+
+**Link**: [https://arxiv.org/pdf/2111.06740.pdf](https://arxiv.org/pdf/2111.06740.pdf)  
+
+**Datasets**: Varied public pedestrian trajectory datasets used in comparative studies
+
+**Metrics**: Prediction accuracy (e.g., ADE/FDE), computational efficiency, explainability
+
+**Applications**: Autonomous driving, surveillance, urban planning, robotics
+
+**Limitations**: Deep learning models require extensive training data; knowledge-based models may lack predictive precision
+
+**Future Directions**: Development of hybrid models, scalability to complex environments, incorporation of social and contextual cues
 
 ---
 
 ### Social LSTM/GANs
-**Title**: Social LSTM: Human Trajectory Prediction in Crowded Spaces  
-**Authors**: Alexandre Alahi, Kratarth Goel, Vignesh Ramanathan, et al.  
+
+**Title**: Social LSTM: Human Trajectory Prediction in Crowded Spaces
+
+**Authors**: Agrim Gupta, Justin Johnson, Li Fei-Fei
+
 **Publication Year**: 2016  
-**Summary**: Introduces Social LSTM, combining LSTM with social pooling to predict pedestrian trajectories in crowded environments. Outperforms traditional models in dense scenarios by modeling social interactions. GAN extensions enhance synthetic trajectory generation.  
-**Link**: [DOI:10.1109/CVPR.2016.123](https://doi.org/10.1109/CVPR.2016.123)  
-**Datasets**: ETH, UCY.  
-**Metrics**: ADE, FDE, collision rate.  
-**Applications**: Surveillance, AV navigation, crowd forecasting.  
-**Limitations**: Limited to short-term predictions; high computational cost.  
-**Future Directions**: Scaling to larger crowds; integrating attention mechanisms.
+
+**Summary**: This pioneering work introduces the Social LSTM model, which uses Long Short-Term Memory networks augmented with a social pooling mechanism to capture interactions between pedestrians in crowded scenes. The model predicts future human trajectories by considering both individual motion history and the influence of neighboring pedestrians. It requires no additional annotations beyond existing trajectory datasets and significantly outperforms traditional models on benchmark datasets like ETH and UCY. The social pooling layer enables effective modeling of human-human interactions for more accurate and socially-consistent trajectory predictions.
+
+**Link**: [https://cvgl.stanford.edu/papers/CVPR16_Social_LSTM.pdf](https://cvgl.stanford.edu/papers/CVPR16_Social_LSTM.pdf)  
+
+**Datasets**: ETH and UCY pedestrian trajectory datasets
+
+**Metrics**: Average displacement error (ADE), final displacement error (FDE)
+
+**Applications**: Crowd behavior modeling, autonomous vehicle navigation, robotics, surveillance
+
+**Limitations**: Focused mainly on trajectory prediction without integrating scene context explicitly; may struggle with highly complex interactions beyond crowd motion data
+
+**Future Directions**: Incorporation of contextual information, extension to multi-modal predictions, combining with adversarial training frameworks
+
+---
+
+**Title**: Social GAN: Socially Acceptable Trajectory Prediction
+
+**Authors**: Agrim Gupta, Justin Johnson, Li Fei-Fei
+
+**Publication Year**: 2018  
+
+**Summary**: Social GAN extends the Social LSTM framework by integrating Generative Adversarial Networks (GANs) to generate multiple plausible and socially acceptable future trajectories for pedestrians. The model combines an LSTM encoder-decoder with a social pooling mechanism and a discriminator network to learn diverse and realistic motion patterns, capturing the inherent uncertainty in human motion. This adversarial approach leads to improved performance on standard trajectory prediction benchmarks by generating more diverse trajectory samples compared to deterministic methods.
+
+**Link**: [https://arxiv.org/abs/1803.10892](https://arxiv.org/abs/1803.10892)  
+
+**Datasets**: ETH and UCY pedestrian trajectory datasets
+
+**Metrics**: ADE, FDE, best-of-N sampling metrics
+
+**Applications**: Autonomous driving, robotic path planning, crowd simulation systems
+
+**Limitations**: GAN training instability and mode collapse risks; requires careful tuning
+
+**Future Directions**: Incorporating scene context, improving multi-agent interaction modeling, enhancing stability and diversity of generated trajectories
 
 ---
 
 ### Generative Models
-**Title**: Generative Modeling of Pedestrian Behavior: A Receding Horizon Optimization-Based Trajectory Planning Approach  
-**Authors**: Mohamed H. Zaki, Tarek Sayed  
-**Publication Year**: 2023  
-**Summary**: Uses Variational Autoencoders (VAEs) with receding horizon planning to generate synthetic pedestrian trajectories. Validated with synthetic urban scenarios, it supports data augmentation for AV training and urban planning.  
-**Link**: [ResearchGate](https://www.researchgate.net/publication/123456793)  
-**Datasets**: Synthetic urban scenarios, UCY.  
-**Metrics**: Trajectory realism (Fréchet distance), diversity, computational efficiency.  
-**Applications**: AV training, urban planning, synthetic data generation.  
-**Limitations**: Requires large training datasets; limited real-world validation.  
-**Future Directions**: Diffusion models for improved realism; real-time generation.
+
+**Title**: Learning to Generate Diverse Pedestrian Movements from Web Videos with Noisy Labels
+
+**Authors**: Zhizheng Liu, Joe Lin, Wayne Wu, Bolei Zhou
+
+**Publication Year**: 2024
+
+**Summary**: This paper introduces a generative model called PedGen that learns to generate diverse and realistic pedestrian movements from large-scale web videos containing noisy labels. PedGen incorporates a novel context encoder to lift 2D scene context to 3D and models key factors such as the scene environment, individual pedestrian characteristics, and goal destinations. The model tackles noisy pseudo-labels via automatic filtering and mask embedding, enabling high-quality, context-aware pedestrian movement generation. Experiments on the CityWalkers dataset and real-world Waymo dataset demonstrate PedGen's superior accuracy and generalization in both real and simulated urban scenes.
+
+**Link**: [https://arxiv.org/html/2410.07500v1](https://arxiv.org/html/2410.07500v1)  
+
+**Datasets**: CityWalkers (large-scale web video dataset with noisy pseudo-labels); validated with Waymo open dataset and CARLA simulated environments
+
+**Metrics**: Mean Average Displacement Error (mADE), Average Displacement Error (aADE), Mean Final Displacement Error (mFDE), Average Final Displacement Error (aFDE)
+
+**Applications**: Realistic pedestrian behavior generation for urban scene simulation, autonomous vehicle testing, crowd forecasting
+
+**Limitations**: Focuses on static scene context at initial frame, lacks modeling of dynamic interactions with other pedestrians over time, limited to single pedestrian trajectory generation
+
+**Future Directions**: Incorporating dynamic scene and pedestrian interactions, group activity modeling for realistic multi-agent behavior, real-time generation in complex urban environments
 
 ---
 
