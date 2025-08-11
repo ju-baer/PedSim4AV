@@ -1651,18 +1651,57 @@
 
 ### Bayesian Models
 
-**Title**: Bayesian Modeling of Pedestrian Behavior with Uncertainty Quantification  
-**Authors**: Anonymous et al.  
-**Publication Year**: 2020  
-**Summary**: Uses Bayesian inference to model pedestrian behavior with uncertainty quantification, capturing variability in decision-making (e.g., path choice). Validated with ETH dataset, it provides probabilistic predictions for AV safety applications.  
-**Link**: [ResearchGate](https://www.researchgate.net/publication/123456800)  
-**Datasets**: ETH, UCY, synthetic scenarios.  
-**Metrics**: Negative Log-Likelihood (NLL), prediction uncertainty, trajectory accuracy.  
-**Applications**: Probabilistic crowd modeling, AV safety, risk assessment.  
-**Limitations**: Computationally intensive; assumes Gaussian priors.  
-**Future Directions**: Non-Gaussian Bayesian models; real-time inference methods.
+**Title**: An agent-based simulation model of pedestrian evacuation based on Bayesian Nash Equilibrium 
+
+**Authors**: Yiyu Wang, Jiaqi Ge, Alexis Comber
+
+**Publication Year**: 2022
+
+**Summary**: This paper incorporates Bayesian game theory, specifically Bayesian Nash Equilibrium (BNE), into an agent-based pedestrian evacuation simulation. Pedestrians modeled as agents predict congestion levels probabilistically and adjust their movement accordingly to avoid crowds, resulting in more efficient and realistic evacuation behaviors. The model compares three behaviors (Random Follow, Shortest Route, and BNE) and finds that BNE significantly reduces evacuation time and increases comfort by anticipating congestion. The model also includes collision avoidance and following behaviors, using a multi-agent system framework.
+
+**Link**: [https://arxiv.org/abs/2211.14260](https://arxiv.org/abs/2211.14260)  
+
+**Datasets**: Simulation datasets generated from agent-based evacuation scenarios; no direct empirical pedestrian datasets reported
+
+**Metrics**: Evacuation time, congestion levels, pedestrian comfort, flow efficiency
+
+**Applications**: Emergency evacuation modeling, crowd management, safety planning in public spaces
+
+**Limitations**: Currently focuses on static games with incomplete information and simplified agent perceptions; further validation and incorporation of more complex pedestrian behaviors needed
+
+**Future Directions**: Incorporating more complex social behaviors (e.g., competition, emotions), improving behavioral realism, extending to dynamic games with complete information
 
 ---
+
+**Title**: A simulation model of pedestrian flow based on Bayesian Nash Equilibrium and a Multi-Agent System
+
+**Authors**: Yiyu Wang, Jiaqi Ge, Alexis Comber
+
+**Publication Year**: 2022
+
+**Summary**: This paper details the development of a pedestrian flow simulation combining Bayesian Nash Equilibrium within a multi-agent system to advance pedestrian decision rationality during evacuations. The BNE framework helps pedestrians optimize their path choices by predicting others' strategies under uncertainty, thereby improving flow efficiency and reducing congestion compared to traditional models. The model also incorporates self-organization effects like following and conformity behaviors. Initial simulation results reveal better evacuation times and more realistic pedestrian spatial distributions.
+
+**Link**: [https://eprints.whiterose.ac.uk/id/eprint/209541/1/GISRUK_2022_paper_70.pdf](https://eprints.whiterose.ac.uk/id/eprint/209541/1/GISRUK_2022_paper_70.pdf)  
+
+**Datasets**: Generated simulation data from model experiments; no empirical pedestrian data used directly
+
+**Metrics**: Evacuation time, pedestrian distribution patterns, congestion avoidance success
+
+**Applications**: Crowd evacuation modeling, urban safety analysis, pedestrian infrastructure design
+
+**Limitations**: Based on static Bayesian games without temporal dynamics; limited empirical validation; complexity of expanding to large-scale crowds
+
+**Future Directions**: Adding temporal game dynamics, including emotional and social factors influencing decisions, comprehensive model calibration with real-world data
+
+---
+
+
+
+
+
+
+
+
 
 ### Attention-based Models
 **Title**: Attention-Based Models for Pedestrian Navigation in Crowded Environments  
