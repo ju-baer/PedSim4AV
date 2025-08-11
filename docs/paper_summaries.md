@@ -1491,36 +1491,166 @@
 
 ---
 
+**Title**: Discovering Interaction Mechanisms in Crowds via Deep Generative Simulation
+
+**Authors**: Koen Minartz, Fleur Hendriks, Simon Martinus Koop, Alessandro Corbetta & Vlado Menkovski 
+
+**Publication Year**: 2025
+
+**Summary**: This study presents a novel generative simulation model based on graph neural networks (GNNs) to capture and discover interaction mechanisms in pedestrian crowds. The model is trained on real-world pedestrian tracking data, enabling it to simulate crowd dynamics that reflect realistic social interactions emergent from data, rather than being hand-crafted. The approach provides deeper insight into crowd behavior mechanisms and enhances simulation realism by learning interaction rules implicitly through a generative process.
+
+**Link**: [https://www.nature.com/articles/s41598-025-92566-9](https://www.nature.com/articles/s41598-025-92566-9)  
+
+**Datasets**: Real-world pedestrian tracking datasets used for training and validation
+
+**Metrics**: Not explicitly listed, but typically includes trajectory prediction accuracy and interaction fidelity metrics
+
+**Applications**: Crowd dynamics analysis, improving predictive pedestrian models, urban planning, safety assessment
+
+**Limitations**: Complexity in model training and interpretability; requires large-scale real trajectory data; generalization to diverse environments needs further testing
+
+**Future Directions**: Extending to multimodal data sources, enhancing interpretability of learned interactions, real-time crowd monitoring applications
+
+---
+
 ### Vision Transformer (ViT) Models
-**Title**: Vision Transformers for Pedestrian Trajectory Prediction  
-**Authors**: Hao Xue, Tian Zhou, Duen Horng Chau  
-**Publication Year**: 2021  
-**Summary**: Adapts Vision Transformers (ViT) for pedestrian trajectory prediction from visual data (e.g., video frames). Uses transformer architecture to capture spatial-temporal patterns, outperforming CNNs in complex urban scenes. Validated with PIE and InD datasets, it excels in AV perception tasks.  
-**Link**: [DOI:10.1109/TPAMI.2021.1234567](https://doi.org/10.1109/TPAMI.2021.1234567)  
-**Datasets**: PIE, InD, Caltech.  
-**Metrics**: ADE, FDE, Modified Hausdorff Distance (MHD).  
-**Applications**: AV perception, crowd trajectory forecasting, surveillance.  
-**Limitations**: High computational cost; requires large labeled datasets.  
-**Future Directions**: Lightweight transformer architectures; multi-modal fusion (e.g., LiDAR).  
-**Note**: ViTs leverage self-attention to model long-range dependencies in visual data, making them ideal for dense urban environments.
+
+**Title**: Effectiveness of Vision Transformer for Fast and Accurate Single-Stage Pedestrian Detection
+
+**Authors**: Jing Yuan, Panagiotis Barmpoutis, Tania Stathaki
+
+**Publication Year**: 2022
+
+**Summary**: This paper demonstrates the effectiveness of deformable Vision Transformer architectures for single-stage pedestrian detection. The model incorporates spatial and multi-scale feature enhancement modules that optimize the balance between speed and accuracy. Evaluations on pedestrian benchmark datasets such as Caltech and Citypersons show that the proposed ViT-based detector surpasses many state-of-the-art single- and two-stage methods, especially in challenging crowded scenarios, while maintaining fewer model parameters and faster inference speed. This suggests ViT's suitability for real-time pedestrian detection tasks critical for simulation and safety systems.
+
+**Link**: [https://openreview.net/forum?id=eow_ZGaw24j](https://openreview.net/forum?id=eow_ZGaw24j)  
+
+**Datasets**: Caltech Pedestrian, Citypersons dataset
+
+**Metrics**: Log-average miss rate, detection accuracy, inference speed
+
+**Applications**: Real-time pedestrian detection for autonomous driving, crowd monitoring, pedestrian flow simulation input
+
+**Limitations**: Focused primarily on detection rather than full trajectory simulation; computational requirements for transformer models
+
+**Future Directions**: Extending to multi-modal inputs and integrating pedestrian trajectory prediction for enhanced simulation accuracy
+
+---
+
+**Title**: CAPformer: Pedestrian Crossing Action Prediction Using Transformer
+
+**Authors**: Javier Lorenzo, Ignacio Parra Alonso, Rubén Izquierdo, Augusto Luis Ballardini, Álvaro Hernández Saz, David Fernández Llorca, Miguel Ángel Sotelo
+
+**Publication Year**: 2021
+
+**Summary**: CAPformer introduces a transformer-based model for predicting pedestrian crossing actions in urban environments, replacing recurrent architectures with self-attention mechanisms. The architecture combines video-based features extracted via vision transformers and kinematic data processed through transformer encoders. It achieves comparable or superior performance to state-of-the-art LSTM-based models on benchmark datasets like JAAD and PIE, benefiting from parallel processing and holistic sequence analysis. This approach advances pedestrian behavior modeling relevant to simulation and autonomous driving safety applications.
+
+**Link**: [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8433949/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8433949/)  
+
+**Datasets**: JAAD (Joint Attention for Autonomous Driving), PIE (Pedestrian Intention Estimation) datasets
+
+**Metrics**: F1 score for crossing action prediction
+
+**Applications**: Pedestrian behavior anticipation for autonomous vehicle safety, pedestrian trajectory simulation under real-world traffic scenarios
+
+**Limitations**: Requires extensive video and kinematic data preprocessing; focused on classification rather than full trajectory prediction
+
+**Future Directions**:  Integration with multi-agent simulations, real-time prediction systems, and fusion with environmental context data
+
+---
+
+**Title**: Multi-Modal Pedestrian Crossing Intention Prediction with Transformer
+
+**Authors**: Yu Liu, Yu Liu, Yongjian Hu, Jianbin Jiao
+
+**Publication Year**: 2024
+
+**Summary**: This paper proposes a multi-modal pedestrian crossing intention prediction framework leveraging transformer models for sequential data analysis. It incorporates diverse information sources including image frames, 3D human pose, and head orientation into a unified transformer-based architecture, which improves understanding of pedestrian behavior and crossing intentions. Evaluated on benchmark datasets, the approach achieves state-of-the-art prediction accuracy, demonstrating the capability of ViT-based architectures to model complex pedestrian movement intentions.
+
+**Link**: [https://www.nowpublishers.com/article/Details/SIP-20240019](https://www.nowpublishers.com/article/Details/SIP-20240019)  
+
+**Datasets**: Public pedestrian crossing datasets enriched with 3D pose and head orientation data
+
+**Metrics**: Prediction accuracy for crossing intention
+
+**Applications**: Autonomous driving, pedestrian safety systems, advanced driver assistance systems, pedestrian simulation models
+
+**Limitations**: Focus limited to crossing intention without full trajectory modeling; requires integration of multi-modal sensors
+
+**Future Directions**: Extending to full trajectory and behavior prediction, enhancing robustness in diverse environmental conditions, real-time implementation
 
 ---
 
 ### Multi-Agent Reinforcement Learning Models
-**Title**: Multi-Agent Reinforcement Learning for Pedestrian Crowd Simulation  
-**Authors**: Zhe Zhu, V. Kumar, Erion Plaku  
-**Publication Year**: 2022  
-**Summary**: Proposes a multi-agent RL framework where pedestrians learn interactive behaviors (e.g., collision avoidance, group following) via decentralized policies. Uses Proximal Policy Optimization (PPO) and validates with synthetic crowd scenarios, showing improved adaptability over single-agent RL.  
-**Link**: [DOI:10.1109/ICRA.2022.123456](https://doi.org/10.1109/ICRA.2022.123456)  
-**Datasets**: Synthetic crowd scenarios, UCY.  
-**Metrics**: Success rate, collision frequency, policy convergence.  
-**Applications**: Dynamic crowd simulation, AV interaction testing, urban planning.  
-**Limitations**: High training complexity; limited real-world validation.  
-**Future Directions**: Scalable multi-agent training; real-world dataset integration.
+
+**Title**: Multi-agent reinforcement learning using echo-state network and its application to pedestrian dynamics
+
+**Authors**: Hisato Komatsu
+
+**Publication Year**: 2023
+
+**Summary**: This paper implements a MARL model using echo-state networks (ESN) and least squares policy iteration to simulate pedestrian dynamics in grid-world environments. Pedestrians act as agents learning to navigate by avoiding collisions and choosing between narrow direct routes versus broader detours and bidirectional flows in corridors. Results show effective learning for moderate agent densities. The approach offers efficient training with lower computational cost compared to deep RL, suitable for complex navigation tasks like evacuation routes with obstacles. It highlights potential scaling to larger agent numbers and adaptation beyond pedestrian simulations to animal group behaviors.
+
+**Link**: [https://arxiv.org/html/2312.11834v2](https://arxiv.org/html/2312.11834v2)  
+
+**Datasets**: Simulation data generated in grid-world scenarios; no real-world pedestrian datasets used
+
+**Metrics**: Agent collision avoidance success, route choice efficiency, flow rates under different densities
+
+**Applications**: Pedestrian route planning, evacuation simulations, dynamic crowd navigation in constrained environments
+
+**Limitations**: Demonstrated only up to 64 agents; performance and scalability for larger crowds require further study; trained only in simplified grid-world environments
+
+**Future Directions**: Scaling to hundreds of agents, combining with deep learning to reduce complexity, extending to real-world pedestrian and animal group behavior simulations
+
+---
+
+**Title**: Multi-Agent Reinforcement Learning-Based Pedestrian Dynamics Simulation for Emergency Evacuation
+
+**Authors**: Namilae et al. (National Technical University, NCAT)
+
+**Publication Year**: 2023
+
+**Summary**: This comprehensive study integrates MARL with social force and Markov Decision Process (MDP) models to optimize pedestrian evacuation behavior in complex environments such as airports. Pedestrians are agents learning navigation policies that balance route optimality and collision avoidance. The combined model reduces evacuation time and improves safety compared to traditional approaches. Simulations include both static and dynamic threat environments, showing multi-agent collaboration outperforms single-agent learning in evacuation efficiency and casualty reduction.
+
+**Link**: [https://www.ncat.edu/cobe/transportation-institute/_files/pdfs/finalreport-multiagentpedestrianprojectada.pdf](https://www.ncat.edu/cobe/transportation-institute/_files/pdfs/finalreport-multiagentpedestrianprojectada.pdf)  
+
+**Datasets**: Simulation datasets from emergency evacuation models; no direct empirical pedestrian behavior data reported
+
+**Metrics**: Evacuation time, pedestrian safety/casualty rates, collaboration reward metrics
+
+**Applications**: Emergency evacuation planning, pedestrian safety enhancement, real-time route guidance systems in crowded facilities
+
+**Limitations**: Complexity of model calibration; lacks detailed validation with real crowd evacuation data; challenges in dynamic environment adaptation
+
+**Future Directions**: Extending to Time-Dependent MDPs, real-time adaptive routing, incorporation of heterogeneous pedestrian behaviors and environmental uncertainties
+
+---
+
+**Title**: Multi-agent Reinforcement Learning for Simulating Pedestrian Movement
+
+**Authors**: Namilae et al. (National Technical University, NCAT)
+
+**Publication Year**: 2013
+
+**Summary**: This paper presents a multi-agent system where pedestrians are modeled as RL agents learning local navigation strategies in complex environments. The agents optimize their path to goals while avoiding collisions and congestion through experience-based policy updates. The framework handles interactions and cooperation emergently and is validated through simulation scenarios resembling real pedestrian flows. It emphasizes the capability of MARL to reproduce realistic pedestrian dynamics compared to rule-based models.
+
+**Link**: [https://link.springer.com/chapter/10.1007/978-3-642-28499-1_4](https://link.springer.com/chapter/10.1007/978-3-642-28499-1_4)  
+
+**Datasets**: Synthetic datasets from simulated pedestrian movement; no direct real-world datasets reported
+
+**Metrics**: Path efficiency, collision frequency, flow consistency with observed pedestrian patterns
+
+**Applications**: Simulating crowd dynamics in urban and building environments, evacuation modeling, intelligent pedestrian behavior generation
+
+**Limitations**: Earlier model with limited scalability and less complex agent perception; requires further enhancement for high-density crowds
+
+**Future Directions**: Integration with more sophisticated perception models, scaling to larger crowds, combining with macroscopic flow models
 
 ---
 
 ### Bayesian Models
+
 **Title**: Bayesian Modeling of Pedestrian Behavior with Uncertainty Quantification  
 **Authors**: Anonymous et al.  
 **Publication Year**: 2020  
