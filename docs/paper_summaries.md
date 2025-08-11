@@ -1695,69 +1695,324 @@
 
 ---
 
+**Title**: A Bayesian modeling approach to bi-directional pedestrian flows in corridors
 
+**Authors**: T. Zhang, G. Li, X. Lin, Y. Wu
 
+**Publication Year**: 2017
 
+**Summary**: This study uses a Bayesian statistical framework to model bi-directional pedestrian flows in corridor environments based on real observation data. The Bayesian approach captures the uncertainty and variability in pedestrian speed and density relationships from video survey data collected at a crowded market event. The probabilistic model provides posterior distributions for fundamental diagram parameters, enhancing reliability over deterministic fits. The results characterize pedestrian interaction effects and flow asymmetries in corridors, improving predictive power for pedestrian facility design and flow management.
 
+**Link**: [https://journal.hep.com.cn/fem/EN/10.15302/J-FEM-2017023](https://journal.hep.com.cn/fem/EN/10.15302/J-FEM-2017023)  
 
+**Datasets**: Video-based observational pedestrian flow and speed data from Hong Kong Lunar New Year Market
 
+**Metrics**: Pedestrian density, speed, flow rates, fundamental diagram parameters with uncertainty estimates
 
+**Applications**: Pedestrian flow modeling in corridor environments, design and management of bi-directional pedestrian facilities
+
+**Limitations**: Limited to corridor settings; models statistical variability but does not explicitly simulate individual behaviors or decision-making
+
+**Future Directions**: Extension to two-dimensional and complex spatial domains, coupling Bayesian inference with dynamic simulation models
+
+---
 
 ### Attention-based Models
-**Title**: Attention-Based Models for Pedestrian Navigation in Crowded Environments  
-**Authors**: Anonymous et al.  
-**Publication Year**: 2021  
-**Summary**: Employs attention mechanisms to model pedestrian focus and decision-making, prioritizing relevant neighbors and obstacles. Validated with UCY and ETH datasets, it outperforms Social LSTM in socially-aware navigation tasks.  
-**Link**: [DOI:10.1109/CVPR.2021.123456](https://doi.org/10.1109/CVPR.2021.123456)  
-**Datasets**: UCY, ETH, synthetic crowds.  
-**Metrics**: ADE, FDE, attention weight interpretability.  
-**Applications**: Socially-aware navigation, AV interaction, crowd forecasting.  
-**Limitations**: High computational cost; requires extensive training data.  
-**Future Directions**: Lightweight attention models; multi-modal attention integration.
+
+**Title**: Microscopic Modeling of Attention-Based Movement Behaviors
+
+**Authors**: Danrui Li, Mathew Schwartz, Samuel S. Sohn, Sejong Yoon, Vladimir Pavlovic, Mubbasir Kapadia
+
+**Publication Year**: 2024
+
+**Summary**: This paper proposes a novel pedestrian simulation model focusing on attention-based movement behaviors, integrating visual attention and locomotion mechanisms. The model simulates pedestrian attention transitions using a Markov Chain structure and accounts for changes in walking speed based on visual attention states. The locomotion is modeled using a Social Force Model with a dynamic walking speed governed by angular speed relative to environmental objects. The framework is calibrated and validated on an empirical dataset collected from pedestrian movements in a metro station corridor, demonstrating improved prediction of visual attention and pedestrian flow efficiency in retail environments of transportation hubs. The model can be applied for architectural design optimization by balancing retail potential and pedestrian efficiency.
+
+**Link**: [https://arxiv.org/html/2403.14892v1](https://arxiv.org/html/2403.14892v1)  
+
+**Datasets**: Real-world pedestrian dataset collected at an underground metro station corridor with 1,153 pedestrian trajectories focusing on attention-based movements.
+
+**Metrics**: Attention transition prediction accuracy, prediction of attention durations, locomotion prediction accuracy, comparison to Social Force Model based simulation outcomes.
+
+**Applications**: Simulation of pedestrian flows in retail areas of transportation hubs, architectural design optimization for improved retail potential and pedestrian flow efficiency.
+
+**Limitations**: Limited pedestrian flow density and diversity in empirical data; does not model pedestrians entering stores; dependent on Social Force Model properties.
+
+**Future Directions**: Extend to diverse environmental factors, high-density pedestrian flows, integrate other pedestrian response modes, improve base locomotion models.
+
+---
+
+### Attention-based Models
+
+**Title**: Microscopic Modeling of Attention-Based Movement Behaviors
+
+**Authors**: Danrui Li, Mathew Schwartz, Samuel S. Sohn, Sejong Yoon, Vladimir Pavlovic, Mubbasir Kapadia
+
+**Publication Year**: 2024
+
+**Summary**: This paper proposes a novel pedestrian simulation model focusing on attention-based movement behaviors, integrating visual attention and locomotion mechanisms. The model simulates pedestrian attention transitions using a Markov Chain structure and accounts for changes in walking speed based on visual attention states. The locomotion is modeled using a Social Force Model with a dynamic walking speed governed by angular speed relative to environmental objects. The framework is calibrated and validated on an empirical dataset collected from pedestrian movements in a metro station corridor, demonstrating improved prediction of visual attention and pedestrian flow efficiency in retail environments of transportation hubs. The model can be applied for architectural design optimization by balancing retail potential and pedestrian efficiency.
+
+**Link**: [https://arxiv.org/html/2403.14892v1](https://arxiv.org/html/2403.14892v1)  
+
+**Datasets**: Real-world pedestrian dataset collected at an underground metro station corridor with 1,153 pedestrian trajectories focusing on attention-based movements.
+
+**Metrics**: Attention transition prediction accuracy, prediction of attention durations, locomotion prediction accuracy, comparison to Social Force Model based simulation outcomes.
+
+**Applications**: Simulation of pedestrian flows in retail areas of transportation hubs, architectural design optimization for improved retail potential and pedestrian flow efficiency.
+
+**Limitations**: Limited pedestrian flow density and diversity in empirical data; does not model pedestrians entering stores; dependent on Social Force Model properties.
+
+**Future Directions**: Extend to diverse environmental factors, high-density pedestrian flows, integrate other pedestrian response modes, improve base locomotion models.
+
+---
+
+**Title**: Visualization of Pedestrian Interaction through Attention-based Pedestrian Trajectory Prediction
+
+**Authors**: Wen-Xin Qiu, Takashi Fuse
+
+**Publication Year**: 2024
+
+**Summary**: This study develops a deep learning approach using Graph Attention Networks (GAT) to model and predict pedestrian trajectories by learning interaction features between pedestrians explicitly. The model constructs a spatial-temporal graph of pedestrian coordinates and uses attention mechanisms to quantify the degree of awareness pedestrians have toward one another. The learned attention scores are interpretable and visualizable, offering a quantitative representation of pedestrian interactions that conventional black-box models lack. Validated on benchmark ETH/UCY pedestrian datasets, the approach improves prediction accuracy and reduces computational cost compared to baselines, providing tangible insights for urban space planners and autonomous navigation systems.
+
+**Link**: [https://aars-ajg.org/article/24/AJG-2311002.pdf](https://aars-ajg.org/article/24/AJG-2311002.pdf)  
+
+**Datasets**: ETH and UCY benchmark pedestrian trajectory datasets.
+
+**Metrics**: Average Displacement Error (ADE), Final Displacement Error (FDE), and computational efficiency measures.
+
+**Applications**: Pedestrian trajectory prediction, urban space planning, navigation of autonomous vehicles and robots through crowds.
+
+**Limitations**: Interactions with vehicles and environmental factors are not modeled; interpretation of causal effects of attention scores is still an open problem.
+
+**Future Directions**: Investigating causal effects of pedestrian interactions, extending interpretability, incorporating environmental agents like vehicles.
+
+---
+
+**Title**: Attention-Based Deep Learning Approach for Pedestrian Detection in Autonomous Vehicles
+
+**Authors**: Wael Ahmad AlZoubi, Prof. Girish Bhagwant Desale, Dr. Sweety Bakyarani E, Dr Uma Kumari C R, Dr. Divya Nimma, K Swetha, Dr B Kiran Bala
+
+**Publication Year**: 2024
+
+**Summary**: This paper presents an attention-based convolutional bi-GRU deep learning model for pedestrian detection tailored for dynamic and complex scenarios typical of autonomous vehicle environments. The model leverages attention mechanisms to enhance detection accuracy significantly over previous models, achieving a pedestrian recognition accuracy rate of 99.4%. The approach integrates contextual information effectively to improve recognition reliability and safety in autonomous driving.
+
+**Link**: [https://thesai.org/Downloads/Volume15No8/Paper_91-Attention_Based_Deep_Learning_Approach_for_Pedestrian_Detection.pdf](https://thesai.org/Downloads/Volume15No8/Paper_91-Attention_Based_Deep_Learning_Approach_for_Pedestrian_Detection.pdf)  
+
+**Datasets**: Various pedestrian detection datasets used for training and validation (specific datasets not detailed in the search snippet).
+
+**Metrics**: Accuracy rate, recognition performance compared to Random Forest, Faster R-CNN, and SVM classifiers.
+
+**Applications**: Pedestrian detection in autonomous vehicles for collision avoidance and safety.
+
+**Limitations**: Focused primarily on detection rather than trajectory prediction; may require extensive labeled data for training.
+
+**Future Directions**: Further integration with autonomous vehicle navigation systems, improvement of detection under occlusion and complex scenes.
 
 ---
 
 ### Imitation Learning Models
-**Title**: Imitation Learning for Pedestrian Behavior Modeling  
-**Authors**: Anonymous et al.  
-**Publication Year**: 2022  
-**Summary**: Uses imitation learning (e.g., Behavioral Cloning, GAIL) to learn pedestrian behaviors from human demonstrations. Validated with TJU-DHD-Pedestrian dataset, it generates realistic trajectories for urban scenarios.  
-**Link**: [ResearchGate](https://www.researchgate.net/publication/123456801)  
-**Datasets**: TJU-DHD-Pedestrian, UCY.  
-**Metrics**: Trajectory realism, imitation accuracy, computational efficiency.  
-**Applications**: Realistic crowd simulation, AV training, urban planning.  
-**Limitations**: Dependent on quality of demonstration data; limited adaptability.  
-**Future Directions**: Combining with RL for adaptive learning; larger demonstration datasets.
+
+**Title**: Towards Imitation Learning in Real World Unstructured Social Mini-Games in Pedestrian Crowds
+
+**Authors**: Harsh Patel, Pushkar Patil, Matthew R. Walter, Siddharth V. Srivastava
+
+**Publication Year**: 2023
+
+**Summary**: This paper benchmarks various imitation learning (IL) methods including behavior cloning (BC), inverse reinforcement learning (IRL), and generative methods on real-world pedestrian motion planning tasks. Using a novel dataset of pedestrian interactions collected at the University of Texas at Austin campus, the study shows that multi-agent MaxEnt IRL outperforms other methods in modeling diverse pedestrian behaviors during tightly coupled social interactions. Conditioning IL models on partial or global state information improves performance in complex pedestrian-rich environments. The research highlights the challenges of learning from limited, real-world demonstrations and the need for multi-agent cost function learning to capture social dynamics effectively.
+
+**Link**: [https://arxiv.org/html/2405.16439v1](https://arxiv.org/html/2405.16439v1)  
+
+**Datasets**: Novel pedestrian intersection dataset collected at University of Texas at Austin, containing hours of pedestrian trajectory data in a busy intersection including positions, velocity, heading, and class IDs.
+
+**Metrics**: Policy effectiveness measured by trajectory prediction accuracy and diversity in multi-agent settings.
+
+**Applications**: Robot motion planning and navigation in crowded urban environments, socially aware autonomous systems.
+
+**Limitations**: Limited scalability testing in denser crowds, local observability challenges, and absence of factors like weather or social context in modeling.
+
+**Future Directions**: Explore advanced multi-agent interaction modeling, improved conditioning strategies, real-world scalability to dense crowds, and inclusion of external context like weather and social variables.
+
+---
+
+**Title**: HAIL: Modular Agent-Based Pedestrian Imitation Learning
+
+**Authors**: André Antakli, Igor Vozniak, Nils Lipp, Matthias Klusch, Christian Müller
+
+**Publication Year**: 2021
+
+**Summary**: HAIL presents a modular framework for simulating pedestrian behaviors by combining imitation learning with agent-based modeling. It integrates three components: OpenDS for traffic simulation visualization, AJAN for strategic and tactical pedestrian behavior through reasoning and planning, and InfoSalGAIL for operational-level imitation learning from human expert demonstrations. The framework addresses challenges like out-of-distribution scenarios, enabling more human-like and flexible pedestrian path generation in complex traffic settings. HAIL can simulate individual pedestrian behavior, surpassing fixed trajectory models, and supports critical traffic scenario generation for testing autonomous systems.
+
+**Link**: [https://www.dfki.de/~makl01/i2s/PAAMS2021_HAIL.pdf](https://www.dfki.de/~makl01/i2s/PAAMS2021_HAIL.pdf)    
+
+**Datasets**: Demonstration datasets of on-street pedestrian walking behavior with saliency maps from expert observations used for imitation learning.
+
+**Metrics**: Evaluation of trajectory similarity, adaptability to unseen scenarios, and uncertainty prediction under out-of-distribution conditions.
+
+**Applications**: Autonomous driving simulation, pedestrian safety testing, urban planning, traffic scenario generation.
+
+**Limitations**: Moderate generalization with behavior cloning; computational complexity in apprenticeship learning; limited testing with large-scale crowds.
+
+**Future Directions**: Extend to wider traffic scenarios, improve generalization in unseen environments, integrate richer behavioral contexts including social and environmental factors.
+
+---
+
+**Title**: Simulation of Pedestrian Evacuation with Reinforcement Learning and Imitation Learning
+
+**Authors**: Li Zhang, Lina Yao, Sen Wang, Jian Tang
+
+**Publication Year**: 2023
+
+**Summary**: This paper proposes a hybrid path planning model for pedestrian evacuation in fire emergency scenarios, combining reinforcement learning (RL) and imitation learning (IL). The approach first learns optimal evacuation paths based on expert demonstrations and then refines the strategy using RL to adapt to dynamic fire and crowd conditions. Experiments demonstrate that the hybrid model generates efficient, realistic evacuation trajectories and can adapt to various emergency scenarios, outperforming traditional rule-based evacuation simulations. This work exemplifies the application of imitation learning in critical pedestrian simulation tasks with safety implications.
+
+**Link**: [https://www.sciencedirect.com/science/article/abs/pii/S0378437123005666](https://www.sciencedirect.com/science/article/abs/pii/S0378437123005666)    
+
+**Datasets**: Simulated and expert demonstration data of pedestrian evacuation paths in fire emergency drills.
+
+**Metrics**: Evacuation time, path optimality, adaptability to dynamic environments, success rate of evacuation completion.
+
+**Applications**: Emergency evacuation planning, safety management in public venues, training autonomous agents in crowd escape scenarios.
+
+**Limitations**: Model validation mostly on simulated datasets; limited real-world testing; potential challenges in modeling extremely dense crowds.
+
+**Future Directions**: Integration of more realistic fire and hazard modeling, deeper multi-agent coordination in evacuation, real-world data collection and validation.
 
 ---
 
 ### Federated Learning Models
-**Title**: Federated Learning for Privacy-Preserving Pedestrian Behavior Prediction  
-**Authors**: Anonymous et al.  
+
+**Title**: A Federated Pedestrian Trajectory Prediction Model with Data Privacy Protection
+
+**Authors**: Wei Qian, Shaohui Liu, Yajie Sun, Yifan Liu, Linyuan Wang, Guixu Zhang
+
 **Publication Year**: 2023  
-**Summary**: Applies federated learning to train pedestrian behavior models across decentralized datasets while preserving privacy. Validated with synthetic urban data, it ensures robust predictions without sharing raw trajectories.  
-**Link**: [DOI:10.1109/TITS.2023.123456](https://doi.org/10.1109/TITS.2023.123456)  
-**Datasets**: Synthetic urban datasets, PIE (anonymized).  
-**Metrics**: ADE, FDE, privacy metrics (e.g., differential privacy loss).  
-**Applications**: Decentralized crowd modeling, AV safety, smart cities.  
-**Limitations**: Communication overhead; limited real-world validation.  
-**Future Directions**: Optimized federated algorithms; integration with real-world IoT data.
+
+**Summary**: This paper proposes a multi-scene federated trajectory prediction (Fed-TP) model that combines destination-oriented LSTM-based prediction with federated learning to collaboratively train pedestrian trajectory predictors across multiple scenes without sharing raw data. Fed-TP addresses the issue of data islands and privacy concerns in trajectory prediction by allowing local training on scattered scene data and aggregating model parameters globally. Experiments on ETH, UCY, and Stanford Drone Dataset (SDD) show that Fed-TP outperforms single-scene training and offers strong privacy protection while maintaining high prediction accuracy.
+
+**Link**: [https://link.springer.com/article/10.1007/s40747-023-01239-5](https://link.springer.com/article/10.1007/s40747-023-01239-5)  
+
+**Datasets**: ETH, UCY, Stanford Drone Dataset (SDD) pedestrian trajectory datasets from multiple scenes.
+
+**Metrics**: Prediction accuracy (Average Displacement Error, Final Displacement Error), data privacy preservation, model convergence.
+
+**Applications**: Pedestrian trajectory prediction for autonomous driving, intelligent monitoring, privacy-preserving crowd forecasting.
+
+**Limitations**: Need for further exploration in high-density scenarios, handling heterogeneous data distributions across scenes.
+
+**Future Directions**: Improving federated clustering and personalization methods to handle diverse scene data; exploring federated learning for dynamic crowd interactions.
+
+---
+
+**Title**: Realistic Urban Traffic Generator using Decentralized Federated Reinforcement Learning
+
+**Authors**: Saeed Tadayon Nabavi, Farnoosh Bakhshnava, Mohammad H. Hajiesmaili
+
+**Publication Year**: 2025 
+
+**Summary**: This paper introduces DesRUTGe, a decentralized federated learning framework combining Deep Reinforcement Learning (DRL) agents with the SUMO traffic simulator to generate realistic 24-hour urban traffic, including pedestrian flows. The framework employs a neighbor-only federated learning scheme to collaboratively train agents without central data aggregation, enhancing privacy, scalability, and robustness in traffic and pedestrian simulation. This approach is novel for traffic generation and applicable to large-scale urban traffic simulation involving multi-agent pedestrian behaviors.
+
+**Link**: [https://arxiv.org/html/2506.07980v1](https://arxiv.org/html/2506.07980v1)  
+
+**Datasets**: Simulated urban traffic and pedestrian datasets generated from SUMO simulator across multiple geographic zones.
+
+**Metrics**: Realism and fidelity of generated traffic patterns, privacy preservation, scalability, and decentralized model convergence.
+
+**Applications**: Large-scale urban traffic and pedestrian flow simulation, smart city planning, autonomous vehicle testing.
+
+**Limitations**: Focused on simulation with limited real-world pedestrian data; challenges in integrating heterogeneous real data and dynamic environments.
+
+**Future Directions**: Incorporating real sensor data for dynamic adaptation, refining decentralized aggregation protocols, extending to multimodal traffic including pedestrians.
+
+---
+
+**Title**: Homomorphic Federated Learning Schemes Enabled Pedestrian Detection System
+
+**Authors**: Mazin Abed Mohammed, Abdullah Lakhan, Karrar Hameed Abdulkareem, Dilovan Asaad Zebari, Jan Nedoma, Radek Martinek, Seifedine Kadry, Begonya Garcia-Zapirain
+
+**Publication Year**: 2023
+
+**Summary**: This study presents a secure pedestrian detection system leveraging homomorphic encryption and federated learning to protect data privacy while collaboratively training models on encrypted data from multiple sources. The system ensures privacy through cryptographic means during federated updates, applying federated learning for pedestrian detection in various surveillance and autonomous scenarios. The combination of homomorphic encryption and federated training mitigates privacy leakage while maintaining detection performance comparable to centralized methods.
+
+**Link**: [https://www.sciencedirect.com/science/article/abs/pii/S2542660523002263](https://www.sciencedirect.com/science/article/abs/pii/S2542660523002263)  
+
+**Datasets**: Various pedestrian detection datasets, specifics not detailed in available summary.
+
+**Metrics**: Detection accuracy, privacy level (encryption security), communication overhead.
+
+**Applications**: Privacy-preserving pedestrian detection in surveillance, autonomous driving safety systems
+
+**Limitations**: Computational overhead due to encryption, limited evaluation on large-scale real-world datasets.
+
+**Future Directions**: Enhancing efficiency of homomorphic operations, expanding to other pedestrian-related tasks in federated settings.
 
 ---
 
 ### Temporal Convolutional Networks (TCNs)
-**Title**: Temporal Convolutional Networks for Pedestrian Trajectory Prediction  
-**Authors**: Anonymous et al.  
-**Publication Year**: 2020  
-**Summary**: Uses TCNs for sequence modeling of pedestrian trajectories, capturing temporal dependencies with convolutional layers. Validated with ETH and UCY datasets, it offers faster training than LSTMs for long-term predictions.  
-**Link**: [DOI:10.1109/CVPR.2020.123456](https://doi.org/10.1109/CVPR.2020.123456)  
-**Datasets**: ETH, UCY, synthetic sequences.  
-**Metrics**: ADE, FDE, training time.  
-**Applications**: Long-term trajectory forecasting, AV navigation, surveillance.  
-**Limitations**: Limited to fixed-length sequences; less effective for irregular patterns.  
-**Future Directions**: Adaptive TCN architectures; multi-modal sequence modeling.
+
+**Title**: Enhanced Pedestrian Trajectory Prediction via Overlapping Field-of-View Domains and Integrated Kolmogorov-Arnold Networks
+
+**Authors**: Hui Wang, Ying Liu, Zhen Nie
+
+**Publication Year**: 2025
+
+**Summary**: This paper proposes the OV-SKTGCNN model, an enhancement of the Social-STGCNN that integrates Temporal Convolutional Networks with Kolmogorov-Arnold Networks (KANs) for pedestrian trajectory prediction. The model addresses limitations of traditional pedestrian interaction models by incorporating an asymmetric binocular overlapping field-of-view method to realistically simulate interactions among pedestrians. The use of TCNs enhances temporal feature extraction, significantly improving prediction accuracy. Evaluation on ETH and UCY pedestrian datasets shows an 18% reduction in Average Displacement Error (ADE) and 23% reduction in Final Displacement Error (FDE) compared to previous models.
+
+**Link**: [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0322722](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0322722)  
+
+**Datasets**: ETH and UCY pedestrian trajectory benchmark datasets.
+
+**Metrics**: Average Displacement Error (ADE), Final Displacement Error (FDE).
+
+**Applications**: Pedestrian trajectory prediction in autonomous driving, crowd surveillance, and urban planning.
+
+**Limitations**: Fixed model parameters limit adaptability in extremely dense crowds; parameter tuning for varying crowd densities needs improvement.
+
+**Future Directions**: Adaptive parameter tuning via reinforcement learning, improving model robustness in diverse and dense crowd scenarios.
 
 ---
+
+**Title**: Traffic-Aware Pedestrian Intention Prediction Using a Spatio-Temporal Graph Convolutional Network
+
+**Authors**: Fahimeh Orvati, Hai Lin
+
+**Publication Year**: 2025 (preprint on arXiv)
+
+**Summary**: The paper introduces TA-STGCN, a model combining spatio-temporal graph convolutional networks with LSTM-based temporal encoding to predict pedestrian intentions and trajectories in traffic environments. The model incorporates traffic light states and environmental context to improve prediction accuracy of crossing intentions and future positions. Evaluated on the PIE dataset, the model demonstrates superior performance with higher classification metrics (accuracy, precision, recall) and lower displacement errors (ADE, FDE) compared to state-of-the-art baselines.
+
+**Link**: [https://arxiv.org/html/2507.12433v1](https://arxiv.org/html/2507.12433v1)  
+
+**Datasets**: PIE pedestrian intention dataset.
+
+**Metrics**: Accuracy, Precision, Recall, F1-score, Average Displacement Error (ADE), Final Displacement Error (FDE).
+
+**Applications**: Autonomous vehicles, advanced driver-assistance systems, urban safety systems.
+
+**Limitations**: Limited explicit author information; complexity in modeling diverse environmental influences; potential reliance on accurate traffic signal data.
+
+**Future Directions**: Extending environmental context integration, improving robustness to sensor noise and traffic variations, and exploring multimodal data fusion.
+
+---
+
+**Title**: DSTCNN: Deformable Spatial-Temporal Convolutional Neural Network for Pedestrian Trajectory Prediction
+
+**Authors**: Wangxing Chen, Haifeng Sang, Jinyu Wang, Zishan Zhao
+
+**Publication Year**: 2024
+
+**Summary**: This paper proposes DSTCNN, a deformable spatial-temporal convolutional neural network designed to better capture pedestrian motion dynamics for trajectory prediction. By allowing adaptive receptive fields through deformable convolutions, the model flexibly models varying pedestrian movement patterns over time and space. This results in improved trajectory prediction accuracy compared to standard graph convolutional or fixed-kernel approaches, especially in complex scenarios with irregular pedestrian behaviors.
+
+**Link**: [https://www.sciencedirect.com/science/article/abs/pii/S0020025524003682](https://www.sciencedirect.com/science/article/abs/pii/S0020025524003682)  
+
+**Datasets**: (Not explicitly detailed) Presumably standard pedestrian trajectory datasets.
+
+**Metrics**: Trajectory prediction accuracy (Displacement errors).
+
+**Applications**: Pedestrian movement modeling for surveillance, autonomous systems, and crowd management.
+
+**Limitations**: Limited details on dataset and experimental setup; model complexity may affect real-time applicability.
+
+**Future Directions**: Enhancing model efficiency for real-time applications, expanding evaluations on diverse and large-scale datasets, integrating contextual information.
+
+---
+
 
 ### Normalizing Flow Models
 **Title**: Normalizing Flows for Generating Realistic Pedestrian Trajectories  
