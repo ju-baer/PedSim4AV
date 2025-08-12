@@ -2015,74 +2015,300 @@
 
 
 ### Normalizing Flow Models
-**Title**: Normalizing Flows for Generating Realistic Pedestrian Trajectories  
-**Authors**: Anonymous et al.  
-**Publication Year**: 2022  
-**Summary**: Employs normalizing flows to model complex pedestrian trajectory distributions, generating realistic synthetic trajectories for data augmentation. Validated with UCY dataset, it outperforms VAEs in trajectory diversity.  
-**Link**: [DOI:10.1109/TPAMI.2022.123456](https://doi.org/10.1109/TPAMI.2022.123456)  
-**Datasets**: UCY, synthetic urban scenarios.  
-**Metrics**: Fréchet distance, trajectory diversity, likelihood scores.  
-**Applications**: Synthetic data generation, AV training, urban simulation.  
-**Limitations**: High computational cost; requires large training datasets.  
-**Future Directions**: Lightweight flow models; integration with diffusion models.
+
+**Title**: Contextual Movement Models Based on Normalizing Flows
+
+**Authors**: Tim Genewein, Stefan M. Winkler, Peter F. Stadler 
+
+**Publication Year**: 2021
+
+**Summary**: This paper proposes a unified contextual probabilistic movement model leveraging conditional normalizing flows to predict pedestrian trajectories. The model efficiently incorporates various contextual factors like speed and environment into a single flow-based framework. Normalizing flows transform complex pedestrian movement distributions into simpler base distributions, enabling accurate, adaptable, and real-time trajectory predictions independent of training data size. This approach improves modeling flexibility and computational efficiency in pedestrian movement simulation.
+
+**Link**: [https://link.springer.com/article/10.1007/s10182-021-00412-w](https://link.springer.com/article/10.1007/s10182-021-00412-w)  
+
+**Datasets**: The study uses standard pedestrian datasets including ETH and UCY for performance evaluation.
+
+**Metrics**: Prediction accuracy via displacement errors, computational time efficiency.
+
+**Applications**: Real-time pedestrian trajectory prediction, autonomous navigation, crowd behavior analysis.
+
+**Limitations**: Model performance under extremely dense or highly dynamic crowd scenarios requires further study; contextual integration complexity may increase computation cost.
+
+**Future Directions**: Incorporation of richer environmental contexts, extension to multi-agent and multi-modal pedestrian interaction modeling, and scalability enhancement for large-scale crowd simulations.
+
+---
+
+**Title**: Likelihood-Based Diverse Sampling for Pedestrian Trajectory Forecasting Using Normalizing Flows
+
+**Authors**: Jason Li, et al.
+
+**Publication Year**: 2021
+
+**Summary**: This work applies normalizing flow models for trajectory forecasting in pedestrian simulations, improving the diversity and accuracy of predicted paths. The CAM-NF model encodes pedestrian histories and interactions using LSTMs and self-attention mechanisms, then generates future trajectories via an autoregressive affine normalizing flow decoder. The method efficiently represents multi-modal pedestrian movement distributions and achieves competitive predictive accuracy on benchmark datasets.
+
+**Link**: [https://openaccess.thecvf.com/content/ICCV2021/supplemental/Jason_Likelihood-Based_Diverse_Sampling_ICCV_2021_supplemental.pdf](https://openaccess.thecvf.com/content/ICCV2021/supplemental/Jason_Likelihood-Based_Diverse_Sampling_ICCV_2021_supplemental.pdf)  
+
+**Datasets**: Widely used pedestrian datasets such as ETH, UCY, and nuScenes.
+
+**Metrics**: Average Displacement Error (ADE), Final Displacement Error (FDE), diversity metrics of sampled trajectories.
+
+**Applications**: Pedestrian trajectory prediction for autonomous driving and surveillance.
+
+**Limitations**: Focused on trajectory forecasting rather than full pedestrian behavior simulation; may require extensive computational resources for large-scale applications.
+
+**Future Directions**: Exploring integration of perception modules, extending to other pedestrian behavior aspects beyond trajectory forecasting.
 
 ---
 
 ## Hybrid Models
 
 ### Hybrid Models
-**Title**: Pedestrian Simulation: Theoretical Models vs. Data-Driven Techniques  
-**Authors**: George Kouskoulis, Ioanna Spyropoulou, Constantinos Antoniou  
-**Publication Year**: 2022  
-**Summary**: Compares Social Force (theoretical) with locally weighted regression (data-driven) for hybrid modeling. Data-driven models outperform in real-world datasets, but hybrid approaches combining physics and AI excel in complex scenarios like intersections.  
-**Link**: [DOI:10.1016/j.trc.2022.123456](https://doi.org/10.1016/j.trc.2022.123456)  
-**Datasets**: Custom pedestrian trajectories, InD.  
-**Metrics**: Trajectory accuracy, computational cost, generalization error.  
-**Applications**: Crowd simulation, AV navigation, urban planning.  
-**Limitations**: Complex integration of physics and AI; high computational overhead.  
-**Future Directions**: Automated physics-AI fusion; scalable hybrid frameworks.
+
+**Title**: A Hybrid Workflow Connecting a Network and an Agent-Based Model for Predictive Pedestrian Movement Modelling
+
+**Authors**: Stavroulaki et al.
+
+**Publication Year**: 2024
+
+**Summary**: This paper proposes a hybrid pedestrian simulation model integrating a macroscopic network model (NM) with a microscopic agent-based model (ABM) to predict pedestrian movement both on a large (macro) and individual (micro) scale. The NM statistically predicts aggregated pedestrian flows using spatial predictors available early in urban design. These flow predictions feed into a social-force-based ABM simulating individual pedestrian movements in outdoor urban settings. The model was validated in a real pedestrian precinct in Gothenburg, Sweden, showing reasonable agreement with real-world sensor data. The hybrid approach assists urban planners in analyzing pedestrian flow dynamics, crowding, and movement restrictions, enabling scenario analysis and design optimization. The top-down coupling from macro to micro differentiates it from other models that aggregate micro movements to form macro flows.
+
+**Link**: [https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2024.1447377/full](https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2024.1447377/full)  
+
+**Datasets**: Real-world pedestrian movement data from sensor grids in a Gothenburg city centre precinct; spatial datasets for street networks, markets, and building geometries.
+
+**Metrics**: Comparison of pedestrian flow counts, heat maps of pedestrian occupancy, trajectory similarity, distances between pedestrians, speed deviations, and space violations.
+
+**Applications**: Urban design and planning, pedestrian flow optimization, scenario testing for new districts and street network changes.
+
+**Limitations**: ABM requires preset input flows that rely on NM predictions; dynamic event-specific changes are not directly modeled by NM; some pedestrian behaviors simplified by force-based ABM.
+
+**Future Directions**: Refinement of behavioral rules, inclusion of more empirical data, integration of dynamic event simulations, continuous improvements by updating NM and ABM components.
+
+---
+
+**Title**: Hybrid Machine Learning and Physics-based Modelling of Pedestrian Pushing Behaviours at Bottlenecks
+
+**Authors**: He Biao et al.
+
+**Publication Year**: 2024
+
+**Summary**: This study addresses pedestrian pushing behavior in high-density crowd bottleneck scenarios by combining machine learning and physics-based modeling. Using annotated experimental data, a random forest classifier predicts pushing behaviors based on both pedestrian internal pushing tendencies and the influence of neighboring pedestrians. The hybrid model couples the classifier with a physics-based velocity model that adapts agents’ movement strategies dynamically between pushing and non-pushing states. Validation with experimental data shows the model effectively reproduces pushing behavior and crowd dynamics under varying motivations and corridor widths. The paper highlights the importance of capturing heterogeneity in pedestrian behavior for realistic simulations of dense crowds.
+
+**Link**: [https://arxiv.org/html/2412.20058v1](https://arxiv.org/html/2412.20058v1)  
+
+**Datasets**: Annotated experimental data from controlled bottleneck pedestrian experiments at University of Wuppertal with behavioral categories and trajectory tracking.
+
+**Metrics**: Classification accuracy (macro score), proportion of pushing behaviors, mean time lapse between consecutive agents entering, pedestrian density, effective speeds.
+
+**Applications**: Crowd management in high-density events, safety assessments, emergency evacuation planning.
+
+**Limitations**: Model focuses primarily on pushing behavior, less capturing cooperative or non-pushing dynamics; simplified movement strategies in low-motivation scenarios.
+
+**Future Directions**: Incorporation of cooperative behaviors, extension to other pedestrian behaviors, enhanced scenario-specific parameter tuning and validation.
+
+---
+
+**Title**: Hybrid Techniques for Pedestrian Simulations
+
+**Authors**: Gloor, Stucki, Nagel
+
+**Publication Year**: 2004
+
+**Summary**: The paper introduces a hybrid pedestrian simulation model combining cellular automaton (CA) and continuous space models to leverage the strengths of each: computational efficiency and realistic adaptive behavior, respectively. The hybrid system divides the simulation area into blocks and applies CA in some zones while using more detailed continuous models in others. The approach enables the simulation of large-scale pedestrian systems (thousands of agents) over extended time periods with reasonable memory and cpu usage. The method was applied in a large-scale alpine hiking scenario simulation, demonstrating balance between speed and accuracy.
+
+**Link**: [https://link.springer.com/chapter/10.1007/978-3-540-30479-1_60](https://link.springer.com/chapter/10.1007/978-3-540-30479-1_60)  
+
+**Datasets**: Large-scale simulation scenarios of alpine hiking area, with thousands of autonomous agents.
+
+**Metrics**: Computational performance (computation time per simulation step), memory usage, validation based on flow patterns and pedestrian trajectories.
+
+**Applications**: Large-scale pedestrian traffic simulations, event planning, virtual environment modeling.
+
+**Limitations**: The hybrid is primarily focused on balancing computational aspects, less on behavioral realism or real-world data calibration.
+
+**Future Directions**: Further integration of perception and communication in agents, enhanced decision-making processes, adaptation to more complex environments.
 
 ---
 
 ### SUMO Models
-**Title**: Pedestrian Simulation for Urban Traffic Scenarios  
-**Authors**: Andreas D. Lattner, Ingo J. Timm  
-**Publication Year**: 2012  
-**Summary**: Integrates pedestrian models into SUMO for traffic-pedestrian interactions, modeling gap acceptance and crossing behaviors. Validated with urban intersection data, it supports realistic traffic simulations.  
-**Link**: [ResearchGate](https://www.researchgate.net/publication/123456795)  
-**Datasets**: Urban intersection data, synthetic scenarios.  
-**Metrics**: Crossing time, vehicle delay, interaction accuracy.  
-**Applications**: Traffic-pedestrian simulation, urban planning, AV testing.  
-**Limitations**: Limited to SUMO’s framework; simplified pedestrian behaviors.  
-**Future Directions**: Enhanced pedestrian realism; integration with AI models.
+
+**Title**: Road Crossing Behavior Utilizing SUMO
+
+**Authors**: Peter J. Lawrence, Veronica Pellacini, Darren Blackshields, Lazaros Filippidis
+
+**Publication Year**: 2023
+
+**Summary**: This paper develops a model to simulate pedestrian midblock road crossing behavior within SUMO, including both one-stage and two-stage crossing behaviors (double gap or rolling gap). It integrates a gap acceptance model that predicts when pedestrians cross based on approaching vehicle speed and frequency, allowing pedestrians to cross all lanes at once or lane-by-lane with waiting. The study demonstrates how to couple SUMO with the third-party EXODUS pedestrian simulation tool, representing pedestrian-vehicle interactions more realistically at non-designated crossing points. Simulation results include effects on traffic flow and pedestrian assembly time under mixed pedestrian risk-taking behaviors.
+
+**Link**: [https://www.tib-op.org/ojs/index.php/scp/article/download/90/272](https://www.tib-op.org/ojs/index.php/scp/article/download/90/272)  
+
+**Datasets**: Experimental pedestrian movement data including crossing behavior scenarios with mixed risk profiles.
+
+**Metrics**: Pedestrian assembly time, traffic flow disruption, crossing delays, risk-taking behavior proportions.
+
+**Applications**: Modeling pedestrian-vehicle interactions at midblock crossings, urban traffic management, pedestrian safety analysis.
+
+**Limitations**: Focused on midblock crossings; relies on external pedestrian model coupling; may oversimplify complex pedestrian decision-making.
+
+**Future Directions**: Incorporation of more nuanced pedestrian decision factors, extension to multiple crossing types, enhanced integration with traffic light control.
+
+---
+
+**Title**: Modelling Pedestrian Dynamics in SUMO
+
+**Authors**: Jakob Erdmann, Daniel Krajzewicz
+
+**Publication Year**: 2015
+
+**Summary**: This paper extends the microscopic traffic simulation package SUMO to include detailed pedestrian dynamics, enabling intermodal simulations of vehicles, bicycles, and pedestrians. It introduces specialized pedestrian lanes and edges to model walking paths and crossings, including sidewalks and intersections. The paper presents a "striping" model that combines space-continuous positions with discrete stripes, allowing efficient simulation of pedestrian interactions primarily in two main directions, such as sidewalks. The model supports city-wide pedestrian traffic simulation, enabling evaluations of pedestrian impacts on vehicular traffic in urban environments.
+
+**Link**: [https://elib.dlr.de/100554/1/sumo2015_submission_6.pdf](https://elib.dlr.de/100554/1/sumo2015_submission_6.pdf)  
+
+**Datasets**: Network and route data incorporating pedestrians, vehicles, and bicycles in urban traffic scenarios.
+
+**Metrics**: Trip durations, pedestrian-vehicle interaction dynamics, computational performance, pedestrian flow patterns.
+
+**Applications**: Urban traffic management, intermodal transportation studies, pedestrian infrastructure planning.
+
+**Limitations**: Pedestrian dynamics simplified, limited backing up behavior in crowded areas, not fully realistic microscopic behavior.
+
+**Future Directions**: More detailed pedestrian behavioral models, integration with safety and comfort metrics, enhancement of movement algorithms.
+
+---
+
+**Title**: Pedestrian Simulation in SUMO Through Externally Modelled Agents
+
+**Authors**: Daniel Garrido
+
+**Publication Year**: 2021
+
+**Summary**: This research explores integrating externally modeled pedestrian agents into SUMO to enhance pedestrian flow simulation accuracy. It addresses limitations of SUMO’s built-in pedestrian models by coupling advanced pedestrian behavior models externally through interfaces like TraCI. The approach enables realistic pedestrian decision-making and movement patterns within the broader SUMO traffic simulation environment, improving the representation of pedestrian-vehicle and pedestrian-pedestrian interactions. Case studies show improved accuracy in pedestrian dynamics simulation in urban scenarios.
+
+**Link**: [https://www.academia.edu/92137610/Pedestrian_Simulation_In_SUMO_Through_Externally_Modelled_Agents](https://www.academia.edu/92137610/Pedestrian_Simulation_In_SUMO_Through_Externally_Modelled_Agents)  
+
+**Datasets**: Urban pedestrian flow data used for external model calibration; simulation scenarios for validation.
+
+**Metrics**: Pedestrian flow accuracy, interaction fidelity, computational performance.
+
+**Applications**: Urban pedestrian flow forecasting, multi-modal traffic simulation, smart city planning.
+
+**Limitations**: Dependency on external models increases computational complexity and integration effort.
+
+**Future Directions**: Enhanced real-time coupling techniques, inclusion of more behavioral complexities, scalable implementation for large-scale simulations.
 
 ---
 
 ### Physics-Informed Neural Networks (PINNs)
-**Title**: Physics-Informed Neural Networks for Pedestrian Dynamics  
-**Authors**: Anonymous et al.  
-**Publication Year**: 2023  
-**Summary**: Combines neural networks with physics constraints (e.g., Social Force equations) to predict pedestrian trajectories. PINNs enforce physical laws in the loss function, improving accuracy in constrained environments. Validated with PDDA and synthetic data, it outperforms standard NNs in physics-aware scenarios.  
-**Link**: [DOI:10.1016/j.neunet.2023.123456](https://doi.org/10.1016/j.neunet.2023.123456)  
-**Datasets**: PDDA, synthetic physics-based scenarios.  
-**Metrics**: ADE, FDE, physics constraint violation.  
-**Applications**: Physics-aware trajectory prediction, AV safety, crowd simulation.  
-**Limitations**: High computational cost; requires accurate physics models.  
-**Future Directions**: Scalable PINN architectures; integration with real-world data.
+
+**Title**: Analysis of pedestrian second crossing behavior based on physics-informed neural networks
+
+**Authors**: Yongqing Guo, Hai Zou, Fulu Wei, Qingyin Li, Dong Guo, Jahongir Pirov 
+
+**Publication Year**: 2024
+
+**Summary**: This paper presents a two-stage pedestrian crossing model based on PINNs integrating fluid dynamics equations (Navier-Stokes and continuity equations). It models pedestrian flow characteristics such as speed, density, acceleration, and Reynolds number during bidirectional crossings at signalized intersections. PINNs outperform traditional deep learning in predicting pedestrian fluid properties with high accuracy. The model captures dynamic pedestrian behaviors and informs design optimization for pedestrian facilities and signal timing to enhance safety and mobility. It further suggests applications for autonomous vehicle interpretation of pedestrian intentions.
+
+**Link**: [https://www.nature.com/articles/s41598-024-72155-y](https://www.nature.com/articles/s41598-024-72155-y)  
+
+**Datasets**: Real pedestrian trajectory data from signalized crosswalks involving bidirectional flows
+
+**Metrics**: Mean squared error in fluid property predictions, velocity profiles, acceleration and density changes, Reynolds number evaluation
+
+**Applications**: Pedestrian facility design, signal timing optimization, autonomous vehicle pedestrian intent prediction, urban traffic safety improvement
+
+**Limitations**: Focused on signalized intersections; primarily models fluid-like pedestrian flows, may not capture individual nuanced decision-making fully
+
+**Future Directions**: Extension to off-peak hour behaviors, dynamic fluid density and resistance coefficient modeling, and broader scenario applications
+
+---
+
+**Title**: Physics-infused Machine Learning for Crowd Simulation
+
+**Authors**: Guozhen Zhang, Zihan Yu, Depeng Jin, Yong Li
+
+**Publication Year**: 2022
+
+**Summary**: This study develops a novel Physics-Infused Crowd Simulator (PCS) integrating social force models with graph neural networks for pedestrian interaction modeling. It applies a student-teacher co-training algorithm leveraging both simulated and real data for training and introduces collision avoidance learning to capture micro-level pedestrian dynamics. The work demonstrates enhanced fidelity and long-term generalization in crowd simulations by embedding physical insights directly into neural network architecture, balancing physics-based rules with data-driven learning.
+
+**Link**: [https://fi.ee.tsinghua.edu.cn/public/publications/87da2056-644b-11ee-84fe-0242ac120002.pdf](https://fi.ee.tsinghua.edu.cn/public/publications/87da2056-644b-11ee-84fe-0242ac120002.pdf)  
+
+**Datasets**: Real-world pedestrian trajectory datasets combined with social force simulation data
+
+**Metrics**: Simulation fidelity to real-world data, collision avoidance accuracy, generalization metrics over multiple scenarios
+
+**Applications**: Crowd dynamics simulation for urban safety, event planning, robotic autonomy in pedestrian environments
+
+**Limitations**: Requires substantial real and simulated data for training; complexity of balancing physical rules and neural network flexibility
+
+**Future Directions**: Enhanced physical discovery via symbolic regression, improved real-time adaptability, and finer behavioral modeling
 
 ---
 
 ### Neuro-Symbolic Models
-**Title**: Neuro-Symbolic Approaches for Interpretable Pedestrian Behavior Modeling  
-**Authors**: Anonymous et al.  
-**Publication Year**: 2024  
-**Summary**: Combines neural networks with symbolic reasoning to model pedestrian behavior with interpretable rules (e.g., “avoid obstacles,” “follow group”). Validated with UCY and synthetic data, it offers explainable predictions for AV interactions.  
-**Link**: [DOI:10.1109/TITS.2024.123456](https://doi.org/10.1109/TITS.2024.123456)  
-**Datasets**: UCY, synthetic rule-based scenarios.  
-**Metrics**: Prediction accuracy, rule interpretability, computational efficiency.  
-**Applications**: Interpretable crowd dynamics, AV decision-making, safety analysis.  
-**Limitations**: Complex rule design; limited scalability for large crowds.  
-**Future Directions**: Automated rule learning; integration with RL for adaptability.
+
+**Title**: Neuro-Symbolic Reinforcement Learning for Context-Aware Autonomous Driving Decision-Making
+
+**Authors**: Dr. Huma Khan, Tarunika D Chaudhari, Janjhyam Venkata Naga Ramesh, A.Smitha Kranthi, Elangovan Muniyandy, Prof. Ts. Dr. Yousef A.Baker El-Ebiary, Dr. David Neels Ponkumar Devadhas
+
+**Publication Year**: 2025
+
+**Summary**: This paper presents a Neuro-Symbolic Reinforcement Learning (NSRL) framework that combines deep neural networks and symbolic reasoning to improve autonomous vehicle decisions regarding pedestrian interactions in urban environments. The model integrates neural modules for learning from high-dimensional data with symbolic modules enforcing traffic laws and safety constraints. Using the Lyft Level 5 Motion Prediction dataset, this hybrid model achieves better navigation success, fewer collisions, and enhanced compliance with traffic rules compared to traditional deep reinforcement learning. Metrics such as mean absolute error, mean squared error, and safety violation counts demonstrate the improvement. The symbolic reasoning module uses logic-based rules (e.g., yielding to pedestrians, stopping at red lights) to guide decisions in real-time.
+
+**Link**: [https://thesai.org/Downloads/Volume16No5/Paper_58-Neuro_Symbolic_Reinforcement_Learning.pdf](https://thesai.org/Downloads/Volume16No5/Paper_58-Neuro_Symbolic_Reinforcement_Learning.pdf)  
+
+**Datasets**: Lyft Level 5 Motion Prediction Dataset with urban driving and pedestrian data
+
+**Metrics**: Mean Absolute Error (MAE), Mean Squared Error (MSE), accuracy, number of safety violations, reward per episode
+
+**Applications**: Autonomous vehicle navigation, pedestrian safety, urban traffic management, explainable AI for traffic decision-making
+
+**Limitations**: Focuses primarily on vehicle decision-making including pedestrian interactions, not a standalone pedestrian simulation model; high computational requirements for training; relies on pre-defined symbolic logic rules
+
+**Future Directions**: Expansion to diverse traffic scenarios, real-time adaptive symbolic rule learning, integration of more complex pedestrian behavior models, broader multi-agent scenarios
+
+---
+
+**Title**: Crowd Evacuation with Human-Level Intelligence via Neuro-Symbolic Agents
+
+**Authors**: Alala Bahamid, Azhar Mohd Ibrahim, Amir Akramin Shafie
+
+**Publication Year**: 2024
+
+**Summary**: This research introduces a neuro-symbolic framework for simulating crowd evacuation where agents exhibit human-level reasoning. By combining neural learning with symbolic logic, the model allows simulation agents to perform complex decision-making during emergencies, such as evaluating routes, social norms, and interactions with others, which traditional pure neural models struggle with. This approach improves evacuation efficiency and realism by embedding explicit reasoning about environmental constraints and human behaviors alongside learned representations.
+
+**Link**: [https://www.sciencedirect.com/science/article/abs/pii/S1474034624000041](https://www.sciencedirect.com/science/article/abs/pii/S1474034624000041)  
+
+**Datasets**: Simulated emergency evacuation scenarios with controlled parameters; the paper implies the use of synthetic or benchmark evacuation datasets for validation
+
+**Metrics**: Evacuation time, agent route choice accuracy, compliance with social norms, computational efficiency
+
+**Applications**: Emergency evacuation planning, crowd management, safety protocol design, intelligent urban infrastructure simulation
+
+**Limitations**: Early stage with limited real-world pedestrian data; complexity in scaling for very large crowds; symbolic logic rules require manual crafting and may not cover all behaviors.
+
+**Future Directions**: Automated learning of symbolic rules, integration with sensor data for real-time evacuation monitoring, adaptation to heterogeneous agent populations
+
+---
+
+**Title**: Experimental Insights Towards Explainable and Interpretable Pedestrian Crossing Prediction Using Neuro-Symbolic Approaches
+
+**Authors**: Angie Nataly Melo, Carlota Salinas, Miguel Angel Sotelo
+
+**Publication Year**: 2023
+
+**Summary**: This study proposes a neuro-symbolic model that combines deep learning techniques with fuzzy logic to enable explainable and interpretable pedestrian crossing behavior prediction. The method introduces symbolic components to provide reasoning and rule-based explanations alongside conventional prediction outputs. This dual approach enhances trustworthiness and interpretability in pedestrian simulation systems, which is crucial for deploying autonomous driving technologies and urban traffic control systems. The model was tested against pedestrian crossing datasets to validate predictive performance and interpretability.
+
+**Link**: [https://arxiv.org/abs/2312.02872](https://arxiv.org/abs/2312.02872)  
+
+**Datasets**: Pedestrian crossing behavior datasets collected from real-world urban environments
+
+**Metrics**: Prediction accuracy, interpretability scores, rule compliance measures
+
+**Applications**: Autonomous vehicle pedestrian interaction prediction, urban traffic safety systems, human-in-the-loop traffic management
+
+**Limitations**: Limited scope focused on crossing prediction; fuzzy logic rules require expert tuning; may not generalize to all pedestrian behaviors without retraining
+
+**Future Directions**: Extending to other pedestrian scenarios, automated rule extraction, integration with real-time sensor data, scalability to large urban networks
 
 ---
 
