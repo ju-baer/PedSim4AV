@@ -2,7 +2,7 @@
 
 > **Welcome to the most comprehensive research hub for Pedestrian Simulation Models!** 
 > 
-> This curated collection features **detailed summaries of 40+ seminal papers** spanning **34 distinct modeling approaches**, from foundational physics-based frameworks to cutting-edge AI-driven innovations. Designed for **researchers, urban planners, transportation engineers, and crowd dynamics specialists**, this resource provides deep insights into methodologies, empirical findings, practical applications, and future research directions.
+> This curated collection features **detailed summaries of 97 seminal papers** spanning **34 distinct modeling approaches**, from foundational physics-based frameworks to cutting-edge AI-driven innovations. Designed for **researchers, urban planners, transportation engineers, and crowd dynamics specialists**, this resource provides deep insights into methodologies, empirical findings, practical applications, and future research directions.
 
 ---
 
@@ -13,8 +13,8 @@
 | [**Microscopic Models**](#microscopic-models) | 39 | Individual behavior, crowd dynamics |
 | [**Flow-Based Models**](#flow-based-models) | 8 | Large-scale planning, traffic flow |
 | [**Group-Based Models**](#group-based-models) | 3 | Social interactions, group dynamics |
-| [**AI-Driven Models**](#ai-driven-models) | 15+ | Prediction, learning, adaptation |
-| [**Hybrid Models**](#hybrid-models) | 4+ | Physics + AI integration |
+| [**AI-Driven Models**](#ai-driven-models) | 36 | Prediction, learning, adaptation |
+| [**Hybrid Models**](#hybrid-models) | 11 | Physics + AI integration |
 
 ---
 
