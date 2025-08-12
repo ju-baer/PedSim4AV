@@ -1741,30 +1741,6 @@
 
 ---
 
-### Attention-based Models
-
-**Title**: Microscopic Modeling of Attention-Based Movement Behaviors
-
-**Authors**: Danrui Li, Mathew Schwartz, Samuel S. Sohn, Sejong Yoon, Vladimir Pavlovic, Mubbasir Kapadia
-
-**Publication Year**: 2024
-
-**Summary**: This paper proposes a novel pedestrian simulation model focusing on attention-based movement behaviors, integrating visual attention and locomotion mechanisms. The model simulates pedestrian attention transitions using a Markov Chain structure and accounts for changes in walking speed based on visual attention states. The locomotion is modeled using a Social Force Model with a dynamic walking speed governed by angular speed relative to environmental objects. The framework is calibrated and validated on an empirical dataset collected from pedestrian movements in a metro station corridor, demonstrating improved prediction of visual attention and pedestrian flow efficiency in retail environments of transportation hubs. The model can be applied for architectural design optimization by balancing retail potential and pedestrian efficiency.
-
-**Link**: [https://arxiv.org/html/2403.14892v1](https://arxiv.org/html/2403.14892v1)  
-
-**Datasets**: Real-world pedestrian dataset collected at an underground metro station corridor with 1,153 pedestrian trajectories focusing on attention-based movements.
-
-**Metrics**: Attention transition prediction accuracy, prediction of attention durations, locomotion prediction accuracy, comparison to Social Force Model based simulation outcomes.
-
-**Applications**: Simulation of pedestrian flows in retail areas of transportation hubs, architectural design optimization for improved retail potential and pedestrian flow efficiency.
-
-**Limitations**: Limited pedestrian flow density and diversity in empirical data; does not model pedestrians entering stores; dependent on Social Force Model properties.
-
-**Future Directions**: Extend to diverse environmental factors, high-density pedestrian flows, integrate other pedestrian response modes, improve base locomotion models.
-
----
-
 **Title**: Visualization of Pedestrian Interaction through Attention-based Pedestrian Trajectory Prediction
 
 **Authors**: Wen-Xin Qiu, Takashi Fuse
