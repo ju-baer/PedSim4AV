@@ -4,7 +4,7 @@
 
 <h1 align="center"> PedSim4AV: Pedestrian Simulation Models for Autonomous Vehicles </h1>
 <p align="center">
-  <strong>A vibrant hub of pedestrian simulation models for researchers, urban planners, and tech enthusiasts .</strong>
+  <strong>A vibrant hub of pedestrian simulation models for researchers, students, and tech enthusiasts .</strong>
 </p>
 <p align="center">
   <img src="https://img.shields.io/badge/Version-1.0-blue.svg" alt="Version">
@@ -125,7 +125,7 @@ Combining physics and AI for versatile, robust simulations.
 ---
 
 ## Benchmarking
-We want to test the pedestrina simulation models in this benchmarking way to see how they perform in robust scenarios and how pedestrian simulation models can be modeled for AV safety and more. 
+We want to test the pedestrian simulation models in this benchmarking way to see how they perform in robust scenarios and how pedestrian simulation models can be modeled for AV safety and more. 
 ### Evaluation Metrics
 - **Safety**: Collision rates, minimum distances, reaction times
 - **Realism**: Human behavior similarity, trajectory naturalness
