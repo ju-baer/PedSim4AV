@@ -2,7 +2,7 @@
   <img src="logo.png" alt="PedSim4AV Logo" width="300"/>
 </p>
 
-<h1 align="center"> PedSim4AV: Pedestrian Simulation Models for Autonomous Vehicles </h1>
+<h1 align="center"> PedSim4AD: Pedestrian Simulation Models for Autonomous Driving </h1>
 <p align="center">
   <strong>A vibrant hub of pedestrian simulation models for researchers, students, and tech enthusiasts .</strong>
 </p>
