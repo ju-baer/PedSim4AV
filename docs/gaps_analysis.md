@@ -23,8 +23,11 @@ This comprehensive analysis identifies critical gaps in pedestrian simulation mo
 
 ## **Microscopic Models** | *Individual-Level Precision*
 
-<details>
-<summary><b> Physics-Based Foundations</b></summary>
+<div align="center">
+
+### **Physics-Based Foundation Models**
+</div>
+
 
 | Model | Type | Key Feature | Use Case | Research Validation | Identified Limitations |
 |-------|------|-------------|----------|----------------------|-------------------------|
@@ -32,10 +35,12 @@ This comprehensive analysis identifies critical gaps in pedestrian simulation mo
 | **Cellular Automata** | Microscopic | Grid-based discrete movement | Large-scale crowds | Effective for mixed pedestrian-vehicle scenarios | Oversimplified individual differences |
 | **Granular** | Microscopic | Particle-based contact forces | Dense crowds | Handles physical interactions well | No social/emotional modeling |
 
-</details>
 
-<details>
-<summary><b> Behavioral & Navigation Models</b></summary>
+<div align="center">
+  
+### **Behavioral & Navigation Models**
+</div>
+
 
 | Model | Type | Key Feature | Use Case | Research Evidence | Gap Analysis |
 |-------|------|-------------|----------|--------------------|-------------------|
@@ -45,10 +50,11 @@ This comprehensive analysis identifies critical gaps in pedestrian simulation mo
 | **Path-Based** | Microscopic | A* pathfinding for movement | Optimal routing | Efficient route planning | Assumes rational decision-making |
 | **Steering Behaviors** | Microscopic | Game-inspired steering | Game-like simulations | Intuitive movement patterns | Lacks real-world behavioral complexity |
 
-</details>
+<div align="center">
 
-<details>
-<summary><b> Advanced Collision & Safety Models</b></summary>
+### **Advanced Collision & Safety Models**
+</div>
+
 
 | Model | Type | Key Feature | Use Case | Strengths | AV Usage Gaps |
 |-------|------|-------------|----------|-------------|-----------------|
@@ -56,7 +62,6 @@ This comprehensive analysis identifies critical gaps in pedestrian simulation mo
 | **Anticipation Velocity** | Microscopic | Predictive collision avoidance | Dense environments | Proactive safety measures | Limited to physics-based prediction only |
 | **Centrifugal Force** | Microscopic | Generalized force for crowd avoidance | High-density crowds | Handles crowd pressure effectively | Missing individual personality traits |
 
-</details>
 
 ---
 
@@ -150,10 +155,17 @@ Individual Behavior ←→ Group Dynamics ←→ Cultural Context
 </tr>
 </table>
 
+---
+
 ### **Specialized AI Approaches**
 
-<details>
-<summary><b> Reinforcement Learning Ecosystem</b></summary>
+<div align="center">
+
+### **Reinforcement Learning Ecosystem Models**
+
+</div>
+
+
 
 | Model | Key Feature | Research Evidence | Industry Readiness | Current Maturity |
 |-------|-------------|-------------------|-------------------|------------------|
@@ -161,10 +173,12 @@ Individual Behavior ←→ Group Dynamics ←→ Cultural Context
 | **Multi-Agent RL** | Multi-agent interactions | Effective for modeling complex social scenarios | Research stage | Early Development |
 | **Imitation Learning** | Learning from human demonstrations | Growing research interest | Limited deployment | Developing |
 
-</details>
 
-<details>
-<summary><b> Advanced Mathematical Models</b></summary>
+<div align="center">
+
+### **Advanced Mathematical Models**
+
+</div>
 
 | Model | Key Feature | Research Application | Technical Status | Current Focus |
 |-------|-------------|---------------------|-----------------|---------------|
@@ -172,7 +186,20 @@ Individual Behavior ←→ Group Dynamics ←→ Cultural Context
 | **Attention-based** | Focus mechanisms | Social context awareness | Transformer architectures showing promise | Industry adoption |
 | **Normalizing Flow** | Realistic trajectory distributions | Behavioral diversity modeling | Early research | Limited application |
 
-</details>
+
+### **Cutting-Edge Temporal Models**
+
+```
+Past Behavior → Current State → Future Prediction
+     ↓              ↓               ↓
+ Historical    Real-time        Trajectory
+   Data        Processing       Forecasting
+     ↓              ↓               ↓
+   Temporal Convolutional Networks (TCNs)
+```
+
+**Temporal CNNs**: Addressing the **temporal intent change gap** with sequence modeling for long-term trajectory forecasting.
+
 
 ### **Recent Technical Advances**
 
@@ -388,7 +415,33 @@ Recent benchmarking on Argoverse 2 dataset shows significant variations in model
 
 # Strategic Implementation: Evidence-Based Roadmap
 
+
 <div align="center">
+
+## **Timeline for Gap Resolution**
+
+</div>
+
+```mermaid
+gantt
+    title AV Pedestrian Modeling Evolution
+    dateFormat  YYYY-MM-DD
+    section Phase 1: Foundation
+    Enhanced Datasets        :a1, 2025-01-01, 2025-12-31
+    Basic AI Integration     :a2, 2025-06-01, 2026-06-30
+    section Phase 2: Intelligence  
+    Social Awareness Models  :b1, 2026-01-01, 2027-12-31
+    Cultural Adaptation      :b2, 2026-06-01, 2028-06-30
+    section Phase 3: Mastery
+    Full Hybrid Systems      :c1, 2027-01-01, 2029-12-31
+    Real-world Deployment    :c2, 2028-01-01, 2030-12-31
+```
+
+
+
+<div align="center">
+
+---
 
 ## **Research-Informed Development Path**
 
@@ -576,3 +629,361 @@ The two most common metrics when evaluating trajectory predictors are the Averag
 ---
 
 <div align="center">
+
+
+# Technical Appendix: Pedestrian Behavior Modeling
+
+## **Section A:** Implementation Guidelines
+
+### Technology Ecosystem
+
+**Research & Prototyping Stack**
+
+```yaml
+Programming:
+  - Python 3.8+: Core development
+  - PyTorch/TensorFlow: Deep learning frameworks
+  - NumPy/Pandas: Data manipulation
+
+Simulation:
+  - SUMO: Traffic simulation
+  - CARLA: Autonomous driving simulator
+  - OpenAI Gym: RL environments
+
+Visualization:
+  - Matplotlib: Static plots
+  - Plotly: Interactive dashboards
+  - Wandb: Experiment tracking
+```
+
+**Production Deployment Stack**
+
+```yaml
+Core Systems:
+  - C++17: High-performance computing
+  - CUDA: GPU acceleration
+  - ONNX: Cross-platform inference
+
+Infrastructure:
+  - ROS2: Robot operating system
+  - Docker: Containerization
+  - Kubernetes: Orchestration
+
+Monitoring:
+  - Prometheus: Metrics collection
+  - Grafana: Performance dashboards
+  - ELK Stack: Log analysis
+```
+
+
+---
+
+## **Section B:** Benchmark Datasets & Evaluation
+
+### Standard Datasets Landscape
+
+<div align="center">
+
+> **Dataset Comparison Chart**
+
+</div>
+
+| **Dataset** | **Size** | **Environment** | **Strengths** | **Limitations** |
+|:---------------|:------------|:-------------------|:-----------------|:-------------------|
+| **ETH/UCY** | ~1,500 trajectories | University campus | Established benchmark | Limited diversity |
+| **Stanford Drone** | ~11,000 trajectories | Campus aerial view | Multi-perspective | Single location |
+| **InD Dataset** | ~11,500 trajectories | German intersections | High annotation quality | Geographic bias |
+| **JAAD** | 346 video sequences | Pedestrian crossings | Behavioral labels | Regional limitation |
+
+---
+
+### Performance Metrics Framework
+
+#### **Primary Safety Metrics**
+```
+Accuracy Targets:
+├── Average Displacement Error (ADE): < 0.5m
+├── Final Displacement Error (FDE): < 1.0m  
+├── Collision Risk Prediction: > 95%
+└── Real-time Processing: < 100ms
+```
+
+#### **Behavioral Assessment Metrics**
+```
+Intelligence Indicators:
+├── Intent Prediction Accuracy: 85-95%
+├── Social Interaction Score: 0.8-0.9
+├── Trajectory Smoothness: RMSE < 0.3m
+└── Cultural Adaptation Index: 0.7-0.9
+```
+
+---
+
+## **Section C:** Research Insights & Evidence
+
+### Foundational Literature
+
+<div align="center">
+
+> **Milestone Publications in Chronological Order**
+
+</div>
+
+| **Year** | **Authors** | **Contribution** | **Impact** |
+|:-----------|:----------------|:-------------------|:-------------|
+| **1995** | Helbing & Molnár | Social Force Model | Foundation of physics-based modeling |
+| **2016** | Alahi et al. | Social LSTM | First deep learning approach |
+| **2018** | Gupta et al. | Social GAN | Adversarial training introduction |
+| **2020** | Salzmann et al. | Trajectron++ | Multi-modal heterogeneous data |
+
+---
+
+### Model Performance Analysis
+
+
+#### **Computational Cost vs Accuracy**
+
+```mermaid
+quadrantChart
+    title Model Selection Matrix
+    x-axis "Low Computational Cost" --> "High Computational Cost"
+    y-axis "Low Accuracy" --> "High Accuracy"
+    quadrant-1 "High Performance"
+    quadrant-2 "Overkill Zone"
+    quadrant-3 "Basic Solutions"
+    quadrant-4 "Sweet Spot"
+    
+    Social Force: [0.2, 0.6]
+    Agent-Based: [0.4, 0.7]
+    Deep LSTM: [0.7, 0.8]
+    Transformer: [0.9, 0.9]
+```
+
+<div align="center">
+
+> **Key Insight:** Transformer models maintain performance better in complex scenarios but require significantly more computational resources
+
+</div>
+
+---
+
+## **Section D:** Technical Challenges & Solutions
+
+### Critical Implementation Issues
+
+<div align="center">
+
+Challenge 1: Data Scarcity
+
+</div>
+
+**Problem:** Limited high-quality annotated pedestrian datasets
+
+**Solutions:**
+- Data augmentation techniques
+- Synthetic data generation using GANs  
+- Transfer learning from related domains
+- Semi-supervised learning approaches
+
+<div align="center">
+
+**Challenge 2: Real-time Processing**
+
+</div>
+
+**Problem:** Computational complexity vs. latency requirements
+
+**Solutions:**
+- Model optimization (quantization, pruning)
+- Knowledge distillation
+- Hardware acceleration (GPU/TPU)
+
+**Performance Targets:**
+```
+Inference Time Budget:
+├── Feature Extraction: < 30ms
+├── Model Inference: < 50ms  
+├── Post-processing: < 20ms
+└── Total Pipeline: < 100ms
+```
+
+
+---
+
+## **Section E:** Deployment Framework
+
+### System Architecture
+
+```mermaid
+flowchart TD
+    subgraph "Sensor Layer"
+        A1[ Cameras]
+        A2[ LiDAR] 
+        A3[ Radar]
+        A4[ Audio]
+    end
+    
+    subgraph "Processing Pipeline"
+        B1[ Data Fusion]
+        B2[ Feature Extraction]
+        B3[ Pedestrian Detection]
+        B4[ Behavior Analysis]
+    end
+    
+    subgraph "Prediction Engine"
+        C1[ Intent Prediction]
+        C2[ Trajectory Forecasting]
+        C3[ Risk Assessment]
+    end
+    
+    subgraph "Safety & Control"
+        D1[ Safety Validation]
+        D2[ Decision Making]
+        D3[ Vehicle Control]
+    end
+    
+    A1 & A2 & A3 & A4 --> B1
+    B1 --> B2 --> B3 --> B4
+    B4 --> C1 & C2 & C3
+    C1 & C2 & C3 --> D1
+    D1 --> D2 --> D3
+    
+    style A1 fill:#e3f2fd
+    style A2 fill:#e3f2fd
+    style A3 fill:#e3f2fd
+    style A4 fill:#e3f2fd
+    style C1 fill:#f3e5f5
+    style C2 fill:#f3e5f5
+    style C3 fill:#f3e5f5
+    style D3 fill:#e8f5e8
+```
+
+#### **System Performance Metrics**
+
+```mermaid
+xychart-beta
+    title "Processing Pipeline Latency Breakdown"
+    x-axis ["Sensor Fusion", "Feature Extract", "Detection", "Prediction", "Validation", "Control"]
+    y-axis "Latency (ms)" 0 --> 50
+    bar [15, 20, 25, 35, 10, 8]
+```
+
+*Target: Total pipeline latency < 100ms for real-time operation*
+
+### Validation Pipeline
+
+```mermaid
+flowchart TD
+    A[ Requirements] --> B[ Simulation Testing]
+    B --> C{ Pass Criteria?}
+    C -->| Yes| D[ Closed-Course Testing]
+    C -->| No| E[ Model Refinement]
+    E --> B
+    
+    D --> F{Performance OK?}
+    F -->| Yes| G[ Limited Public Testing]
+    F -->| No| H[ System Optimization]
+    H --> D
+    
+    G --> I{ Safety Validated?}
+    I -->| Yes| J[ Production Deployment]
+    I -->| No| K[ Safety Analysis]
+    K --> G
+    
+    style A fill:#e3f2fd
+    style J fill:#e8f5e8
+    style E fill:#fff3e0
+    style H fill:#fff3e0
+    style K fill:#ffebee
+```
+
+#### **Testing Phase Metrics**
+
+```mermaid
+gantt
+    title Validation Timeline & Resource Allocation (months)
+    dateFormat X
+    axisFormat %s
+    
+    section Simulation
+    Environment Setup    :0, 2
+    Scenario Generation  :2, 6
+    Model Testing       :6, 10
+    Performance Analysis:10, 12
+    
+    section Closed-Course
+    Track Preparation   :12, 14
+    Safety Protocols    :14, 16
+    Human Actor Testing :16, 22
+    Data Collection     :22, 24
+    
+    section Public Testing
+    Regulatory Approval :24, 28
+    Limited Deployment  :28, 40
+    Monitoring & Analysis:40, 48
+    Final Validation    :48, 52
+```
+
+---
+
+## **Section F:** Future Research Directions
+
+### 2025-2030: The Next Five Years
+
+```mermaid
+timeline
+    title Pedetrian Simulation Evolution Timeline 
+    
+    2025     : Multi-Modal Fusion
+             : Sensor data integration
+             : Early prototypes
+             : Pedestrian behavior archetypes and annotations 
+             
+    2026     : Edge Optimization
+             : Enhanced AI models
+             : Improved datasets with pedetsrian behaviors
+             : Real-time learning
+             
+    2027     : Federated Learning
+             : Privacy-preserving training
+             : Social Intelligence
+             : Global model standardization
+             
+    2028     : Explainable AI
+             : Model interpretability
+             : <10ms inference targets
+             : Hardware Acceleration
+             
+
+    2029     : Predictive City Models
+             : Autonomous Adaptation
+             : Safety certification
+             
+    2030     : Production Integration
+             : Large-scale deployment
+             : Commercial adoption
+```
+
+</div>
+
+---
+
+## **References**
+
+<div align="center">
+
+**Core Publications**
+
+</div>
+
+
+1. **Helbing, D., & Molnár, P.** (1995). Social force model for pedestrian dynamics. *Physical Review E*, 51(5), 4282-4286.
+
+2. **Alahi, A., Goel, K., Ramanathan, V., Robicquet, A., Fei-Fei, L., & Savarese, S.** (2016). Social LSTM: Human trajectory prediction in crowded spaces. *CVPR*.
+
+3. **Gupta, A., Johnson, J., Fei-Fei, L., Savarese, S., & Alahi, A.** (2018). Social GAN: Socially acceptable trajectories with generative adversarial networks. *CVPR*.
+
+4. **Salzmann, T., Ivanovic, B., Chakravarty, P., & Pavone, M.** (2020). Trajectron++: Dynamically-feasible trajectory forecasting with heterogeneous data. *ECCV*.
+
+
+---
