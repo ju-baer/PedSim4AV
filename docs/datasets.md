@@ -260,6 +260,77 @@ python run_simulation.py --input ped_trajectories.csv
 
 ---
 
+## Factors Already Considered in Current Datasets
+- **Scene Diversity**: urban, suburban, rural, highway, intersections, construction zones  
+- **Sensor Modalities**: RGB, stereo, LiDAR, radar, GPS/IMU, event-based (neuromorphic)  
+- **Environmental Conditions**: day/night, rain, fog, adverse weather, low visibility  
+- **Pedestrian Attributes**: demographics (age/gender), clothing, pose, activity labels  
+- **Crowd Dynamics**: dense crowds, occlusion, multi-pedestrian interactions  
+- **Intent & Behavior**: crossing, waiting, stopping, walking, joint attention cues  
+- **Trajectory & Motion Data**: bounding boxes, tracking, trajectory interpolation/imputation  
+- **Synthetic vs. Real-World**: controllable synthetic datasets (Cognata) and real-world datasets (Waymo, NuScenes, KITTI, etc.)  
+
+---
+
+## Factors Yet to Be Considered (But Necessary for Robust Testing) [Contribution of pedestrian archetypes]
+- **Psychological & Cognitive States**  
+  - Distraction (phone usage, headphones)  
+  - Attention & eye contact (driver–pedestrian negotiation)  
+  - Emotional states (stress, urgency, calmness)  
+
+- **Cultural & Regional Diversity**  
+  - Crossing norms vary by country/region  
+  - Different walking speeds and group behavior patterns  
+
+- **Special Populations**  
+  - Children, elderly, and people with mobility aids (wheelchairs, crutches, strollers)  
+  - Pedestrians with disabilities (visual/hearing impairments)  
+
+- **Contextual Interactions**  
+  - Interaction with traffic signals and signage  
+  - Group dynamics (families, friends walking together)  
+  - Pedestrian–vehicle negotiation (hand gestures, hesitation, yielding)  
+
+- **Edge Cases**  
+  - Sudden running into streets  
+  - Cyclists/pedestrians overlap in mixed zones  
+  - Pedestrians interacting with delivery robots, e-scooters, or autonomous shuttles  
+
+- **Sensor Challenges Beyond Weather**  
+  - Shadows, reflections (glass buildings, puddles)  
+  - Extreme lighting transitions (tunnels, headlights, sunset glare)  
+  - Partial visibility (behind parked cars, bushes)  
+
+- **Temporal & Longitudinal Behavior**  
+  - Long-term pedestrian trajectories over extended time  
+  - Repeated daily behaviors (commuting patterns)  
+
+- **Ethical & Safety-Critical Scenarios**  
+  - Emergency evacuations (panic crowds)  
+  - Pedestrians during natural disasters (flood, earthquake zones)  
+  - First responders directing traffic in chaotic conditions  
+
+---
+
+## Dataset Coverage
+
+| Dataset              | Scene Diversity | Multi-Modal Sensors | Envir. Conditions | Attributes / Demographics | Crowd Dynamics | Behavior / Intent Labels | Trajectories / Tracking | Synthetic Data | Event-based / Aerial | Notes                         |
+|---------------------|-----------------|----------------------|--------------------|---------------------------|----------------|---------------------------|--------------------------|-----------------|------------------------|------------------------------|
+| Waymo Open          | Urban, suburban | LiDAR, RGB, Radar    | Yes (weather, light) | Limited                   | Medium         | No                        | Yes                      | No              | No                     | Large-scale, multi-modal     |
+| NuScenes            | Urban           | LiDAR, RGB, Radar    | Yes                | Limited                   | Medium         | No                        | Yes                      | No              | No                     | Comprehensive multi-modal    |
+| TrajImpute (2024)   | Urban           | RGB, trajectories    | Partial (occlusion) | No                        | No             | No                        | Yes                      | No              | No                     | Focused on missing data      |
+| PSI 2.0             | Urban / crossings | RGB                | Yes (daylight)     | No (behavioral)           | Low            | Yes                       | Yes                      | No              | No                     | Intent labels included       |
+| JAAD 2.0            | Urban crossings | RGB                  | Yes                | Yes (demographics)        | Low            | Yes                       | Yes                      | No              | No                     | Detailed crossing behavior   |
+| MSP60K              | Urban crowds    | RGB, attribute data  | Yes                | Yes                       | High           | No                        | No                       | No              | No                     | Attributes rich               |
+| Cchead (2024)       | Dense crowds    | RGB, optical flow    | Partial            | No                        | Very High      | No                        | Yes (head-level)         | No              | No                     | Crowd & occlusion focus      |
+| NU-AIR              | Aerial urban    | Event-camera         | Yes (lighting)     | No                        | Medium         | No                        | Yes                      | No              | Yes                    | Event-based & aerial         |
+| Cognata Synthetic   | Work zones      | Synthetic sensors    | Full control       | Customizable              | Medium         | Yes (configurable)        | Yes                      | Yes             | No                     | Synthetic flexibility        |
+| KITTI               | Urban, rural    | Stereo RGB, LiDAR    | Yes                | No                        | Low            | No                        | Yes                      | No              | No                     | Classic baseline dataset     |
+| BDD100K             | Urban, weather  | RGB, annotations     | Yes                | No                        | Medium         | No                        | Yes                      | No              | No                     | Broad annotated video        |
+| Caltech Pedestrian  | Urban, rural    | RGB video            | Yes (daylight)     | No                        | Low            | No                        | Yes                      | No              | No                     | Baseline detection dataset   |
+
+---
+
 ## Future Directions
 
 ### Research Opportunities
