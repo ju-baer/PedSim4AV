@@ -811,7 +811,7 @@ Inference Time Budget:
 ---
 
 ## **Section E:** Possible Framework for full deployment 
-> The possible framework is designed without considering the prior work on **pedestrian behaviour archetypes**. With **pedestrian behaviour archetypes**, **"Sensor Layer"** would be very easier to implement.
+> The possible framework is designed without considering the prior work on **pedestrian behaviour archetypes**. With **pedestrian behaviour archetypes**, we wouldn't need **"Sensor Layer"**.
 
 ### System Architecture
 
