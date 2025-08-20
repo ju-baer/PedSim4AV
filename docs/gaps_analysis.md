@@ -810,7 +810,8 @@ Inference Time Budget:
 
 ---
 
-## **Section E:** Deployment Framework
+## **Section E:** Possible Framework for full deployment 
+> The possible framework is designed without considering the prior work on **pedestrian behaviour archetypes**. With **pedestrian behaviour archetypes**, **"Sensor Layer"** would be very easier to implement.
 
 ### System Architecture
 
@@ -822,7 +823,12 @@ flowchart TD
         A3[ Radar]
         A4[ Audio]
     end
-    
+
+    subgraph "Pedestrian Archetypes"
+          P1[ Archetypes]
+          P2[ Datasets]
+     end
+
     subgraph "Processing Pipeline"
         B1[ Data Fusion]
         B2[ Feature Extraction]
@@ -843,6 +849,7 @@ flowchart TD
     end
     
     A1 & A2 & A3 & A4 --> B1
+    P1 & P2 --> B2
     B1 --> B2 --> B3 --> B4
     B4 --> C1 & C2 & C3
     C1 & C2 & C3 --> D1
