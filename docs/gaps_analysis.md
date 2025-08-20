@@ -867,15 +867,8 @@ flowchart TD
 
 #### **System Performance Metrics**
 
-```mermaid
-xychart-beta
-    title "Processing Pipeline Latency Breakdown"
-    x-axis ["Sensor Fusion", "Feature Extract", "Detection", "Prediction", "Validation", "Control"]
-    y-axis "Latency (ms)" 0 --> 50
-    bar [15, 20, 25, 35, 10, 8]
-```
+For better performance, our goal should be achieving the target of having **total pipeline latency < 100ms for real-time operation**.
 
-*Target: Total pipeline latency < 100ms for real-time operation*
 
 ### Validation Pipeline
 
