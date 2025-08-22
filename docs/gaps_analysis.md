@@ -19,7 +19,7 @@ This comprehensive analysis identifies critical gaps in pedestrian simulation mo
 
 ---
 
-# The Model Universe: Comprehensive Model Analysis
+# Comprehensive Model Analysis
 
 ## **Microscopic Models** | *Individual-Level Precision*
 
