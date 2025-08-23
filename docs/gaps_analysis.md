@@ -526,19 +526,75 @@ Simulation of pedestrian motion in urban traffic networks faces challenges in mi
 
 **Verified Missing Elements:**
 
-• **Complex weather condition modeling**  
-  *Limited simulation of how rain, snow, fog, or bright sunlight affects pedestrian visibility, movement speed, and decision-making processes*
+### • **Complex Weather Condition Modeling**
 
-• **Event-driven crowd behavior scenarios**  
-  *Insufficient modeling of emergency evacuations, large events, protests, or situations where normal pedestrian flow patterns are disrupted*
+*Limited simulation of how rain, snow, fog, or bright sunlight affects pedestrian visibility, movement speed, and decision-making processes*
 
-• **Construction and temporary infrastructure changes**  
-  *Lack of dynamic scenarios involving temporary barriers, detours, construction zones that force pedestrians into unexpected movement patterns*
+#### **What Currently Exists:**
+- **Basic Visual Weather Effects**: CARLA provides fundamental weather rendering with rain, snow, and fog effects primarily for visual sensors
+- **Static Weather Parameters**: Current simulators like CARLA offer weather settings but treat them as static environmental conditions rather than dynamic behavioral influencers
 
-• **Multi-modal transportation interactions**  
-  *Missing integration of pedestrian behavior around buses, bicycles, scooters, and other transportation modes beyond just vehicles*
+#### **Critical Limitations:**
+- **No Behavioral Weather Response**: Pedestrians in simulations don't alter walking patterns, speed, or route choices based on weather conditions
+- **Missing Micro-Climate Effects**: Simulation environments lack modeling of how pedestrians seek shelter under awnings, change crossing patterns during rain, or exhibit hurried behavior in adverse weather
+- **Sensor Degradation Gap**: While visual sensors show weather effects, the impact on pedestrian detection algorithms under different weather conditions isn't properly validated
+  
+---
 
-**Industry Impact**: The need for complex and naturalistic traffic environments that could emulate the complexities of the external environment while providing realistic sensor outputs to the AV pipeline.
+### • **Event-Driven Crowd Behavior Scenarios**
+
+*Insufficient modeling of emergency evacuations, large events, protests, or situations where normal pedestrian flow patterns are disrupted*
+
+#### **What Currently Exists:**
+- **Basic Social Force Models**: PedSUMO evaluates automated vehicle-pedestrian interaction using SUMO to study large-scale effects, but focuses on simple one-on-one scenarios
+- **Rule-Based Pedestrian Movement**: Current simulators use deterministic algorithms for pedestrian pathing
+- **Limited Multi-Agent Systems**: Basic crowd simulation exists but doesn't account for psychological factors during emergencies
+
+#### **Critical Limitations:**
+- **No Panic Response Modeling**: Current pedestrian models don't simulate how people behave during emergencies when normal traffic rules break down
+- **Missing Crowd Psychology**: Simulations lack modeling of herding behavior, panic contagion, and irrational decision-making during crises
+- **Static Crowd Density**: Current models don't handle dynamic crowd surges, bottlenecks, or evacuation behaviors
+- **Event Context Awareness**: Pedestrians in simulations don't respond to sirens, announcements, or visual cues that would trigger emergency behaviors
+
+#### **Recent Research Gap:**
+- **Simple Scenario Focus**: Concepts are mostly evaluated in simple scenarios, such as one person trying to cross in front of one automated vehicle, highlighting the persistent limitation in handling complex, multi-pedestrian emergency scenarios
+
+---
+
+### • **Construction and Temporary Infrastructure Changes**
+
+*Lack of dynamic scenarios involving temporary barriers, detours, construction zones that force pedestrians into unexpected movement patterns*
+
+#### **What Currently Exists:**
+- **Static Environment Generation**: CARLA and SUMO can create predefined urban layouts with construction zones
+- **Basic Traffic Management**: CARLA provides Traffic Manager module that controls vehicles in simulation from the client side
+- **Co-simulation Capabilities**: CARLA-SUMO integration allows for some traffic scenario testing
+
+#### **Critical Limitations:**
+- **No Dynamic Infrastructure Updates**: Simulations can't handle real-time appearance of construction barriers, road closures, or temporary signage
+- **Missing Pedestrian Adaptation**: Current models don't simulate how pedestrians learn and adapt to new temporary obstacles over time
+- **Lack of Construction Zone Realism**: Pedestrian behavior around construction (increased caution, altered crossing patterns, confusion) isn't modeled
+- **Temporary Signage Interpretation**: Simulations don't account for how pedestrians interpret and respond to temporary signs and detour instructions
+
+---
+
+### • **Multi-Modal Transportation Interactions**
+
+*Missing integration of pedestrian behavior around buses, bicycles, scooters, and other transportation modes beyond just vehicles*
+
+#### **What Currently Exists:**
+- **Vehicle-Pedestrian Focus**: Existing models prove to be insufficient in modeling the interaction between autonomous vehicles and vulnerable road users such as bicyclists and pedestrians
+- **Basic Multi-Agent Systems**: Some integration of different vehicle types in traffic simulation
+- **Limited Vulnerable Road User Modeling**: Basic bicycle and pedestrian interactions exist but lack complexity
+
+#### **Critical Limitations:**
+- **Missing Micro-Mobility Integration**: No proper modeling of e-scooter, e-bike, and delivery robot interactions with pedestrians
+- **Insufficient Public Transit Modeling**: Pedestrian behavior around bus stops, boarding/alighting scenarios, and transit-induced crowd dynamics aren't adequately simulated
+- **Lack of Mode-Switching Scenarios**: Simulations don't handle pedestrians who transition between walking, biking, and using public transport
+- **Dynamic Traffic Mix Gap**: Current models struggle with the increasingly complex urban transportation ecosystem including shared mobility services
+
+#### **Recent Development Challenges:**
+- **Complex Urban Environments**: Research indicates that intersections are considered one of the most complex scenarios in a self-driving framework due to the uncertainty in the behaviors of surrounding vehicles, but this complexity multiplies with multi-modal transportation
 
 ---
 
