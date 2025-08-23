@@ -19,6 +19,243 @@ This comprehensive analysis identifies critical gaps in pedestrian simulation mo
 
 ---
 
+# Technical Glossary
+
+*Essential terms for understanding pedestrian simulation models and autonomous vehicle integration*
+
+## **Artificial Intelligence & Machine Learning**
+
+### **Core AI Concepts**
+
+<table>
+<tr>
+<td width="25%"><b>Attention Mechanisms</b></td>
+<td>AI techniques that allow models to focus on relevant parts of input data, similar to human attention. In pedestrian prediction, this helps models identify which pedestrians or environmental features are most important for forecasting behavior.</td>
+</tr>
+
+<tr>
+<td><b>Generative Adversarial Networks (GANs)</b></td>
+<td>A machine learning architecture where two neural networks compete: one generates fake data while the other tries to detect fakes. Used in pedestrian modeling to create realistic trajectory predictions and synthetic training data.</td>
+</tr>
+
+<tr>
+<td><b>Reinforcement Learning (RL)</b></td>
+<td>A type of machine learning where an AI agent learns optimal behavior through trial and error, receiving rewards or penalties. Applied to pedestrian simulation for learning complex walking patterns and decision-making strategies.</td>
+</tr>
+
+<tr>
+<td><b>Transformer-Based Architectures</b></td>
+<td>Advanced neural network designs originally created for language processing, now adapted for pedestrian trajectory prediction. They excel at understanding sequences and relationships in movement patterns over time.</td>
+</tr>
+
+<tr>
+<td><b>Multi-Agent Reinforcement Learning</b></td>
+<td>Extension of RL where multiple AI agents (representing different pedestrians) learn simultaneously, discovering how to interact and coordinate their behaviors in shared environments.</td>
+</tr>
+</table>
+
+### **Specialized AI Models**
+
+<table>
+<tr>
+<td width="25%"><b>Social LSTM</b></td>
+<td>Long Short-Term Memory networks enhanced to model social interactions between pedestrians. They predict individual trajectories while considering the influence of nearby people's movements.</td>
+</tr>
+
+<tr>
+<td><b>Bayesian Models</b></td>
+<td>Statistical models that quantify uncertainty in predictions by calculating probabilities rather than single answers. Crucial for safety-critical AV applications where confidence levels matter.</td>
+</tr>
+
+<tr>
+<td><b>Temporal Convolutional Networks (TCNs)</b></td>
+<td>Neural networks specialized for processing time-series data, designed to capture long-term dependencies in pedestrian movement patterns and predict future behavior changes.</td>
+</tr>
+
+<tr>
+<td><b>Physics-Informed Neural Networks (PINNs)</b></td>
+<td>Neural networks that incorporate physical laws and constraints into their learning process, ensuring predictions follow realistic movement physics.
+</td>
+</tr>
+
+</table>
+
+---
+
+## **Metrics & Evaluation Standards**
+
+<div align="center">
+
+### **Primary Performance Indicators**
+
+</div>
+
+<table>
+<tr>
+<td width="30%"><b>Average Displacement Error (ADE)</b></td>
+<td>The average distance between predicted and actual pedestrian positions throughout the entire prediction timeline. Lower values indicate more accurate trajectory forecasting. <em>Target: < 0.5m for AV applications</em></td>
+</tr>
+
+<tr>
+<td><b>Final Displacement Error (FDE)</b></td>
+<td>The distance between predicted and actual final destination points. Measures how well models predict where pedestrians will end up. <em>Target: < 1.0m for safety-critical systems</em></td>
+</tr>
+
+<tr>
+<td><b>Real-time Processing</b></td>
+<td>The ability to analyze and predict pedestrian behavior fast enough for immediate AV decision-making. <em>Requirement: Complete analysis in < 100ms</em></td>
+</tr>
+</table>
+
+### **Advanced Evaluation Concepts**
+
+<div align="center">
+
+```mermaid
+graph LR
+    A[Model Performance] --> B[Accuracy Metrics]
+    A --> C[Speed Metrics] 
+    A --> D[Safety Metrics]
+    
+    B --> E[ADE/FDE Scores]
+    C --> F[Inference Time]
+    D --> G[Collision Prediction]
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#fff3e0
+    style D fill:#e8f5e8
+```
+
+</div>
+
+---
+
+## **Simulation Frameworks & Platforms**
+
+### **Core Simulation Tools**
+
+<table>
+<tr>
+<td width="25%"><b>CARLA</b></td>
+<td><strong>C</strong>ar <strong>L</strong>earning to <strong>A</strong>ct - An open-source simulator providing photorealistic environments for testing autonomous vehicles, including pedestrian interactions with realistic sensor outputs.</td>
+</tr>
+
+<tr>
+<td><b>SUMO</b></td>
+<td><strong>S</strong>imulation of <strong>U</strong>rban <strong>M</strong>o<strong>bility</strong> - A traffic simulation package designed for handling large road networks, enabling detailed analysis of pedestrian-vehicle interactions in urban environments.</td>
+</tr>
+
+<tr>
+<td><b>SUMO-CARLA Integration</b></td>
+<td>Combined framework linking SUMO's traffic management with CARLA's realistic visualization, creating comprehensive testing environments that simulate both large-scale traffic patterns and detailed sensor interactions.</td>
+</tr>
+</table>
+
+### **Model Types Explained**
+
+<table>
+<tr>
+<td width="25%"><b>Microscopic Models</b></td>
+<td>Simulate individual pedestrians with detailed behavior rules, tracking each person's decisions, movements, and interactions. Ideal for studying specific pedestrian-AV encounters.</td>
+</tr>
+
+<tr>
+<td><b>Macroscopic Models</b></td>
+<td>Treat pedestrian crowds as flowing fluids, modeling overall movement patterns without individual detail. Used for city-wide traffic planning and large-scale AV impact assessment.</td>
+</tr>
+
+<tr>
+<td><b>Mesoscopic Models</b></td>
+<td>Hybrid approach balancing individual behavior with group dynamics, capturing social influences while maintaining computational efficiency for medium-scale simulations.</td>
+</tr>
+</table>
+
+---
+
+## **Pedestrian Behavior Science**
+
+### **Behavioral Modeling Concepts**
+
+<div align="center">
+
+**The Human Factor Challenge**
+
+```
+Physical Movement ← Social Influence → Cultural Context
+        ↓               ↓                   ↓
+   Body Language → Eye Contact ← Environmental Cues
+        ↓               ↓                   ↓
+        How do we teach machines this complexity?
+```
+
+</div>
+
+<table>
+<tr>
+<td width="25%"><b>Intent Prediction</b></td>
+<td>AI's ability to determine what pedestrians plan to do next (cross street, change direction, stop) based on observable cues like walking speed, head orientation, and body positioning.</td>
+</tr>
+
+<tr>
+<td><b>Social Force Model</b></td>
+<td>Physics-based approach treating pedestrians as particles influenced by attractive forces (destinations) and repulsive forces (obstacles, other people). Foundation of many simulation models.</td>
+</tr>
+
+<tr>
+<td><b>Trajectory Prediction</b></td>
+<td>Forecasting the exact path a pedestrian will take, considering their current movement, destination, obstacles, and social interactions with others in the environment.</td>
+</tr>
+
+<tr>
+<td><b>Group Dynamics</b></td>
+<td>How pedestrian behavior changes when walking with others versus alone, including formation maintenance, leadership roles, and collective decision-making processes.</td>
+</tr>
+</table>
+
+---
+
+## **Research Methodologies**
+
+### **Data & Training Approaches**
+
+<table>
+<tr>
+<td width="25%"><b>Dataset Benchmarking</b></td>
+<td>Standardized collections of pedestrian movement data used to test and compare different AI models. Examples include ETH/UCY (campus environments) and nuScenes (real-world traffic scenarios).</td>
+</tr>
+
+<tr>
+<td><b>Imitation Learning</b></td>
+<td>Training AI models by showing them examples of good pedestrian behavior, similar to how humans learn by watching and copying others. Used to teach realistic walking patterns.</td>
+</tr>
+
+<tr>
+<td><b>Federated Learning</b></td>
+<td>Training AI models across multiple locations without sharing raw data, allowing development of globally-applicable pedestrian models while preserving privacy and local behavioral patterns.</td>
+</tr>
+</table>
+
+---
+
+## **Autonomous Vehicle Integration**
+
+### **AV-Specific Challenges**
+
+<table>
+<tr>
+<td width="25%"><b>Sensor Fusion</b></td>
+<td>Combining data from multiple sensors (cameras, LiDAR, radar) to create a comprehensive understanding of pedestrian positions, movements, and intentions in the vehicle's environment.</td>
+</tr>
+<tr>
+<td><b>Real-time Adaptation</b></td>
+<td>The ability for AV systems to continuously update their understanding of pedestrian behavior based on immediate observations, adjusting predictions as situations evolve.</td>
+</tr>
+</table>
+
+---
+
+
 # Comprehensive Model Analysis
 
 ## **Microscopic Models** | *Individual-Level Precision*
