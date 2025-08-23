@@ -1020,28 +1020,40 @@ Intelligence Indicators:
 
 ### Model Performance Analysis
 
-
 #### **Computational Cost vs Accuracy**
 
 ```mermaid
 quadrantChart
-    title Model Selection Matrix
+    title Model Selection Matrix for Pedestrian Prediction
     x-axis "Low Computational Cost" --> "High Computational Cost"
     y-axis "Low Accuracy" --> "High Accuracy"
-    quadrant-1 "High Performance"
-    quadrant-2 "Overkill Zone"
-    quadrant-3 "Basic Solutions"
-    quadrant-4 "Sweet Spot"
+    quadrant-1 Optimal Zone
+    quadrant-2 Balanced Choice
+    quadrant-3 Inadequate
+    quadrant-4 Over-engineered
     
-    Social Force: [0.2, 0.6]
-    Agent-Based: [0.4, 0.7]
-    Deep LSTM: [0.7, 0.8]
-    Transformer: [0.9, 0.9]
+    "Social Force": [0.15, 0.65]
+    "Cellular Automata": [0.25, 0.55]
+    "Agent-Based": [0.35, 0.72]
+    "Rule-Based": [0.20, 0.40]
+    "Social LSTM": [0.65, 0.82]
+    "Transformer": [0.88, 0.92]
+    "Deep RL": [0.85, 0.85]
+    "Hybrid Models": [0.75, 0.88]
 ```
 
 <div align="center">
 
-> **Key Insight:** Transformer models maintain performance better in complex scenarios but require significantly more computational resources
+> **Key Insights:**
+
+> **Social Force & Agent-Based:** Good accuracy-to-cost ratio for basic applications
+
+> **Hybrid Models:** Best overall performance balancing accuracy and computational efficienc
+
+> **Transformers:** Highest accuracy but computationally intensive - suitable for offline analysis
+
+> **Social LSTM:** Balanced choice for real-time AV applications requiring high accuracy
+
 
 </div>
 
@@ -1129,7 +1141,7 @@ flowchart TD
     end
     
     A1 & A2 & A3 & A4 --> B1
-    P1 & P2 --> B2
+    P1 & P2 --> B3
     B1 --> B2 --> B3 --> B4
     B4 --> C1 & C2 & C3
     C1 & C2 & C3 --> D1
@@ -1208,38 +1220,38 @@ gantt
 
 ## **Section F:** Future Research Directions
 
-### 2025-2030: The Next Five Years
+### 2026-2035: The Next Ten Years
 
 ```mermaid
 timeline
     title Pedetrian Simulation Evolution Timeline 
     
-    2025     : Multi-Modal Fusion
+    2026     : Multi-Modal Fusion
              : Sensor data integration
              : Early prototypes
              : Pedestrian behavior archetypes and annotations 
              
-    2026     : Edge Optimization
+    2028     : Edge Optimization
              : Enhanced AI models
              : Improved datasets with pedetsrian behaviors
              : Real-time learning
              
-    2027     : Federated Learning
+    2030     : Federated Learning
              : Privacy-preserving training
              : Social Intelligence
              : Global model standardization
              
-    2028     : Explainable AI
+    2032     : Explainable AI
              : Model interpretability
              : <10ms inference targets
              : Hardware Acceleration
              
 
-    2029     : Predictive City Models
+    2034     : Predictive City Models
              : Autonomous Adaptation
              : Safety certification
              
-    2030     : Production Integration
+    2035     : Production Integration
              : Large-scale deployment
              : Commercial adoption
 ```
