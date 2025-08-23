@@ -264,10 +264,18 @@ Current Model Assumptions:          Research Findings Show:
 Recent work focuses on learning pedestrian social interactions, but existing methods for modeling pedestrian social interactions rely on pre-defined rules, struggling to capture non-explicit social interactions.
 
 **Key Research Gaps Identified:**
-- Limited representation of non-compliant behaviors
-- Insufficient cultural context modeling
-- Absence of emotional state considerations
-- Lack of communication mechanism simulation
+
+• **Limited representation of non-compliant behaviors**  
+  *Current models primarily simulate rule-following pedestrians but fail to account for jaywalking, sudden direction changes, or aggressive crossing behaviors that occur frequently in real-world scenarios*
+
+• **Insufficient cultural context modeling**  
+  *Pedestrian behavior varies significantly across cultures - from different crossing habits in Tokyo vs. New York to varying interpretations of traffic signals and right-of-way expectations*
+
+• **Absence of emotional state considerations**  
+  *Models don't account for how stress, urgency, distraction, or fear affect pedestrian decision-making and movement patterns in traffic environments*
+
+• **Lack of communication mechanism simulation**  
+  *Missing simulation of critical human-to-human communication like eye contact with drivers, hand gestures, body language cues that facilitate safe navigation*
 
 ---
 
@@ -280,10 +288,18 @@ Recent work focuses on learning pedestrian social interactions, but existing met
 Simulation of pedestrian motion in urban traffic networks faces challenges in mixed traffic systems with complex interactions.
 
 **Verified Missing Elements:**
-- Complex weather condition modeling
-- Event-driven crowd behavior scenarios
-- Construction and temporary infrastructure changes
-- Multi-modal transportation interactions
+
+• **Complex weather condition modeling**  
+  *Limited simulation of how rain, snow, fog, or bright sunlight affects pedestrian visibility, movement speed, and decision-making processes*
+
+• **Event-driven crowd behavior scenarios**  
+  *Insufficient modeling of emergency evacuations, large events, protests, or situations where normal pedestrian flow patterns are disrupted*
+
+• **Construction and temporary infrastructure changes**  
+  *Lack of dynamic scenarios involving temporary barriers, detours, construction zones that force pedestrians into unexpected movement patterns*
+
+• **Multi-modal transportation interactions**  
+  *Missing integration of pedestrian behavior around buses, bicycles, scooters, and other transportation modes beyond just vehicles*
 
 **Industry Impact**: The need for complex and naturalistic traffic environments that could emulate the complexities of the external environment while providing realistic sensor outputs to the AV pipeline.
 
@@ -310,9 +326,9 @@ Required Solution: Continuous real-time intent tracking
 Recent research indicates that longer observation sequences positively impact overall accuracy, with observation lengths providing additional cues to infer pedestrian actions.
 
 **Key Research Findings:**
-- Observation windows of 2 seconds may be sufficient to differentiate crossing from non-crossing actions
-- Need for real-time adaptation to intention changes
-- Importance of explanatory models for interaction understanding
+- **Observation Window Optimization**: Studies show 2-second observation windows may be sufficient to differentiate crossing from non-crossing actions
+- **Real-time Adaptation Need**: Critical requirement for models to adapt to intention changes as they happen, not just at initial observation
+- **Explanatory Model Importance**: Need for AI systems that can explain why they predict certain pedestrian behaviors for safety validation
 
 ---
 
@@ -343,9 +359,14 @@ Recent research indicates that longer observation sequences positively impact ov
 Accurate forecasting requires a comprehensive understanding not only of each pedestrian's previous trajectory but also of their interaction with the surrounding environment, an important part of which are other pedestrians moving dynamically in the scene.
 
 **Current Research Focus:**
-- Social interaction learning with generative adversarial networks
-- Attention mechanisms for social context modeling
-- Integration of non-verbal communication understanding
+
+• **Social Interaction Learning**: Development of generative adversarial networks to model complex pedestrian-to-pedestrian interactions
+
+• **Attention Mechanisms**: Implementation of attention-based models that can focus on relevant social context cues in crowded environments
+
+• **Non-verbal Communication Understanding**: Integration of visual cues like head orientation, walking speed changes, and spatial positioning into prediction models
+
+• **Group Behavior Modeling**: Understanding how pedestrians behave differently when alone versus in groups, families, or crowds
 
 ---
 
@@ -354,6 +375,12 @@ Accurate forecasting requires a comprehensive understanding not only of each ped
 <div align="center">
 
 ### Current Dataset Landscape
+
+| **Limitation Type** | **Impact on Research** | **Real-World Gap** |
+|:-------------------:|:----------------------:|:------------------:|
+| Pedestrian-Only | Limited traffic context | Missing AV scenarios |
+| Urban Bias | Cultural homogeneity | Global applicability |
+| Scale Constraints | Insufficient diversity | Edge case coverage |
 
 </div>
 
@@ -380,9 +407,25 @@ Accurate forecasting requires a comprehensive understanding not only of each ped
 <td>Real-world AV scenarios</td>
 <td> High</td>
 </tr>
+<tr>
+<td><b>Weather/Edge Cases</b></td>
+<td>Limited availability</td>
+<td>Specialized conditions</td>
+<td> Moderate</td>
+</tr>
 </table>
 
 **Key Research Finding**: Although specialized datasets such as Argoverse 2 or nuScenes address this shortcoming, they are rarely utilized in pedestrian research due to their primary focus on vehicles or all road users combined.
+
+### **Critical Dataset Gaps:**
+
+• **Geographic Diversity**: Most datasets focus on Western urban environments, lacking representation from different global traffic cultures
+
+• **Demographic Representation**: Limited data on different age groups, mobility levels, and accessibility needs
+
+• **Temporal Coverage**: Insufficient long-term datasets that capture seasonal variations and evolving urban infrastructure
+
+• **Edge Case Documentation**: Rare but critical scenarios like emergency situations, unusual weather, or infrastructure failures
 
 ---
 
