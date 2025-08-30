@@ -477,6 +477,52 @@ Recent research demonstrates that combining SUMO (Simulation of Urban MObility) 
 
 # The Five Critical Gaps: Evidence-Based Analysis
 
+<div align="center">
+
+## **Critical Gap Impact Assessment**
+
+</div>
+
+```mermaid
+graph TB
+    subgraph "Current Research State"
+        CR1[Limited Behavioral Diversity<br/>Static rule-based models]
+        CR2[Incomplete Scenario Coverage<br/>Weather/emergency gaps]
+        CR3[Static Intent Modeling<br/>No dynamic adaptation]
+        CR4[Social Intelligence Deficit<br/>Missing non-verbal cues]
+        CR5[Dataset Limitations<br/>Western urban bias]
+    end
+    
+    subgraph "Impact on AV Safety"
+        IS1[Unpredictable Pedestrian Actions<br/>Safety Risk: HIGH]
+        IS2[Edge Case Failures<br/>Safety Risk: CRITICAL]
+        IS3[Late Reaction to Intent Changes<br/>Safety Risk: HIGH]
+        IS4[Missed Social Interactions<br/>Safety Risk: MEDIUM]
+        IS5[Cultural Misunderstanding<br/>Safety Risk: HIGH]
+    end
+    
+    subgraph "Research Priority Matrix"
+        RP1[Priority 1: Dynamic Intent<br/>Timeline: 1-2 years]
+        RP2[Priority 2: Scenario Expansion<br/>Timeline: 2-3 years]
+        RP3[Priority 3: Cultural Adaptation<br/>Timeline: 3-4 years]
+        RP4[Priority 4: Social Intelligence<br/>Timeline: 2-4 years]
+        RP5[Priority 5: Dataset Diversity<br/>Timeline: 1-3 years]
+    end
+    
+    CR1 --> IS1 --> RP3
+    CR2 --> IS2 --> RP2
+    CR3 --> IS3 --> RP1
+    CR4 --> IS4 --> RP4
+    CR5 --> IS5 --> RP5
+    
+    style IS2 fill:#FF4444
+    style IS1 fill:#FF6666
+    style IS3 fill:#FF6666
+    style IS5 fill:#FF6666
+    style IS4 fill:#FFA500
+```
+
+
 ## **Gap #1: Limited Behavioral Diversity Crisis**
 
 <div align="center">
@@ -754,26 +800,39 @@ Recent benchmarking on Argoverse 2 dataset shows significant variations in model
 
 <div align="center">
 
-## **Timeline for Gap Resolution**
+## **Technology Readiness Levels & Implementation Roadmap**
 
 </div>
 
 ```mermaid
 gantt
-    title AV Pedestrian Modeling Evolution
+    title AV Pedestrian Modeling Evolution & Industry Deployment
     dateFormat  YYYY-MM-DD
-    section Phase 1: Foundation
-    Enhanced Datasets        :a1, 2025-01-01, 2025-12-31
-    Basic AI Integration     :a2, 2025-06-01, 2026-06-30
-    section Phase 2: Intelligence  
-    Social Awareness Models  :b1, 2026-01-01, 2027-12-31
-    Cultural Adaptation      :b2, 2026-06-01, 2028-06-30
-    section Phase 3: Mastery
-    Full Hybrid Systems      :c1, 2027-01-01, 2029-12-31
-    Real-world Deployment    :c2, 2028-01-01, 2030-12-31
+    
+    section Phase 1: Foundation Building
+    Enhanced Dataset Collection    :crit, foundation1, 2025-01-01, 2025-12-31
+    Basic AI Integration          :foundation2, 2025-03-01, 2026-03-31
+    Physics-AI Hybrid Development:foundation3, 2025-06-01, 2026-12-31
+    
+    section Phase 2: Intelligence Enhancement
+    Social Awareness Integration  :intel1, 2026-01-01, 2027-06-30
+    Cultural Adaptation Systems   :intel2, 2026-06-01, 2028-06-30
+    Dynamic Intent Modeling       :crit, intel3, 2026-01-01, 2027-12-31
+    
+    section Phase 3: Advanced Features
+    Real-time Learning Systems    :advanced1, 2027-01-01, 2029-06-30
+    Multi-Cultural Deployment     :advanced2, 2027-06-01, 2029-12-31
+    Emergency Scenario Handling   :crit, advanced3, 2027-01-01, 2030-06-30
+    
+    section Phase 4: Production Deployment
+    Automotive Industry Integration:deploy1, 2028-01-01, 2030-12-31
+    Urban Planning Implementation  :deploy2, 2028-06-01, 2031-12-31
+    Global Regulatory Approval     :crit, deploy3, 2029-01-01, 2032-12-31
+    
+    section Phase 5: Market Maturity
+    Widespread Commercial Use      :mature1, 2030-01-01, 2035-12-31
+    Full Autonomous Integration    :mature2, 2031-01-01, 2035-12-31
 ```
-
-
 
 <div align="center">
 
